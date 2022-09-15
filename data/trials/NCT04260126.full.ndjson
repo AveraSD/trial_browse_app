@@ -1,0 +1,65 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04260126",
+      "jit": "Tempus",
+      "trial_name": "PDS Versitile-002 (PDS0101-HNC-201)  "
+    },
+    "disease": {
+      "summary": "Metastatic Head and Neck Cancer | Recurrent Head and Neck Cancer | HPV Positive Oropharyngeal Squamous Cell Carcinoma | Neoplasms, Head and Neck",
+      "details": [
+        {
+          "code": "Head and Neck (HEAD_NECK)",
+          "selection": "include"
+        },
+        {
+          "code": "Cervix (CERVIX)",
+          "selection": "include"
+        },
+        {
+          "code": "Head and Neck Squamous Cell Carcinoma (HNSC)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04260126",
+      "title": "Study of PDS0101 and Pembrolizumab Combination I/O in Subjects With HPV16 + Recurrent and/or Metastatic HNSCC",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 26, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "PDS Biotechnology Corp.",
+      "brief_summary": "VERSATILE-002 is a Phase 2, open-label, multicenter study of the efficacy and safety of PDS0101 administered in combination with pembrolizumab in adults with HPV16 and PD-L1 positive recurrent or metastatic head and neck squamous cell carcinoma (HNSCC).",
+      "conditions": "Metastatic Head and Neck Cancer | Recurrent Head and Neck Cancer | HPV Positive Oropharyngeal Squamous Cell Carcinoma | Neoplasms, Head and Neck",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Pembrolizumab and PDS0101",
+          "drug": "Combination Product: Pembrolizumab and PDS0101",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Pembrolizumab and PDS0101",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PD-L1",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "PD-L1 positive (CPS) ≥1 "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\Tempus JIT_2022-09-06.docx ",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04260126\" target=\"_blank\">NCT04260126<\/a>"
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05103358",
+      "jit": "Caris",
+      "trial_name": "Aadi Bioscience TSC-007"
+    },
+    "disease": {
+      "summary": "Advanced Solid Tumor | Neoplasm Metastasis | Metastatic Solid Tumor | ",
+      "details": [
+        {
+          "code": "Solid Tumors",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05103358",
+      "title": "Phase 2 Basket Trial of Nab-sirolimus in Patients With Malignant Solid Tumors With Pathogenic Alterations in TSC1 or TSC2 Genes (PRECISION 1)",
+      "current_status": "Recruiting",
+      "status_verif_date": "September 2022",
+      "last_update_date": "September 9, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Aadi Bioscience, Inc.",
+      "brief_summary": "A Phase 2 multi-center open-label basket trial of nab-sirolimus for adult and adolescent patients with malignant solid tumors harboring pathogenic inactivating alterations in TSC1 or TSC2 genes",
+      "conditions": "Tumor | Tumor, Solid | Metastasis | Metastatic Cancer | Cancer | Cancer Metastatic | Tumors | Neoplasms | Neoplasm Metastasis | Solid Tumor | Advanced Solid Tumor | Advanced Cancer | Malignant Solid Tumor | Malignant Solid Neoplasm | Malignant Neoplasm | Malignant Tumor | TSC | TSC1 | TSC2 | Metastatic Solid Tumor | Metastatic Neoplasm",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Arm A: Pathogenic inactivating TSC1 alterations",
+          "drug": "nab-sirolimus",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm A: Pathogenic inactivating TSC1 alterations",
+              "Gene": "TSC1",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "inactivating",
+              "summary": "TSC1 Pathogenic Alteration inactivating  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Arm B: Pathogenic inactivating TSC2 alterations",
+          "drug": "nab-sirolimus",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm B: Pathogenic inactivating TSC2 alterations",
+              "Gene": "TSC2",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "inactivating",
+              "summary": "TSC2 Pathogenic Alteration inactivating  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "min_age": "12 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05103358\" target=\"_blank\">NCT05103358<\/a>"
+    }
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04907539",
+      "jit": "Caris",
+      "trial_name": "Redx Pharma Plc RXC004/0002 "
+    },
+    "disease": {
+      "summary": "Colorectal Cancer",
+      "details": [
+        {
+          "code": "Colorectal Adenocarcinoma (COADREAD)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04907539",
+      "title": "A Study to Assess Efficacy of RXC004 +/- Nivolumab in Ring Finger Protein 43 (RNF43) or R-spondin (RSPO) Aberrated, Metastatic, Microsatellite Stable, Colorectal Cancer After Progression on Standard of Care (SOC)",
+      "current_status": "Recruiting",
+      "status_verif_date": "May 2021",
+      "last_update_date": "April 22, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Redx Pharma Plc",
+      "brief_summary": "This is a Phase II, open label, multicentre, multi-arm, study to evaluate the preliminary efficacy and safety of RXC004 as monotherapy and in combination with nivolumab in patients with Ring finger protein 43 (RNF43) or R-spondin (RSPO) aberrated, microsatellite stable (MSS), colorectal cancer (CRC), that have progressed following current standard of care treatment.",
+      "conditions": "Colorectal Cancer",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Arm A: RXC004 monotherapy",
+          "drug": "RXC004 | Denosumab | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm A: RXC004 monotherapy",
+              "Gene": "RNF43",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RNF43 Abberration  "
+            },
+            {
+              "cohort": "Arm A: RXC004 monotherapy",
+              "Gene": "RSPO2",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RSPO2 Abberration  "
+            },
+            {
+              "cohort": "Arm A: RXC004 monotherapy",
+              "Gene": "RSPO3",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RSPO3 Abberration  "
+            },
+            {
+              "cohort": "Arm A: RXC004 monotherapy",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Microsatellite",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "unstable",
+              "summary": "Microsatellite stable MSS "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Arm B: RXC004 + nivolumab",
+          "drug": "RXC004 | Nivolumab | Denosumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm B: RXC004 + nivolumab",
+              "Gene": "RNF43",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RNF43 Abberration  "
+            },
+            {
+              "cohort": "Arm B: RXC004 + nivolumab",
+              "Gene": "RSPO2",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RSPO2 Abberration  "
+            },
+            {
+              "cohort": "Arm B: RXC004 + nivolumab",
+              "Gene": "RSPO3",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RSPO3 Abberration  "
+            },
+            {
+              "cohort": "Arm B: RXC004 + nivolumab",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Microsatellite ",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "unstable",
+              "summary": "Microsatellite stable MSS  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04907539\" target=\"_blank\">NCT04907539<\/a>"
+    }
+  }
+]

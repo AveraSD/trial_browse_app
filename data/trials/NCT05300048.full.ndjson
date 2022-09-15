@@ -1,0 +1,203 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05300048",
+      "jit": "Tempus",
+      "trial_name": "Faeth (SER-ISD1-001) "
+    },
+    "disease": {
+      "summary": "Advanced Solid Tumor | Colorectal Cancer |   Endometrial Cancer | Ovarian Clear Cell or Ovarian Endometrioid Carcinoma",
+      "details": [
+        {
+          "code": "Endometrioid Ovarian Cancer (EOV)",
+          "selection": "include"
+        },
+        {
+          "code": "Clear Cell Ovarian Cancer (CCOV)",
+          "selection": "include"
+        },
+        {
+          "code": "Endometrial Carcinoma (UCEC)",
+          "selection": "include"
+        },
+        {
+          "code": "Colorectal Adenocarcinoma (COADREAD)",
+          "selection": "include"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05300048",
+      "title": "Combination of Serabelisib and Insulin Suppressing Diet With or Without Nab-paclitaxel in Subjects With Advanced Solid Tumors With PIK3CA Mutations",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 23, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Faeth Therapeutics",
+      "brief_summary": "This study will evaluate the feasibility of optimizing the safety and tolerability of serabelisib (an investigational PI3K inhibitor) when combined with an ISD and with or without nab-paclitaxel with a goal of reducing side effects and enhancing anticancer activity.",
+      "conditions": "Advanced Solid Tumor | PIK3CA Mutation | PTEN Loss of Function Mutation",
+      "type": "Interventional",
+      "phase": "Phase 1",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Cohort 1a - Dose Modification without nab-paclitaxel",
+          "drug": "Serabelisib | Other: Insulin Suppressing Diet | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 1a - Dose Modification without nab-paclitaxel",
+              "Gene": "PIK3CA",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "activating",
+              "summary": "PIK3CA Mutation activating  "
+            },
+            {
+              "cohort": "Cohort 1a - Dose Modification without nab-paclitaxel",
+              "Gene": "PTEN",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Loss",
+              "summary": "PTEN Mutation Loss "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Cohort 1b - Dose Modification with Nab-Paclitaxel",
+          "drug": "Serabelisib | Other: Insulin Suppressing Diet | Nab paclitaxel",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 1b - Dose Modification with Nab-Paclitaxel",
+              "Gene": "PIK3CA",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "activating",
+              "summary": "PIK3CA Mutation activating  "
+            },
+            {
+              "cohort": "Cohort 1b - Dose Modification with Nab-Paclitaxel",
+              "Gene": "PTEN",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Loss",
+              "summary": "PTEN Mutation Loss "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Cohort 2 - Expansion Colorectal Cancer",
+          "drug": "Serabelisib | Other: Insulin Suppressing Diet | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 2 - Expansion Colorectal Cancer",
+              "Gene": "PIK3CA",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "activating",
+              "summary": "PIK3CA Mutation activating  "
+            },
+            {
+              "cohort": "Cohort 2 - Expansion Colorectal Cancer",
+              "Gene": "PTEN",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Loss",
+              "summary": "PTEN Mutation Loss "
+            }
+          ]
+        },
+        {
+          "ArmID": "4",
+          "cohortlabel": "Cohort 3 - Expansion Endometrial Cancer",
+          "drug": "Serabelisib | Other: Insulin Suppressing Diet | Nab paclitaxel",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 3 - Expansion Endometrial Cancer",
+              "Gene": "PIK3CA",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "activating",
+              "summary": "PIK3CA Mutation activating  "
+            },
+            {
+              "cohort": "Cohort 3 - Expansion Endometrial Cancer",
+              "Gene": "PTEN",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Loss",
+              "summary": "PTEN Mutation Loss "
+            }
+          ]
+        },
+        {
+          "ArmID": "5",
+          "cohortlabel": "Cohort 4 - Expansion Ovarian Clear Cell or Ovarian Endometrioid Carcinoma",
+          "drug": "Serabelisib | Other: Insulin Suppressing Diet | Nab paclitaxel",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 4 - Expansion Ovarian Clear Cell or Ovarian Endometrioid Carcinoma",
+              "Gene": "PIK3CA",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "activating",
+              "summary": "PIK3CA Mutation activating  "
+            },
+            {
+              "cohort": "Cohort 4 - Expansion Ovarian Clear Cell or Ovarian Endometrioid Carcinoma",
+              "Gene": "PTEN",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Loss",
+              "summary": "PTEN Mutation Loss "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\Tempus JIT_2022-09-06.docx ",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05300048\" target=\"_blank\">NCT05300048<\/a>"
+    }
+  }
+]

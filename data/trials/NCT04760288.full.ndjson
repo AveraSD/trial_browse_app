@@ -1,0 +1,77 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04760288",
+      "jit": "Optimal",
+      "trial_name": "Roche CO42865 AcceleRET-MTC"
+    },
+    "disease": {
+      "summary": "RET-MUTATEDMEDULLARY THYROID CANCER MTC",
+      "details": [
+        {
+          "code": "Medullary Thyroid Cancer (THME)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04760288",
+      "title": "A Study of Pralsetinib Versus Standard of Care (SOC) for Treatment of RET-Mutated Medullary Thyroid Cancer (MTC).",
+      "current_status": "Not yet recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 10, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Hoffmann-La Roche",
+      "brief_summary": "A study to evaluate the efficacy and safety of pralsetinib compared with SOC treatment (cabozantinib or vandetanib) for participants with RET (rearranged during transfection)-mutant MTC who have not previously received a SOC MultiKinase Inhibitor (MKI) therapy. Participants will be randomized in a 1:1 ratio into one of two treatment arms: Arm A (pralsetinib) or Arm B (investigator's choice of either cabozantinib or vandetanib for adults and vandetanib for adolescents). Participants whose disease progresses during SOC treatment will be offered the option to cross over to receive pralsetinib after confirmation of progressive disease by blinded independent central review (BICR).",
+      "conditions": "Medullary Thyroid Cancer",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Arm A (Pralsetinib)",
+          "drug": "Pralsetinib | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "on hold",
+          "biomarker": [
+            {
+              "cohort": "Arm A (Pralsetinib)",
+              "Gene": "RET",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RET Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Arm B (SOC: Cabozantinib/Vandetanib)",
+          "drug": "Cabozantinib | Vandetanib",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "on hold",
+          "biomarker": [
+            {
+              "cohort": "Arm B (SOC: Cabozantinib/Vandetanib)",
+              "Gene": "RET",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RET Mutation  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials\\Optimal_Working list Optimal Unblinded Study List_FINAL_draft_ 2022.08.11.pdf",
+      "min_age": "12 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04760288\" target=\"_blank\">NCT04760288<\/a>"
+    }
+  }
+]

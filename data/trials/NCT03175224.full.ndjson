@@ -1,0 +1,273 @@
+[
+  {
+    "info": {
+      "NCT": "NCT03175224",
+      "jit": "Caris",
+      "trial_name": "Apollomics APL-101-01 (SPARTA)"
+    },
+    "disease": {
+      "summary": "Solid Tumor | Advanced Cancer | Renal Cancer | Gastric Cancer | Gastroesophageal Junction Adenocarcinoma | NSCLC | Lung Cancer | Brain Tumor | Glioblastoma Multiforme",
+      "details": [
+        {
+          "code": "CNS/Brain (BRAIN)",
+          "selection": "include"
+        },
+        {
+          "code": "Glioblastoma Multiforme (GBM)",
+          "selection": "include"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include"
+        },
+        {
+          "code": "Lung (LUNG)",
+          "selection": "include"
+        },
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include"
+        },
+        {
+          "code": "Kidney (KIDNEY)",
+          "selection": "include"
+        },
+        {
+          "code": "Renal Cell Carcinoma (RCC)",
+          "selection": "include"
+        },
+        {
+          "code": "Adenocarcinoma of the Gastroesophageal Junction (GEJ)",
+          "selection": "include"
+        },
+        {
+          "code": "Esophagogastric Adenocarcinoma (EGC)",
+          "selection": "include"
+        },
+        {
+          "code": "Esophagus/Stomach (STOMACH)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT03175224",
+      "title": "APL-101 Study of Subjects With NSCLC With c-Met EXON 14 Skip Mutations and c-Met Dysregulation Advanced Solid Tumors",
+      "current_status": "Recruiting",
+      "status_verif_date": "July 2022",
+      "last_update_date": "July 26, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Apollomics Inc.",
+      "brief_summary": "The primary Phase 1 purpose of this study was to assess overall safety, tolerability and recommended Phase 2 dose (RP2D) of APL-101.\n\nThe Phase 2 portion will assess efficacy of the dose determined in Phase 1 in individuals with Non-Small Cell Lung Cancer with c-Met EXON 14 Skip Mutations; individuals with cancers associated with c-Met amplifications; individuals with cancers associated with c-Met fusion",
+      "conditions": "Solid Tumor | Advanced Cancer | Renal Cancer | Gastric Cancer | Gastroesophageal Junction Adenocarcinoma | NSCLC | Lung Cancer | Brain Tumor | Glioblastoma Multiforme",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Single-Arm",
+          "drug": "APL-101 Oral Capsules",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Single-Arm",
+              "Gene": "MET",
+              "Gene2": "Not available",
+              "Type": "Skipping Mutation",
+              "Variant": "METex14",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MET METex14 Skipping Mutation  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "MET",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+		"summary": "MET gene Fusions "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "MET",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "high",
+              "summary": "MET Amplification high  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Wild-Type",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "EGFR Wild-Type Cohort C "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "PTPRZ1",
+              "Gene2": "MET",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "PTPRZ1-MET Fusion"
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ALK Mutation  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "ROS1",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ROS1 Mutation  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "RET",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "RET Mutation  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "NTRK",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "NTRK Mutation  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "KRAS Mutation  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRAF Mutation  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "EGFR Mutation (except for Cohort C) "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "EGFR Rearrangement (except for Cohort C) "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ALK Rearrangement  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "ROS1",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ROS1 Rearrangement  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "RET",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "RET Rearrangement  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "NTRK",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "NTRK Rearrangement  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "KRAS Rearrangement  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRAF Rearrangement  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT03175224\" target=\"_blank\">NCT03175224<\/a>"
+    }
+  }
+]

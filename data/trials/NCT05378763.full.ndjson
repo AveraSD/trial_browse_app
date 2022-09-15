@@ -1,0 +1,117 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05378763",
+      "jit": "Optimal",
+      "trial_name": "Spectrum SPI-POZ-301 PINNACLE"
+    },
+    "disease": {
+      "summary": "Carcinoma, Non-Small-Cell Lung",
+      "details": [
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05378763",
+      "title": "A Study of Poziotinib in Previously Treated Participants With Locally Advanced or Metastatic NSCLC Harboring HER2 Exon 20 Mutations",
+      "current_status": "Recruiting",
+      "status_verif_date": "June 2022",
+      "last_update_date": "June 10, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Spectrum Pharmaceuticals, Inc",
+      "brief_summary": "The primary purpose of this study is to compare the progression-free survival (PFS) in participants with locally advanced or metastatic non-small cell lung cancer (NSCLC) harboring human epidermal growth factor receptor 2 (HER2) exon 20 mutations when treated with poziotinib versus docetaxel.",
+      "conditions": "NSCLC",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Poziotinib 8 mg",
+          "drug": "Poziotinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Poziotinib 8 mg",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Ex20",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "HER2 Ex20 Mutation  "
+            },
+            {
+              "cohort": "Poziotinib 8 mg",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "EGFR Alteration  "
+            },
+            {
+              "cohort": "Poziotinib 8 mg",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ALK Alteration  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Docetaxel 75 mg/m^2",
+          "drug": "Docetaxel",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Docetaxel 75 mg/m^2",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Ex20",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "HER2 Ex20 Mutation  "
+            },
+            {
+              "cohort": "Docetaxel 75 mg/m^2",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "EGFR Alteration  "
+            },
+            {
+              "cohort": "Docetaxel 75 mg/m^2",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ALK Alteration  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\optimal-working list Optimal Unblinded Study List_Final_draft_2022.08.11.pdf",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05378763\" target=\"_blank\">NCT05378763<\/a>"
+    }
+  }
+]

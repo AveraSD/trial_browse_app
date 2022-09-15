@@ -1,0 +1,105 @@
+[
+  {
+    "info": {
+      "NCT": "NCT02912949",
+      "jit": "Tempus",
+      "trial_name": "Merus eNRGy (MCLA-128-CL01) "
+    },
+    "disease": {
+      "summary": "Solid Tumors| NSCLC LUNG | Pancreatic Cancer | NRG1 Fusion",
+      "details": [
+        {
+          "code": "Solid Tumors",
+          "selection": "include"
+        },
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include"
+        },
+        {
+          "code": "Pancreatic Adenocarcinoma (PAAD)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT02912949",
+      "title": "A Study of Zenocutuzumab (MCLA-128) in Patients With Solid Tumors Harboring an NRG1 Fusion (eNRGy)",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 10, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Merus N.V.",
+      "brief_summary": "This is a Phase I/II, open-label, multi-center, multi-national, dose escalation, single agent study to assess the safety, tolerability, PK, PD, immunogenicity and anti-tumor activity of zenocutuzumab (MCLA-128) in patients with solid tumors harboring an NRG1 fusion (eNRGy)",
+      "conditions": "Solid Tumours Harboring NRG1 Fusion | NSCLC Harboring NRG1 Fusion | Pancreatic Cancer Harboring NRG1 Fusion | NRG1 Fusion",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Part 2 Pancreatic adenocarcinoma harboring NRG1 fusion",
+          "drug": "zenocutuzumab (MCLA-128)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Part 2 Pancreatic adenocarcinoma harboring NRG1 fusion",
+              "Gene": "NRG1",
+              "Gene2": "NRG1",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NRG1-NRG1 Fusion"
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Part 2 NSCLC cancer harboring NRG1 fusion",
+          "drug": "zenocutuzumab (MCLA-128)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Part 2 NSCLC cancer harboring NRG1 fusion",
+              "Gene": "NRG1",
+              "Gene2": "NRG1",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NRG1-NRG1 Fusion"
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Part 2 Solid tumour (basket) harboring NRG1 fusion",
+          "drug": "zenocutuzumab (MCLA-128)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Part 2 Solid tumour (basket) harboring NRG1 fusion",
+              "Gene": "NRG1",
+              "Gene2": "NRG1",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NRG1-NRG1 Fusion"
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\Tempus JIT_2022-09-06.docx ",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT02912949\" target=\"_blank\">NCT02912949<\/a>"
+    }
+  }
+]

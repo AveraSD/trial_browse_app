@@ -1,0 +1,185 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04913285",
+      "jit": "Caris",
+      "trial_name": "Kinnate Biopharma KN-8701 "
+    },
+    "disease": {
+      "summary": "Solid Tumor, Adult | Non-small Cell Lung Cancer | Melanoma",
+      "details": [
+        {
+          "code": "Solid Tumors",
+          "selection": "include"
+        },
+        {
+          "code": "Melanoma (MEL)",
+          "selection": "include"
+        },
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04913285",
+      "title": "A Study to Evaluate KIN-2787 in Participants With BRAF and/or NRAS Mutation Positive Solid Tumors",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 31, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Kinnate Biopharma",
+      "brief_summary": "The purpose of this study is to evaluate the safety, tolerability, pharmacokinetics (PK), and preliminary efficacy of KIN-2787 in adults with BRAF/NRAS-mutated advanced or metastatic solid tumors.",
+      "conditions": "Solid Tumor, Adult | Non-small Cell Lung Cancer | Melanoma",
+      "type": "Interventional",
+      "phase": "Phase 1",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Dose Escalation Monotherapy (Part A1)",
+          "drug": "KIN-2787",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Dose Escalation Monotherapy (Part A1)",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class I Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class I Mutation positive  "
+            },
+            {
+              "cohort": "Dose Escalation Monotherapy (Part A1)",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class II Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class II Mutation positive  "
+            },
+            {
+              "cohort": "Dose Escalation Monotherapy (Part A1)",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class III Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class III Mutation positive  "
+            },
+            {
+              "cohort": "Dose Escalation Monotherapy (Part A1)",
+              "Gene": "NRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "NRAS Mutation positive  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Dose Escalation Combination therapy (Part A2)",
+          "drug": "KIN-2787 and binimetinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Dose Escalation Combination therapy (Part A2)",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class I Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class I Mutation positive  "
+            },
+            {
+              "cohort": "Dose Escalation Combination therapy (Part A2)",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class II Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class II Mutation positive  "
+            },
+            {
+              "cohort": "Dose Escalation Combination therapy (Part A2)",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class III Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class III Mutation positive  "
+            },
+            {
+              "cohort": "Dose Escalation Combination therapy (Part A2)",
+              "Gene": "NRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "NRAS Mutation positive  "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Dose Expansion (Part B)",
+          "drug": "KIN-2787",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Dose Expansion (Part B)",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class II Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class II Mutation positive  "
+            },
+            {
+              "cohort": "Dose Expansion (Part B)",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class III Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class III Mutation positive  "
+            },
+            {
+              "cohort": "Dose Expansion (Part B)",
+              "Gene": "NRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "NRAS Mutation positive  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04913285\" target=\"_blank\">NCT04913285<\/a>"
+    }
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04094610",
+      "jit": "Caris",
+      "trial_name": "Turning Point Therapeutics TPX-0005-07"
+    },
+    "disease": {
+      "summary": "Locally Advanced Solid Tumors | Metastatic Solid Tumors | Lymphoma | Primary CNS Tumors",
+      "details": [
+        {
+          "code": "Solid Tumors",
+          "selection": "include"
+        },
+        {
+          "code": "CNS/Brain (BRAIN)",
+          "selection": "include"
+        },
+        {
+          "code": "Lymphoid (LYMPH)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04094610",
+      "title": "A Study of Repotrectinib in Pediatric and Young Adult Subjects Harboring ALK, ROS1, OR NTRK1-3 Alterations",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 9, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Turning Point Therapeutics, Inc.",
+      "brief_summary": "Phase 1 will evaluate the safety and tolerability at different dose levels of repotrectinib in pediatric and young adult subjects with advanced or metastatic malignancies harboring anaplastic lymphoma kinase (ALK), receptor tyrosine kinase encoded by the gene ROS1 (ROS1), or neurotrophic receptor kinase genes encoding TRK kinase family (NTRK1-3) alterations to estimate the Maximum Tolerated Dose (MTD) or Maximum Administered Dose (MAD) and select the Pediatric Recommended Phase 2 Dose (RP2D).\n\nPhase 2 will determine the anti-tumor activity of repotrectinib in pediatric subjects with advanced or metastatic malignancies harboring ALK, ROS1, or NTRK1-3 alterations.",
+      "conditions": "Locally Advanced Solid Tumors | Metastatic Solid Tumors | Lymphoma | Primary CNS Tumors",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Repotrectinib (TPX-0005)",
+          "drug": "Oral repotrectinib (TPX-0005)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": ".",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "ALK . Mutation  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+		"summary": "ALK Fusion  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "ALK Amplification  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "ROS1",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": ".",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "ROS1 . Mutation  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "ROS1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+		"summary": "ROS1 Fusion  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "ROS1",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "ROS1 Amplification  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "NTRK1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "NTRK1 NTRK2 NTRK3 Fusion positive  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "NTRK1",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NTRK1 NTRK2 NTRK3 Alteration  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "NTRK1",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NTRK1 NTRK2 NTRK3 Amplification  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "min_age": "0 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04094610\" target=\"_blank\">NCT04094610<\/a>"
+    }
+  }
+]

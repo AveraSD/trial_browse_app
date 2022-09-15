@@ -1,0 +1,127 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04613596",
+      "jit": "Tempus",
+      "trial_name": "Mirati KRYSTAL-7 (849-007) "
+    },
+    "disease": {
+      "summary": "Advanced Non-Small Cell Lung Cancer | Metastatic Non-Small Cell Lung Cancer",
+      "details": [
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04613596",
+      "title": "Phase 2 Trial of MRTX849 Monotherapy and in Combination With Pembrolizumab for NSCLC With KRAS G12C Mutation KRYSTAL-7",
+      "current_status": "Recruiting",
+      "status_verif_date": "September 2022",
+      "last_update_date": "September 6, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Mirati Therapeutics Inc.",
+      "brief_summary": "This Phase 2 study evaluates the efficacy and safety of MRTX849 monotherapy and in combination with pembrolizumab in cohorts of patients with advanced NSCLC with KRAS G12C mutation and any PD-L1 TPS and who are candidates for first-line treatment.",
+      "conditions": "Advanced Non-Small Cell Lung Cancer | Metastatic Non-Small Cell Lung Cancer",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Cohort 1a: PD-L1 TPS <1%",
+          "drug": "MRTX849 in Combination with Pembrolizumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 1a: PD-L1 TPS <1%",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PD-L1",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "low",
+              "summary": "PD-L1 TPS <1% low  "
+            },
+            {
+              "cohort": "Cohort 1a: PD-L1 TPS <1%",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Cohort 1b: PD-L1 TPS <1%",
+          "drug": "MRTX849 Monotherapy",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 1b: PD-L1 TPS <1%",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PD-L1",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "low",
+              "summary": "PD-L1 TPS <1% low  "
+            },
+            {
+              "cohort": "Cohort 1b: PD-L1 TPS <1%",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Cohort 2: PD-L1 TPS ≥1%",
+          "drug": "MRTX849 in Combination with Pembrolizumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 2: PD-L1 TPS ≥1%",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PD-L1",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "high",
+              "summary": "PD-L1 TPS ≥1 high  "
+            },
+            {
+              "cohort": "Cohort 2: PD-L1 TPS ≥1%",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\Tempus JIT_2022-09-06.docx ",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04613596\" target=\"_blank\">NCT04613596<\/a>"
+    }
+  }
+]

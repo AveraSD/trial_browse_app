@@ -1,0 +1,77 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05199584",
+      "jit": "Caris",
+      "trial_name": "Endeavor Biomedicines ENV-ONC-101"
+    },
+    "disease": {
+      "summary": "Solid Tumors ",
+      "details": [
+        {
+          "code": "Solid Tumors",
+          "selection": "include"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05199584",
+      "title": "A Study Evaluating the Safety and Efficacy of ENV-101 (Taladegib) in Patients With Advanced Solid Tumors Harboring PTCH1 Loss of Function Mutations",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 4, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Endeavor Biomedicines, Inc.",
+      "brief_summary": "This study employs a 2-stage design that aims to evaluate the efficacy and safety of ENV- 101, a potent Hedgehog (Hh) pathway inhibitor, in patients with refractory advanced solid tumors characterized by loss of function (LOF) mutations in the Patched-1 (PTCH1) gene. Stage 1 of this study will enroll approximately 44 patients randomized between two dose levels. As appropriate, Stage 2 of the study will expand enrollment based on the results of Stage 1.",
+      "conditions": "Solid Tumors With PTCH1 Loss-of-function Mutations",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "200 mg ENV-101",
+          "drug": "ENV-101 (taladegib)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "200 mg ENV-101",
+              "Gene": "PTCH1",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Loss of Function",
+              "summary": "PTCH1 Mutation Loss of Function  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "300 mg ENV-101",
+          "drug": "ENV-101 (taladegib)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "300 mg ENV-101",
+              "Gene": "PTCH1",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Loss of Function",
+              "summary": "PTCH1 Mutation Loss of Function  "
+            }
+          ]
+        }
+      ],
+      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05199584\" target=\"_blank\">NCT05199584<\/a>"
+    }
+  }
+]
