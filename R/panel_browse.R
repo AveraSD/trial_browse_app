@@ -3,8 +3,10 @@
 library(reactable)
 # browse table
 display_browse_db <- reactable(browse_tbl %>% 
-                                 select(Link, Name, Disease, disp_biomarkers, Documentation) %>% 
+                                #select(Link, Name, Disease, disp_biomarkers, Documentation) %>% 
+                                 select(Link, JIT, HoldStatus, Name, Disease, disp_biomarkers) %>%
                                  rename("Trial" = Link,
+                                        "Conditions/Disease" = Disease,
                                         "Biomarker" = disp_biomarkers), 
                                filterable = TRUE,
                                #searchable = TRUE,
@@ -41,13 +43,26 @@ display_browse_db <- reactable(browse_tbl %>%
                                    
                                  # create tables to be displayed if nested rows are expanded
                                  htmltools::div(
-                                  
+                                   # group 3: summary
+                                   reactable(browse_tbl[index, ] %>%
+                                               select(Summary)),
                                     
                                    # group1: general info
                                    reactable(browse_tbl[index, ] %>%
-                                               select(JIT, Sponsor, Phase, StudyType, Status, HoldStatus)),
+                                               #select(JIT, Sponsor, Phase, StudyType, Status, HoldStatus)),
+                                   select(Sponsor, Phase, StudyType, Status,)),
                                    
-                                   
+                                 # group 3: summary
+                                 # reactable(browse_tbl[index, ] %>%
+                                 #             select(Summary)),
+                                 
+                                 # group 4: trial conditions
+                                 reactable(browse_tbl[index, ] %>%
+                                             select(Gender, MinAge, StatusUpdate, LastUpdate),
+                                           defaultColDef = colDef(align = "center"),
+                                           columns = list(MinAge = colDef(name = "Minimum Age"),
+                                                          StatusUpdate = colDef(name = "Status Verification Date"),
+                                                          LastUpdate = colDef(name = "Last Update"))),
                                    # group2: cohort info
                                    # reactable(browse_tbl[index, ] %>% 
                                    #            # reactable(coh %>% 
@@ -73,17 +88,17 @@ display_browse_db <- reactable(browse_tbl %>%
                                    
 
                                    # group 3: summary
-                                   reactable(browse_tbl[index, ] %>%
-                                               select(Summary)),
+                                   # reactable(browse_tbl[index, ] %>%
+                                   #             select(Summary)),
 
                                    
                                    
                                    # group 4: trial conditions
-                                   reactable(browse_tbl[index, ] %>%
-                                               select(Gender, MinAge, StatusUpdate, LastUpdate),
-                                             defaultColDef = colDef(align = "center"),
-                                             columns = list(MinAge = colDef(name = "Minimum Age"),
-                                                            StatusUpdate = colDef(name = "Status Verification Date"),
-                                                            LastUpdate = colDef(name = "Last Update")))
+                                   # reactable(browse_tbl[index, ] %>%
+                                   #             select(Gender, MinAge, StatusUpdate, LastUpdate),
+                                   #           defaultColDef = colDef(align = "center"),
+                                   #           columns = list(MinAge = colDef(name = "Minimum Age"),
+                                   #                          StatusUpdate = colDef(name = "Status Verification Date"),
+                                   #                          LastUpdate = colDef(name = "Last Update")))
                                  )
                                })

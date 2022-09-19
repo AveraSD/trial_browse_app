@@ -37,8 +37,8 @@ parseTrials <- function(jsonfile) {
     
     # disease
     Disease = trial$disease$summary,
-    disp_disease = list(disp_disease = trial$disease %>% unnest(details)), 
-    
+   # disp_disease = list(disp_disease = trial$disease %>% unnest(details)), 
+    disp_disease =  trial$disease[[1]] %>% unlist(),
     # query - general
     Status = trial$query$current_status,
     StatusUpdate = trial$query$status_verif_date,
