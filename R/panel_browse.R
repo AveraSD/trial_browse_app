@@ -4,7 +4,7 @@ library(reactable)
 # browse table
 display_browse_db <- reactable(browse_tbl %>% 
                                 #select(Link, Name, Disease, disp_biomarkers, Documentation) %>% 
-                                 select(Link, JIT, HoldStatus, Name, Disease, disp_biomarkers) %>%
+                                 select(Link, JIT, HoldStatus, Name, Disease, disp_biomarkers, Documentation) %>%
                                  rename("Trial" = Link,
                                         "Conditions/Disease" = Disease,
                                         "Biomarker" = disp_biomarkers), 
@@ -85,7 +85,13 @@ display_browse_db <- reactable(browse_tbl %>%
                                                             arm_hold_status = colDef(name = "Arm HoldStatus"),
                                                             Selection = colDef(name = "Criteria"),
                                                             summary = colDef(name = "Biomarker"))),
-                                   
+                                 
+                                    reactable(browse_tbl[index, ]$disp_disease$disp_disease), 
+                                              # %>% 
+                                    #             select(code, selection),
+                                    # #          # columns = list(summary = colDef("summary"),
+                                    #               columns = list(code = colDef("code"),
+                                    #                           selection = colDef("selection"))),
 
                                    # group 3: summary
                                    # reactable(browse_tbl[index, ] %>%

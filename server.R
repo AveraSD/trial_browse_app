@@ -28,8 +28,8 @@ shinyServer(function(input, output,session) {
   
   ##### MATCH ########
   # main display table for match
-  output$matchtable <- renderReactable({
-    display_match_gen # from panel_match.R
-  })
+  # output$matchtable <- renderReactable({
+  #   display_match_gen # from panel_match.R
+  # })
 
 })

@@ -36,8 +36,8 @@ shinyUI(fluidPage(
                reactableOutput("browsetable")),
       
       # MATCH
-      tabPanel("Match",
-               reactableOutput("matchtable")),
+      # tabPanel("Match",
+      #          reactableOutput("matchtable")),
       
       theme = bs_theme(version = 5, 
                        bootswatch = "cosmo",
