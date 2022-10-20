@@ -32,7 +32,8 @@ if (storage == "db") {
   }
   
   if (docker == "no") {
-    db_url <<- "mongodb://0.0.0.0:27017" 
+    #db_url <<- "mongodb://0.0.0.0:27017" 
+    db_url <<- "mongodb://127.0.0.1:27017"
   }
   
   browse_tbl <<- loadDbData()
