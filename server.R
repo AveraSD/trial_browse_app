@@ -14,6 +14,10 @@ library(shiny)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output,session) {
+  
+ # observeEvent(input$dise_fil,{
+ #   result %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% filter()
+  #})
 
   ##### BROWSE ########
   # main display table for BROWSE

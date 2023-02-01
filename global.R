@@ -203,8 +203,6 @@ loadDbData <- function() {
   
 }
 
-drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
-diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
 
 source(here("R", "read_data.R"))
  source(here("R", "panel_browse.R"))
