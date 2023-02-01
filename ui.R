@@ -18,7 +18,7 @@ library(jsonlite)
 library(httr)
 library(glue)
 library(tidyverse)
-
+library(shinyWidgets)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -27,11 +27,99 @@ shinyUI(fluidPage(
     tags$head(
       tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
     ), 
+    
+    
     navbarPage(
       title = "TrialMatch", 
       
+      
       # BROWSE
       tabPanel("Browse",
+               wellPanel(fluidRow(
+                 column(4,
+                 selectInput(
+                   inputId = "stageView",
+                   label = "Disease Stages",
+                   choices = c("Stage I","Stage II","Stage III","Stage IV","Methylated","Un-resectable","resectable",
+                               "Unmethylated","Advanced Stage","Recurrent","Metastatic","Early stage", "New diagnosis","Relapsed/Refractory","Post Cellular Therapy",
+                               "Smoldering Myeloma"),
+                   multiple = T,
+                   #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
+                   width = "400px"
+                   
+                  )),
+                 # column(4,
+                 #        
+                 #        #  style = "display: inline-block;",
+                 #        #style = "margin-top: 10px;",
+                 #        ),
+                 column(2,
+                        #style = "display: inline-block;",
+                        # style = "margin-top: 10px;",
+                        actionButton("filter_stage", " ",icon = shiny::icon("filter"),size = "sm")
+
+                 ),
+                 column(4,
+
+                        # style = "display: inline-block;",
+                        #style = "margin-top: 15px;",
+                        selectInput(
+                          inputId = "disFil",
+                          label = "Cancer Type",
+                          choices = c(diseasAv$code),
+                          multiple = T,
+                          #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
+                          width = "400px"
+
+                        )),
+                 column(2,
+                        #style = "display: inline-block;",
+                        # style = "margin-top: 15px;",
+                        actionButton("dise_fil", " ",icon = shiny::icon("filter"),size = "sm")
+
+                 ),
+                 column(4,
+                        
+                        # style = "display: inline-block;",
+                        #style = "margin-top: 15px;",
+                        selectInput(
+                          inputId = "drugFil",
+                          label = "Drugs Options",
+                          choices = c(drugAv$drug),
+                          multiple = T,
+                          #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
+                          width = "400px"
+                          
+                        )),
+                 column(2,
+                        #style = "display: inline-block;",
+                        # style = "margin-top: 15px;",
+                        actionButton("drug_fil", " ",icon = shiny::icon("filter"),size = "sm")
+                        
+                 ),
+                 column(4,
+                        
+                        # style = "display: inline-block;",
+                        #style = "margin-top: 15px;",
+                        selectInput(
+                          inputId = "locaFil",
+                          label = "Locations",
+                          choices = c("Sioux Falls SD"),
+                          multiple = T,
+                          #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
+                          width = "400px"
+                          
+                        )),
+                 column(2,
+                        #style = "display: inline-block;",
+                        # style = "margin-top: 15px;",
+                        actionButton("loc_fil", " ",icon = shiny::icon("filter"),size = "sm")
+                        
+                 )
+
+               )),
+               br(),
+               br(),
                actionButton("collapse_btn_browse", "Collapse All"), 
                reactableOutput("browsetable")),
       

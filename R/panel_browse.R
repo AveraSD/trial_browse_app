@@ -7,7 +7,7 @@ display_browse_db <- reactable(browse_tbl %>%
                                 # select(Link, JIT, HoldStatus, Name, Disease, disp_biomarkers, Documentation) %>%
                                 # select( Link, Name, Summary, Phase , HoldStatus,  Disease, disp_biomarkers, Documentation) %>%
                                 # select( Link, NameProtocol, Name,Protocol_No, HoldStatus, Phase, Summary, Disease, disp_biomarkers, Documentation) %>%
-                                 select( Link,Protocol_No, HoldStatus, Phase, Summary, Disease,disp_biomarkers, Documentation) %>%
+                                 select( Link, HoldStatus, Phase, Summary, Disease,disp_biomarkers, Documentation) %>%
                                  rename("Trial" = Link,
                                         # "TrialName" = paste(Trial,Name,sep=":"), 
                                         "Title" = Summary,

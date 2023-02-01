@@ -26,7 +26,7 @@ parseTrials <- function(jsonfile) {
                       arm_type = trial$query$arm[[1]]$arm_type,
                       line_of_therapy = trial$query$arm[[1]]$line_of_therapy,
                       arm_hold_status = trial$query$arm[[1]]$arm_hold_status,
-                                           biomarker = trial$query$arm[[1]]$biomarker)
+                      biomarker = trial$query$arm[[1]]$biomarker)
                       
          parsedTrial <- tibble(
 
@@ -35,7 +35,7 @@ parseTrials <- function(jsonfile) {
     NCT = trial$info$NCT,
     JIT = trial$info$jit,
     #Added Protocol Number
-    Protocol_No = trial$info$Protocol_No,
+    #Protocol_No = trial$info$Protocol_No,
     Name = trial$info$trial_name,
 
 
@@ -202,6 +202,9 @@ loadDbData <- function() {
   return(db_tbl)
   
 }
+
+drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
+diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
 
 source(here("R", "read_data.R"))
  source(here("R", "panel_browse.R"))
