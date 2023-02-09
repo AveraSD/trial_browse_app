@@ -32,10 +32,15 @@ if (storage == "db") {
   }
   
   if (docker == "no") {
-    db_url <<- "mongodb://0.0.0.0:27017" 
+    #db_url <<- "mongodb://0.0.0.0:27017" 
+    db_url <<- "mongodb://127.0.0.1:27017"
   }
   
   browse_tbl <<- loadDbData()
 }
 
 #source(here("R", "panel_browse.R"))
+drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
+diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
+
+NCTselected=result %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% filter(code == "Non-Small Cell Lung Cancer (NSCLC)") %>% select(NCT)
