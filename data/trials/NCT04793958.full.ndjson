@@ -1,0 +1,81 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04793958",
+      "Protocol_No": "849-010",
+      "jit": "Caris",
+      "trial_name": "Mirati Therapeutics KRYSTAL-10"
+    },
+    "disease": {
+      "summary": "Advanced Metastatic Colorectal Cancer",
+      "details": [
+        {
+          "code": "Bowel (BOWEL)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04793958",
+      "title": "Phase 3 Study of MRTX849 With Cetuximab vs Chemotherapy in Patients With Advanced Colorectal Cancer With KRAS G12C Mutation (KRYSTAL-10)",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 30, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Mirati Therapeutics Inc.",
+      "brief_summary": "Study 849-010 is an open-label, randomized Phase 3 clinical trial comparing the efficacy of MRTX849 administered in combination with cetuximab versus chemotherapy in the second-line treatment setting in patients with CRC with KRAS G12C mutation.",
+      "conditions": "Advanced Colorectal Cancer | Metastatic Colorectal Cancer",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "MRTX849 + Cetuximab",
+          "drug": "MRTX849 | Cetuximab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "MRTX849 + Cetuximab",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "mFOLFOX6 or FOLFIRI",
+          "drug": "mFOLFOX6 Regimen | FOLFIRI Regimen",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "1",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "mFOLFOX6 or FOLFIRI",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-20",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04793958\" target=\"_blank\">NCT04793958<\/a>"
+    }
+  }
+]

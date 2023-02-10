@@ -2,15 +2,17 @@
   {
     "info": {
       "NCT": "NCT04613596",
-      "jit": "Tempus",
-      "trial_name": "Mirati KRYSTAL-7 (849-007) "
+      "Protocol_No": "849-007",
+      "jit": "Tempus and Caris",
+      "trial_name": "Mirati KRYSTAL-7 "
     },
     "disease": {
       "summary": "Advanced Non-Small Cell Lung Cancer | Metastatic Non-Small Cell Lung Cancer",
       "details": [
         {
           "code": "Non-Small Cell Lung Cancer (NSCLC)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "NUn-resectable;Advanced Stage;Metastatic"
         }
       ]
     },
@@ -118,7 +120,9 @@
           ]
         }
       ],
-      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\Tempus JIT_2022-09-06.docx ",
+      "docs": "<a href=\"https://therapies.securetempus.com/\">Tempus<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
       "min_age": "18 Years",
       "gender": "All",
       "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04613596\" target=\"_blank\">NCT04613596<\/a>"

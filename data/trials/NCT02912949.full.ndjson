@@ -2,23 +2,27 @@
   {
     "info": {
       "NCT": "NCT02912949",
+      "Protocol_No": "MCLA-128-CL01",
       "jit": "Tempus",
-      "trial_name": "Merus eNRGy (MCLA-128-CL01) "
+      "trial_name": "Merus eNRGy"
     },
     "disease": {
       "summary": "Solid Tumors| NSCLC LUNG | Pancreatic Cancer | NRG1 Fusion",
       "details": [
         {
-          "code": "Solid Tumors",
-          "selection": "include"
-        },
-        {
           "code": "Non-Small Cell Lung Cancer (NSCLC)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Advanced Stage"
         },
         {
           "code": "Pancreatic Adenocarcinoma (PAAD)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Un-resectable;Advanced Stage;Metastatic"
         }
       ]
     },
@@ -40,7 +44,7 @@
           "cohortlabel": "Part 2 Pancreatic adenocarcinoma harboring NRG1 fusion",
           "drug": "zenocutuzumab (MCLA-128)",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
+          "line_of_therapy": "2+",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -60,7 +64,7 @@
           "cohortlabel": "Part 2 NSCLC cancer harboring NRG1 fusion",
           "drug": "zenocutuzumab (MCLA-128)",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
+          "line_of_therapy": "2+",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -80,7 +84,7 @@
           "cohortlabel": "Part 2 Solid tumour (basket) harboring NRG1 fusion",
           "drug": "zenocutuzumab (MCLA-128)",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
+          "line_of_therapy": "2+",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -96,7 +100,9 @@
           ]
         }
       ],
-      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\Tempus JIT_2022-09-06.docx ",
+      "docs": "<a href=\"https://therapies.securetempus.com/\">Tempus<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
       "min_age": "18 Years",
       "gender": "All",
       "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT02912949\" target=\"_blank\">NCT02912949<\/a>"

@@ -2,6 +2,7 @@
   {
     "info": {
       "NCT": "NCT05378763",
+      "Protocol_No": "SPI-POZ-301",
       "jit": "Optimal",
       "trial_name": "Spectrum SPI-POZ-301 PINNACLE"
     },
@@ -10,17 +11,18 @@
       "details": [
         {
           "code": "Non-Small Cell Lung Cancer (NSCLC)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
         }
       ]
     },
     "query": {
       "nct": "NCT05378763",
       "title": "A Study of Poziotinib in Previously Treated Participants With Locally Advanced or Metastatic NSCLC Harboring HER2 Exon 20 Mutations",
-      "current_status": "Recruiting",
+      "current_status": "closed",
       "status_verif_date": "June 2022",
       "last_update_date": "June 10, 2022",
-      "trial_hold_status": "open",
+      "trial_hold_status": "closed",
       "sponsor": "Spectrum Pharmaceuticals, Inc",
       "brief_summary": "The primary purpose of this study is to compare the progression-free survival (PFS) in participants with locally advanced or metastatic non-small cell lung cancer (NSCLC) harboring human epidermal growth factor receptor 2 (HER2) exon 20 mutations when treated with poziotinib versus docetaxel.",
       "conditions": "NSCLC",
@@ -32,8 +34,8 @@
           "cohortlabel": "Poziotinib 8 mg",
           "drug": "Poziotinib",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
-          "arm_hold_status": "open",
+          "line_of_therapy": "1",
+          "arm_hold_status": "closed",
           "biomarker": [
             {
               "cohort": "Poziotinib 8 mg",
@@ -72,8 +74,8 @@
           "cohortlabel": "Docetaxel 75 mg/m^2",
           "drug": "Docetaxel",
           "arm_type": "Active Comparator",
-          "line_of_therapy": "Not available",
-          "arm_hold_status": "open",
+          "line_of_therapy": "1",
+          "arm_hold_status": "closed",
           "biomarker": [
             {
               "cohort": "Docetaxel 75 mg/m^2",
@@ -108,7 +110,9 @@
           ]
         }
       ],
-      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\optimal-working list Optimal Unblinded Study List_Final_draft_2022.08.11.pdf",
+      "docs": "<a href=\"https://www.optimalresearchportal.com/login/\">Optimal<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-02-08",
       "min_age": "18 Years",
       "gender": "All",
       "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05378763\" target=\"_blank\">NCT05378763<\/a>"

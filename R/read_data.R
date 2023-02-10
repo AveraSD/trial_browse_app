@@ -43,4 +43,5 @@ if (storage == "db") {
 drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
 diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
 
-NCTselected=result %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% filter(code == "Non-Small Cell Lung Cancer (NSCLC)") %>% select(NCT)
+#NCTselected=result %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug == "MRTX849 in Combination with Pembrolizumab") %>% select(NCT)
+#browse_tbl = browse_tbl %>% filter(NCT %in% NCTselected$NCT)

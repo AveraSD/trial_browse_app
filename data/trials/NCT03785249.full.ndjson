@@ -1,0 +1,251 @@
+[
+  {
+    "info": {
+      "NCT": "NCT03785249",
+      "Protocol_No": "849-001",
+      "jit": "Tempus, Caris",
+      "trial_name": "Mirati Therapeutics KRYSTAL-1"
+    },
+    "disease": {
+      "summary": "Advanced, metastatic solid tumors with KRAS G12C mutation",
+      "details": [
+        {
+          "code": "Colorectal Cancer",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Lung Cancer, NOS",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Pancreatic Adenocarcinoma (PAAD)",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT03785249",
+      "title": "Phase 1/2 Study of MRTX849 in Patients With Cancer Having a KRAS G12C Mutation KRYSTAL-1",
+      "current_status": "Recruiting",
+      "status_verif_date": "February 2022",
+      "last_update_date": "February 4, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Mirati Therapeutics Inc.",
+      "brief_summary": "This study will evaluate the safety, tolerability, drug levels, molecular effects, and clinical activity of MRTX849 (adagrasib) in patients with advanced solid tumors that have a KRAS G12C mutation.",
+      "conditions": "Advanced Cancer | Metastatic Cancer | Malignant Neoplastic Disease",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Phase 1 Dose Exploration",
+          "drug": "MRTX849 | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Phase 1 Dose Exploration",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Phase 1b Expansion",
+          "drug": "MRTX849 | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Phase 1b Expansion",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Phase 2",
+          "drug": "MRTX849 | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Phase 2",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            },
+            {
+              "cohort": "Phase 2",
+              "Gene": "STK11",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "SKT11 Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "4",
+          "cohortlabel": "Pilot Phase 1b Combination with Pembrolizumab",
+          "drug": "MRTX849 | Pembrolizumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Pilot Phase 1b Combination with Pembrolizumab",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "5",
+          "cohortlabel": "Pilot Phase 1b Combination with Cetuximab",
+          "drug": "MRTX849 | Cetuximab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Pilot Phase 1b Combination with Cetuximab",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "6",
+          "cohortlabel": "Pilot Phase 1b Combination with Afatinib",
+          "drug": "MRTX849 | Afatinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Pilot Phase 1b Combination with Afatinib",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "7",
+          "cohortlabel": "Phase 2 Combination with Cetuximab",
+          "drug": "MRTX849 | Cetuximab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Phase 2 Combination with Cetuximab",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "8",
+          "cohortlabel": "Pilot Phase 1b Combination with Cetuximab in NSCLC",
+          "drug": "MRTX849 | Cetuximab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Pilot Phase 1b Combination with Cetuximab in NSCLC",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "9",
+          "cohortlabel": "Pilot Phase 1b Combination with Cetuximab in PDAC",
+          "drug": "MRTX849 | Cetuximab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Pilot Phase 1b Combination with Cetuximab in PDAC",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT03785249\" target=\"_blank\">NCT03785249<\/a>"
+    }
+  }
+]

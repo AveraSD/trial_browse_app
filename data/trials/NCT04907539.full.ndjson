@@ -2,6 +2,7 @@
   {
     "info": {
       "NCT": "NCT04907539",
+      "Protocol_No": "RXC004/0002",
       "jit": "Caris",
       "trial_name": "Redx Pharma Plc RXC004/0002 "
     },
@@ -10,7 +11,8 @@
       "details": [
         {
           "code": "Colorectal Adenocarcinoma (COADREAD)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Metastatic;Stage IV"
         }
       ]
     },
@@ -128,7 +130,9 @@
           ]
         }
       ],
-      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-20",
       "min_age": "18 Years",
       "gender": "All",
       "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04907539\" target=\"_blank\">NCT04907539<\/a>"

@@ -1,0 +1,166 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05330429",
+      "Protocol_No": "GS-US-587-6156",
+      "jit": "Optimal",
+      "trial_name": "Gilead Sciences GS-US-587-6156"
+    },
+    "disease": {
+      "summary": " Metastatic Colorectal Cancer",
+      "details": [
+        {
+          "code": "Bowel (BOWEL)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        },
+        {
+          "code": "Colorectal Adenocarcinoma (COADREAD)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05330429",
+      "title": "Study of Magrolimab Given Together With FOLFIRI/BEV in Participants With Previously Treated Advanced Inoperable Metastatic Colorectal Cancer (mCRC)",
+      "current_status": "Hold",
+      "status_verif_date": "September 2022",
+      "last_update_date": "September 8, 2022",
+      "trial_hold_status": "on hold",
+      "sponsor": "Gilead Sciences",
+      "brief_summary": "The primary objectives of this study are: (safety run-in cohort) to evaluate safety and tolerability, and the recommended Phase 2 dose (RP2D) and (randomized cohort) to evaluate the efficacy of magrolimab in combination with bevacizumab and 5-fluorouracil, irinotecan, and leucovorin (FOLFIRI) in previously treated participants with advanced inoperable metastatic colorectal cancer (mCRC).",
+      "conditions": "Metastatic Colorectal Cancer",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Safety Run-in Cohort: Magrolimab + Bevacizumab + FOLFIRI",
+          "drug": "Magrolimab | Bevacizumab | Irinotecan | Fluorouracil | Leucovorin",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1,2+",
+          "arm_hold_status": "on hold",
+          "biomarker": [
+            {
+              "cohort": "Safety Run-in Cohort: Magrolimab + Bevacizumab + FOLFIRI",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "V600E",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRAF V600E Mutation  "
+            },
+            {
+              "cohort": "Safety Run-in Cohort: Magrolimab + Bevacizumab + FOLFIRI",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "dMMR",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "dMMR"
+            },
+            {
+              "cohort": "Safety Run-in Cohort: Magrolimab + Bevacizumab + FOLFIRI",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "MSI",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "high",
+              "summary": "MSI-H"
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Randomized Cohort: Magrolimab + Bevacizumab + FOLFIRI",
+          "drug": "Magrolimab | Bevacizumab | Irinotecan | Fluorouracil | Leucovorin",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1,2+",
+          "arm_hold_status": "on hold",
+          "biomarker": [
+            {
+              "cohort": "Randomized Cohort: Magrolimab + Bevacizumab + FOLFIRI",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "V600E",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRAF V600E Mutation  "
+            },
+            {
+              "cohort": "Randomized Cohort: Magrolimab + Bevacizumab + FOLFIRI",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "dMMR",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "dMMR"
+            },
+            {
+              "cohort": "Randomized Cohort: Magrolimab + Bevacizumab + FOLFIRI",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "MSI",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "high",
+              "summary": "MSI-H"
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Randomized Cohort: Bevacizumab + FOLFIRI",
+          "drug": "Bevacizumab | Irinotecan | Fluorouracil | Leucovorin | NA",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "1,2+",
+          "arm_hold_status": "on hold",
+          "biomarker": [
+            {
+              "cohort": "Randomized Cohort: Bevacizumab + FOLFIRI",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "V600E",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRAF V600E Mutation  "
+            },
+            {
+              "cohort": "Randomized Cohort: Bevacizumab + FOLFIRI",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "dMMR",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "dMMR"
+            },
+            {
+              "cohort": "Randomized Cohort: Bevacizumab + FOLFIRI",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "MSI",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "high",
+              "summary": "MSI-H"
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://www.optimalresearchportal.com/login/\">Optimal<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-02-08",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05330429\" target=\"_blank\">NCT05330429<\/a>"
+    }
+  }
+]

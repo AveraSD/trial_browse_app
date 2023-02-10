@@ -1,0 +1,126 @@
+[
+  {
+    "info": {
+      "NCT": "NCT02428712",
+      "Protocol_No": "PLX120-03",
+      "jit": "Caris",
+      "trial_name": "Fore Biotherapeutics "
+    },
+    "disease": {
+      "summary": "Advanced Unresectable Solid Tumors, BRAF-mutated Tumors",
+      "details": [
+        {
+          "code": "Bowel (BOWEL)",
+          "selection": "exclude",
+          "stage": "NA"
+        },
+        {
+          "code": "Glioma",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "High-Grade Glioma, NOS (HGGNOS)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Low-Grade Glioma, NOS (LGGNOS)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Pancreas (PANCREAS)",
+          "selection": "exclude",
+          "stage": "NA"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Un-resectable;Advanced Stage"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT02428712",
+      "title": "A Study of FORE8394 as a Single Agent in Patients With Advanced Unresectable Solid Tumors",
+      "current_status": "Recruiting",
+      "status_verif_date": "July 2022",
+      "last_update_date": "July 15, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Fore Biotherapeutics",
+      "brief_summary": "The objective of this study is to determine the safety, pharmacokinetics, maximum tolerated dose/recommended Phase 2 dose, and efficacy of FORE8394.",
+      "conditions": "Advanced Unresectable Solid Tumors | BRAF-mutated Tumors",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "FORE8394",
+          "drug": "FORE8394",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "FORE8394",
+              "Gene": "HRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "HRAS Mutation  "
+            },
+            {
+              "cohort": "FORE8394",
+              "Gene": "NRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "NRAS Mutation  "
+            },
+            {
+              "cohort": "FORE8394",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "KRAS Mutation  "
+            },
+            {
+              "cohort": "FORE8394",
+              "Gene": "RTK",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "activating",
+              "summary": "RTK Mutation activating  "
+            },
+            {
+              "cohort": "FORE8394",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "V600",
+              "Selection": "include",
+              "Function": "activating",
+              "summary": "BRAF V600 Mutation activating "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-17",
+      "min_age": "10 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT02428712\" target=\"_blank\">NCT02428712<\/a>"
+    }
+  }
+]

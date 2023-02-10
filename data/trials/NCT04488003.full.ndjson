@@ -1,0 +1,296 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04488003",
+      "Protocol_No": "BVD-523-ABC",
+      "jit": "Not JIT",
+      "trial_name": "BioMed Valley Discoveries BVD-523-ABC"
+    },
+    "disease": {
+      "summary": "Advanced Solid Tumor | Colorectal Cancer CRC | Non Small Cell Lung | Melanoma | Head and Neck | Brain",
+      "details": [
+        {
+          "code": "CNS/Brain (BRAIN)",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Colorectal Adenocarcinoma (COADREAD)",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Head and Neck (HEAD_NECK)",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Melanoma (MEL)",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04488003",
+      "title": "Study of Ulixertinib for Patients With Advanced Malignancies Harboring MEK or Atypical BRAF Alterations",
+      "current_status": "Not Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 1, 2022",
+      "trial_hold_status": "closed",
+      "sponsor": "BioMed Valley Discoveries, Inc",
+      "brief_summary": "This BVD-523-ABC study builds on the safety and clinical activity experience of previous studies that have evaluated ulixertinib as a novel targeted cancer treatment in cohorts of patients with specific genetic alterations and tumor histologies that result in aberrant MAPK pathway signaling. Early clinical data have demonstrated anti-tumor activity with ulixertinib treatment and have identified specific groups of patients for whom additional development is warranted.",
+      "conditions": "Advanced Solid Tumor | BRAF Gene Mutation | BRAF Gene Alteration | MEK Mutation | MEK Alteration | MAP2K1 Gene Mutation | MAP2K1 Gene Alteration | MAP2K2 Gene Mutation | MAP2K2 Gene Alteration",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Part A: Ulixertinib",
+          "drug": "Ulixertinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1,2,3+",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "G469",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF G469 Alteration  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "L485",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF L485 Alteration  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "L597",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF L597 Alteration  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class II Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF Class II Mutation  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "non-V600",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF non-V600 Alteration  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "MEK1",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MEK1 Alteration  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "MEK2",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MEK2 Alteration  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF Alteration  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "MAP2K1",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MAP2K1 Alteration  "
+            },
+            {
+              "cohort": "Part A: Ulixertinib",
+              "Gene": "MAP2K2",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MAP2K2 Alteration  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Part B: Ulixertinib",
+          "drug": "Ulixertinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1,2,3+",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Part B: Ulixertinib",
+              "Gene": "MEK1",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MEK1 Alteration  "
+            },
+            {
+              "cohort": "Part B: Ulixertinib",
+              "Gene": "MEK2",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MEK2 Alteration  "
+            },
+            {
+              "cohort": "Part B: Ulixertinib",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF Alteration  "
+            },
+            {
+              "cohort": "Part B: Ulixertinib",
+              "Gene": "MAP2K1",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MAP2K1 Alteration  "
+            },
+            {
+              "cohort": "Part B: Ulixertinib",
+              "Gene": "MAP2K2",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MAP2K2 Alteration  "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Part B: Physician's choice of treatment",
+          "drug": "Physician's Choice",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1,2,3+",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Part B: Physician's choice of treatment",
+              "Gene": "MEK1",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MEK1 Alteration  "
+            },
+            {
+              "cohort": "Part B: Physician's choice of treatment",
+              "Gene": "MEK2",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MEK2 Alteration  "
+            },
+            {
+              "cohort": "Part B: Physician's choice of treatment",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF Alteration  "
+            },
+            {
+              "cohort": "Part B: Physician's choice of treatment",
+              "Gene": "MAP2K1",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MAP2K1 Alteration  "
+            },
+            {
+              "cohort": "Part B: Physician's choice of treatment",
+              "Gene": "MAP2K2",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MAP2K2 Alteration  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04488003\" target=\"_blank\">NCT04488003<\/a>"
+    }
+  }
+]

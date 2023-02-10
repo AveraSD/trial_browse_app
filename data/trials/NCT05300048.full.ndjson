@@ -2,6 +2,7 @@
   {
     "info": {
       "NCT": "NCT05300048",
+      "Protocol_No": "SER-ISD1-001",
       "jit": "Tempus",
       "trial_name": "Faeth (SER-ISD1-001) "
     },
@@ -9,24 +10,29 @@
       "summary": "Advanced Solid Tumor | Colorectal Cancer |   Endometrial Cancer | Ovarian Clear Cell or Ovarian Endometrioid Carcinoma",
       "details": [
         {
-          "code": "Endometrioid Ovarian Cancer (EOV)",
-          "selection": "include"
-        },
-        {
           "code": "Clear Cell Ovarian Cancer (CCOV)",
-          "selection": "include"
-        },
-        {
-          "code": "Endometrial Carcinoma (UCEC)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
         },
         {
           "code": "Colorectal Adenocarcinoma (COADREAD)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        },
+        {
+          "code": "Endometrial Carcinoma (UCEC)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        },
+        {
+          "code": "Endometrioid Ovarian Cancer (EOV)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
         },
         {
           "code": "Solid Tumors",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
         }
       ]
     },
@@ -48,8 +54,8 @@
           "cohortlabel": "Cohort 1a - Dose Modification without nab-paclitaxel",
           "drug": "Serabelisib | Other: Insulin Suppressing Diet | NA",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
-          "arm_hold_status": "open",
+          "line_of_therapy": "2+",
+          "arm_hold_status": "close to complete enrollment",
           "biomarker": [
             {
               "cohort": "Cohort 1a - Dose Modification without nab-paclitaxel",
@@ -78,7 +84,7 @@
           "cohortlabel": "Cohort 1b - Dose Modification with Nab-Paclitaxel",
           "drug": "Serabelisib | Other: Insulin Suppressing Diet | Nab paclitaxel",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
+          "line_of_therapy": "3+",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -108,7 +114,7 @@
           "cohortlabel": "Cohort 2 - Expansion Colorectal Cancer",
           "drug": "Serabelisib | Other: Insulin Suppressing Diet | NA",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
+          "line_of_therapy": "2+",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -138,7 +144,7 @@
           "cohortlabel": "Cohort 3 - Expansion Endometrial Cancer",
           "drug": "Serabelisib | Other: Insulin Suppressing Diet | Nab paclitaxel",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
+          "line_of_therapy": "3+",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -168,7 +174,7 @@
           "cohortlabel": "Cohort 4 - Expansion Ovarian Clear Cell or Ovarian Endometrioid Carcinoma",
           "drug": "Serabelisib | Other: Insulin Suppressing Diet | Nab paclitaxel",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
+          "line_of_therapy": "3+",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -194,7 +200,9 @@
           ]
         }
       ],
-      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\Tempus JIT_2022-09-06.docx ",
+      "docs": "<a href=\"https://therapies.securetempus.com/\">Tempus<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-02-08",
       "min_age": "18 Years",
       "gender": "All",
       "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05300048\" target=\"_blank\">NCT05300048<\/a>"
