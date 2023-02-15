@@ -53,12 +53,12 @@ shinyUI(fluidPage(
                  #        #  style = "display: inline-block;",
                  #        #style = "margin-top: 10px;",
                  #        ),
-                 column(2,
-                        #style = "display: inline-block;",
-                        # style = "margin-top: 10px;",
-                        actionButton("filter_stage", " ",icon = shiny::icon("filter"),size = "sm")
-
-                 ),
+                 # column(2,
+                 #        #style = "display: inline-block;",
+                 #        # style = "margin-top: 10px;",
+                 #        actionButton("filter_stage", " ",icon = shiny::icon("filter"),size = "sm")
+                 # 
+                 # ),
                  column(4,
 
                         # style = "display: inline-block;",
@@ -72,12 +72,12 @@ shinyUI(fluidPage(
                           width = "400px"
 
                         )),
-                 column(2,
-                        #style = "display: inline-block;",
-                        # style = "margin-top: 15px;",
-                        actionButton("dise_fil", " ",icon = shiny::icon("filter"),size = "sm")
-
-                 ),
+                 # column(2,
+                 #        #style = "display: inline-block;",
+                 #        # style = "margin-top: 15px;",
+                 #        actionButton("dise_fil", " ",icon = shiny::icon("filter"),size = "sm")
+                 # 
+                 # ),
                  column(4,
                         
                         # style = "display: inline-block;",
@@ -91,12 +91,12 @@ shinyUI(fluidPage(
                           width = "400px"
                           
                         )),
-                 column(2,
-                        #style = "display: inline-block;",
-                        # style = "margin-top: 15px;",
-                        actionButton("drug_fil", " ",icon = shiny::icon("filter"),size = "sm")
-                        
-                 ),
+                 # column(2,
+                 #        #style = "display: inline-block;",
+                 #        # style = "margin-top: 15px;",
+                 #        actionButton("drug_fil", " ",icon = shiny::icon("filter"),size = "sm")
+                 #        
+                 # ),
                  column(4,
                         
                         # style = "display: inline-block;",
@@ -110,24 +110,25 @@ shinyUI(fluidPage(
                           width = "400px"
                           
                         )),
-                 column(2,
+                 column(4 ),
+                 column(4,
                         #style = "display: inline-block;",
                         # style = "margin-top: 15px;",
-                        actionButton("loc_fil", " ",icon = shiny::icon("filter"),size = "sm")
+                        actionButton("loc_fil", "Filter",icon = shiny::icon("filter"),size = "md")
                         
                  )
 
                )),
                br(),
                br(),
-               
-               actionButton("reset_btn_browse", "Reset Trials"), 
-               br(),
-               br(),
-               br(),
-               
-               actionButton("collapse_btn_browse", "Collapse All"), 
-               reactableOutput("browsetable")),
+               fluidPage(
+                 actionButton("reset_btn_browse", "Reset Trials"), 
+                 br(),
+                 br(),
+                 actionButton("collapse_btn_browse", "Collapse All"), 
+                 reactableOutput("browsetable"))
+                 
+               ),
       
       # MATCH
       # tabPanel("Match",
