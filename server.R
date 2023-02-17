@@ -18,54 +18,6 @@ shinyServer(function(input, output,session) {
   
   # first time pass all the trials 
   selecTrial = reactiveValues(comTb=tibble())
-  # output$input_fst <- renderUI({
-  #   input_fst
-  # })
-
- # # selection on stage 
- #  checkStage = eventReactive(input$filter_stage,{
- #   #print(input$stageView)
- #   SelStage = as.list.data.frame(input$stageView)
- #   #print(SelStage)
- #   checkStageSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct()
- #   #selTrial = browse_tbl %>% filter(NCT %in% checkStageSel$NCT)
- #   #print(checkStageSel)
- #   return(checkStageSel)
- # })
- #  
- #  # selection on Disease
- #  checkDise = eventReactive(input$dise_fil,{
- #    #print(input$stageView)
- #    SelDise = as.list.data.frame(input$disFil)
- #    #print(SelStage)
- #    checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
- #    #selTrial = browse_tbl %>% filter(NCT %in% checkDiseSel$NCT)
- #    return(checkDiseSel)
- #  })
- #  
- #  # selection on Drug
- #  checkDrug = eventReactive(input$drug_fil,{
- #    #print(input$stageView)
- #    SelDrug = as.list.data.frame(input$drugFil)
- #    #print(SelStage)
- #    checkDrugSel = browse_tbl %>% select(NCT,disp_cohorts) %>% unnest(disp_cohorts) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
- #    #selTrial = browse_tbl %>% filter(NCT %in% checkDrugSel$NCT)
- #    return(checkDrugSel)
- #    #print(checkDrugSel)
- #  })
- #  
- #  
- #  
- #  # selection on locations
- #  checkLoc = eventReactive(input$loc_fil,{
- #    #print(input$stageView)
- #    SelLoc = as.list.data.frame(input$locaFil )
- #    #print(SelStage)
- #    checklocSel = browse_tbl %>% select(NCT,Location) %>% filter(Location %in% SelLoc) %>% select(NCT) %>% distinct()
- #    #selTrial = browse_tbl %>% filter(NCT %in% checklocSel$NCT)
- #    return(checklocSel)
- #    #print(checklocSel)
- #  })
   
   # reactive to get the data if any of the buttons are clicked 
   #filtered <- eventReactive(input$loc_fil,{
@@ -77,37 +29,21 @@ shinyServer(function(input, output,session) {
     SelStage = as.list.data.frame(input$stageView)
    # print(SelStage)
     checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct()
-    print(checkStageSel)
+ #   print(checkStageSel)
     SelDise = as.list.data.frame(input$disFil)
     checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
     SelDrug = as.list.data.frame(input$drugFil)
     checkDrugSel = browse_tbl %>% select(NCT,disp_cohorts) %>% unnest(disp_cohorts) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
     completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT )
-    print(completeList)
+  #  print(completeList)
     # if (is.null(checkLoc()) || is.null(checkDrug()) || is.null(checkDise()) || is.null(checkStage()) ) {
     #   return(NULL)
     # }
-    
-    # output$filterhalf <- renderUI({
-    #   filUIhalf
-    # })
    filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct()  # Filter based on the interactive input 
      
-    
       #filter(NCT %in% c(checkLoc(),checkDrug(),checkDise(),checkStage() ))
-   # print(selecTrial$comTb)
-  # selecTrial$comTb = filTb 
-   #selecTrial$comTb = filtered()
-   #selecTrial$comTb = browse_tbl
-   #  print(selecTrial$comTb$NCT)
    output$filterbrowse <- renderReactable({
    reactable(filTb %>% select( Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation),
-             # rename("Trial" = Link,
-             #        # "TrialName" = paste(Trial,Name,sep=":"),
-             #        #"Title" = Summary,
-             #        "Current Status" = HoldStatus,
-             #        "Conditions/Disease" = Disease,
-             #        "Biomarker" = disp_biomarkers),
              filterable = TRUE,
              #searchable = TRUE,
              resizable = TRUE,
@@ -126,12 +62,9 @@ shinyServer(function(input, output,session) {
                
                # create tables to be displayed if nested rows are expanded
                htmltools::div(
-                 # group 3: summary
-                 # reactable(browse_tbl[index, ] %>%
-                 #             select(Summary)),
-                 
+                
                  # group1: general info
-                 reactable(filTb[index, ] %>% select(Sponsor,StudyType, Location, TrialLastUpdate),
+                 reactable(filTb[index, ] %>% select(Name,Sponsor,StudyType, Location, TrialLastUpdate),
                            defaultColDef = colDef(align = "center"),
                            columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"))
                  ),
@@ -176,52 +109,32 @@ shinyServer(function(input, output,session) {
                  
                  #  reactable(browse_tbl[index, ]$disp_disease$disp_disease),
                  reactable(filTb[index, ]$disp_disease[[1]] %>% select(code, selection,stage))
-                 
-                 
+                  
                )
              }) 
-     
-    
-     
    })
    
   # return(filTb)
   })
-  
-  
-  
+ 
   # Reset button
  observeEvent(input$reset_btn_browse, {
-  # selecTrial$comTb = browse_tbl
-  #output$input_fst <- renderUI({
-  #  input_fst
-  #})
+ 
    shinyjs::show(id = "browsetable")
    shinyjs::hide(id = "filterbrowse")
    
-   
-   #output$filterbrowse <- renderReactable({
-  # })
-  # updateReactable("filterbrowse", data = NULL)
+   updateSelectInput(inputId = "stageView",selected = "")
+   updateSelectInput(inputId = "disFil",selected = "")
+   updateSelectInput(inputId = "drugFil",selected = "")
+   updateSelectInput(inputId = "locaFil",selected = "")
  })
 
   ##### BROWSE ########b
   # main display table for BROWSE
   output$browsetable <- renderReactable({
-   # brw$selecTrial = browse_tbl
-    #selecTrial = reactive(browse_tbl)
-   # case_when()
-  #  if(is.null(input$loc_fil)){
-   
-     # selecTrial$comTb = filtered()
+  
      selecTrial$comTb = browse_tbl
       reactable(selecTrial$comTb %>% select( Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation),
-                # rename("Trial" = Link,
-                #        # "TrialName" = paste(Trial,Name,sep=":"),
-                #        #"Title" = Summary,
-                #        "Current Status" = HoldStatus,
-                #        "Conditions/Disease" = Disease,
-                #        "Biomarker" = disp_biomarkers),
                 filterable = TRUE,
                 #searchable = TRUE,
                 resizable = TRUE,
@@ -234,18 +147,11 @@ shinyServer(function(input, output,session) {
                 columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"),Disease = colDef(name = "Conditions/Disease"),
                                disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
                 details = function(index) {
-                  
-                  # create table for cohort level information
-                  
-                  
                   # create tables to be displayed if nested rows are expanded
                   htmltools::div(
-                    # group 3: summary
-                    # reactable(browse_tbl[index, ] %>%
-                    #             select(Summary)),
-                    
+                   
                     # group1: general info
-                    reactable(selecTrial$comTb[index, ] %>% select(Sponsor,StudyType, Location, TrialLastUpdate),
+                    reactable(selecTrial$comTb[index, ] %>% select(Name,Sponsor,StudyType, Location, TrialLastUpdate),
                               defaultColDef = colDef(align = "center"),
                               columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"))
                     ),
@@ -315,3 +221,49 @@ shinyServer(function(input, output,session) {
   # })
 
 })
+
+
+# # selection on stage 
+#  checkStage = eventReactive(input$filter_stage,{
+#   #print(input$stageView)
+#   SelStage = as.list.data.frame(input$stageView)
+#   #print(SelStage)
+#   checkStageSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct()
+#   #selTrial = browse_tbl %>% filter(NCT %in% checkStageSel$NCT)
+#   #print(checkStageSel)
+#   return(checkStageSel)
+# })
+#  
+#  # selection on Disease
+#  checkDise = eventReactive(input$dise_fil,{
+#    #print(input$stageView)
+#    SelDise = as.list.data.frame(input$disFil)
+#    #print(SelStage)
+#    checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
+#    #selTrial = browse_tbl %>% filter(NCT %in% checkDiseSel$NCT)
+#    return(checkDiseSel)
+#  })
+#  
+#  # selection on Drug
+#  checkDrug = eventReactive(input$drug_fil,{
+#    #print(input$stageView)
+#    SelDrug = as.list.data.frame(input$drugFil)
+#    #print(SelStage)
+#    checkDrugSel = browse_tbl %>% select(NCT,disp_cohorts) %>% unnest(disp_cohorts) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
+#    #selTrial = browse_tbl %>% filter(NCT %in% checkDrugSel$NCT)
+#    return(checkDrugSel)
+#    #print(checkDrugSel)
+#  })
+#  
+#  
+#  
+#  # selection on locations
+#  checkLoc = eventReactive(input$loc_fil,{
+#    #print(input$stageView)
+#    SelLoc = as.list.data.frame(input$locaFil )
+#    #print(SelStage)
+#    checklocSel = browse_tbl %>% select(NCT,Location) %>% filter(Location %in% SelLoc) %>% select(NCT) %>% distinct()
+#    #selTrial = browse_tbl %>% filter(NCT %in% checklocSel$NCT)
+#    return(checklocSel)
+#    #print(checklocSel)
+#  })

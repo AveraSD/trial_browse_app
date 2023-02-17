@@ -23,29 +23,27 @@ library(shinyjs)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
-  useShinyjs(),
-
   tagList(
     tags$head(
       tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
     
     ), 
     
-    
+    useShinyjs(),
     navbarPage(
-      title = "TrialMatch", 
+      title = span("TrialMatch",style ="color:black; font-size: 25px" ) ,
       
-      
-      # BROWSE
+     
       tabPanel("Browse",
                wellPanel(fluidRow(
                  column(4,
                  selectInput(
                    inputId = "stageView",
                    label = "Disease Stages",
-                   choices = c("Stage I","Stage II","Stage III","Stage IV","Methylated","Un-resectable","resectable",
-                               "Unmethylated","Advanced Stage","Recurrent","Metastatic","Early stage", "New diagnosis","Relapsed/Refractory","Post Cellular Therapy",
-                               "Smoldering Myeloma"),
+                   choices = c(stageAv$stage),
+                   #choices = c("Stage I","Stage II","Stage III","Stage IV","Methylated","Un-resectable","resectable",
+                   #            "Unmethylated","Advanced Stage","Recurrent","Metastatic","Early stage", "New diagnosis","Relapsed/Refractory","Post Cellular Therapy",
+                    #           "Smoldering Myeloma"),
                    multiple = T,
                    #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
                    width = "400px"
@@ -107,7 +105,7 @@ shinyUI(fluidPage(
                         selectInput(
                           inputId = "locaFil",
                           label = "Locations",
-                          choices = c("Sioux Falls SD"),
+                          choices = c(locAv$Location),
                           multiple = T,
                           #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
                           width = "400px"
@@ -117,7 +115,7 @@ shinyUI(fluidPage(
                  column(4,
                         #style = "display: inline-block;",
                         # style = "margin-top: 15px;",
-                        actionButton("loc_fil", "Filter",icon = shiny::icon("filter"),size = "md")
+                        actionButton("loc_fil", "Filter",icon = shiny::icon("filter"),size = "lg",class = "btn-warning")
                         
                  )
 
@@ -127,9 +125,9 @@ shinyUI(fluidPage(
               
                  fluidRow(
                    column(6,
-                          actionButton("reset_btn_browse", "Reset Trials")),
+                          actionButton("reset_btn_browse", "Reset Trials",class = "btn-success")),
                    column(6, 
-                          actionButton("collapse_btn_browse", "Collapse All") )
+                          actionButton("collapse_btn_browse", "Collapse All",class = "btn-info") )
                  ),
                
                br(),
@@ -146,11 +144,12 @@ shinyUI(fluidPage(
       # tabPanel("Match",
       #          reactableOutput("matchtable")),
       
-      theme = bs_theme(version = 5, 
-                       bootswatch = "cosmo",
-                       primary = "#246725")
+     theme = bs_theme(version = 5,
+                      bootswatch = "cosmo",
+                      primary = "#246725")
       
     ) # tabpanel close
  ) # navbar close
  ) # taglist close
-))
+)
+)

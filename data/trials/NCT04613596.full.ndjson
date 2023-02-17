@@ -12,7 +12,7 @@
         {
           "code": "Non-Small Cell Lung Cancer (NSCLC)",
           "selection": "include",
-          "stage": "NUn-resectable;Advanced Stage;Metastatic"
+          "stage": "Un-resectable;Advanced Stage;Metastatic"
         }
       ]
     },
