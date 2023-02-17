@@ -125,6 +125,8 @@ shinyUI(fluidPage(
                  actionButton("reset_btn_browse", "Reset Trials"), 
                  br(),
                  br(),
+                 reactableOutput("filterbrowse"),
+                 br(),
                  actionButton("collapse_btn_browse", "Collapse All"), 
                  reactableOutput("browsetable"))
                  

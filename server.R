@@ -64,7 +64,8 @@ shinyServer(function(input, output,session) {
  #  })
   
   # reactive to get the data if any of the buttons are clicked 
-  filtered <- eventReactive(input$loc_fil,{
+  #filtered <- eventReactive(input$loc_fil,{
+  observeEvent(input$loc_fil,{
     # To stop errors popping up in app if nothing is chosen by default
     SelStage = as.list.data.frame(input$stageView)
    # print(SelStage)
@@ -79,115 +80,207 @@ shinyServer(function(input, output,session) {
     # if (is.null(checkLoc()) || is.null(checkDrug()) || is.null(checkDise()) || is.null(checkStage()) ) {
     #   return(NULL)
     # }
-   filTb = browse_tbl  %>%
-      # Filter based on the interactive input 
-     filter(NCT %in% completeList ) %>% distinct()
+   filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct()  # Filter based on the interactive input 
+     
+    
       #filter(NCT %in% c(checkLoc(),checkDrug(),checkDise(),checkStage() ))
    # print(selecTrial$comTb)
+  # selecTrial$comTb = filTb 
+   #selecTrial$comTb = filtered()
+   #selecTrial$comTb = browse_tbl
+   #  print(selecTrial$comTb$NCT)
+   output$filterbrowse <- renderReactable({
+   reactable(filTb %>% select( Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation),
+             # rename("Trial" = Link,
+             #        # "TrialName" = paste(Trial,Name,sep=":"),
+             #        #"Title" = Summary,
+             #        "Current Status" = HoldStatus,
+             #        "Conditions/Disease" = Disease,
+             #        "Biomarker" = disp_biomarkers),
+             filterable = TRUE,
+             #searchable = TRUE,
+             resizable = TRUE,
+             fullWidth = TRUE,
+             defaultColDef = colDef(align = "center"),
+             striped = TRUE,
+             showSortable = TRUE,
+             style = list(minWidth = 800),
+             #columns = list(Trial = colDef(html = TRUE)),
+             columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"),Disease = colDef(name = "Conditions/Disease"),
+                            disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
+             details = function(index) {
+               
+               # create table for cohort level information
+               
+               
+               # create tables to be displayed if nested rows are expanded
+               htmltools::div(
+                 # group 3: summary
+                 # reactable(browse_tbl[index, ] %>%
+                 #             select(Summary)),
+                 
+                 # group1: general info
+                 reactable(filTb[index, ] %>% select(Sponsor,StudyType, Location, TrialLastUpdate),
+                           defaultColDef = colDef(align = "center"),
+                           columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"))
+                 ),
+                 
+                 # group 3: summary
+                 reactable(filTb[index, ] %>%
+                             select(Summary)),
+                 
+                 
+                 # group 4: trial Status from .gov
+                 reactable(filTb[index, ] %>%
+                             select(Status, StatusUpdate, LastUpdate, Gender, MinAge),
+                           defaultColDef = colDef(align = "center"),
+                           columns = list(Status = colDef(name = "Clinical.gov Status"),
+                                          MinAge = colDef(name = "Minimum Age"),
+                                          StatusUpdate = colDef(name = "Clinical.gov Verification Date"),
+                                          LastUpdate = colDef(name = "Clinical.gov Last Update"))),
+                 # group2: cohort info
+                 
+                 # reactable(browse_tbl[index, ]$arms$arm %>%
+                 reactable(filTb[index, ]$arms[[1]] %>%
+                             # reactable(coh %>%
+                             # select(arms),
+                             select(cohortlabel, drug, arm_type,line_of_therapy,arm_hold_status,Selection,summary) %>% distinct(),
+                           columns = list(cohortlabel = colDef(name = "Cohort Label"),
+                                          drug = colDef(name = "Drug(s)"),
+                                          arm_type = colDef(name = "Arm Type"),
+                                          #  biomarker = colDef(name = "Biomarker(s)"),
+                                          line_of_therapy = colDef(name = "Line of Tx"),
+                                          arm_hold_status = colDef(name = "Arm HoldStatus"),
+                                          Selection = colDef(name = "Criteria"),
+                                          summary = colDef(name = "Biomarker")
+                                          #details = function(index){
+                                          #reactable(browse_tbl[index, ]$arms[[1]] %>% select(Gene,Gene2,Type,Variant,Selection,Function))
+                                          # })
+                           )),
+                 # group 5: CONDITIONS MENTIONED FROM .GOV
+                 reactable(filTb[index, ] %>%
+                             select(Conditions)),
+                 
+                 # group 3: disease information
+                 
+                 #  reactable(browse_tbl[index, ]$disp_disease$disp_disease),
+                 reactable(filTb[index, ]$disp_disease[[1]] %>% select(code, selection,stage))
+                 
+                 
+               )
+             }) 
+     
+   })
    
-   return(filTb)
+  # return(filTb)
   })
   
   
   
   # Reset button
  observeEvent(input$reset_btn_browse, {
-   selecTrial$comTb = browse_tbl
-   updateReactable("browsetable", data = selecTrial$comTb, expanded = FALSE)
+  # selecTrial$comTb = browse_tbl
+   
+   output$filterbrowse <- renderReactable({
+   })
+  # updateReactable("filterbrowse", data = NULL)
  })
 
-  ##### BROWSE ########
+  ##### BROWSE ########b
   # main display table for BROWSE
   output$browsetable <- renderReactable({
    # brw$selecTrial = browse_tbl
     #selecTrial = reactive(browse_tbl)
    # case_when()
-    if(!is.null(input$loc_fil)){
-    #   #print(is.null(checkedTb()) )
-      selecTrial$comTb = filtered()
-       #selecTrial$comTb = browse_tbl
-    #  #return(NULL)
-     }
-     else {
-       selecTrial$comTb = browse_tbl
-     }
-    #print(tableExpand)
-    #tableExpand = selecTrial()
-    reactable(selecTrial$comTb %>%
-                # select( Link, NameProtocol, Name,Protocol_No, HoldStatus, Phase, Summary, Disease, disp_biomarkers, Documentation) %>%
-                #select( Link, Protocol,HoldStatus, Phase, Summary, Disease,disp_biomarkers, Documentation) %>%
-                select( Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation) %>%
-                rename("Trial" = Link,
-                       # "TrialName" = paste(Trial,Name,sep=":"),
-                       #"Title" = Summary,
-                       "Current Status" = HoldStatus,
-                       "Conditions/Disease" = Disease,
-                       "Biomarker" = disp_biomarkers),
-              filterable = TRUE,
-              #searchable = TRUE,
-              resizable = TRUE,
-              fullWidth = TRUE,
-              defaultColDef = colDef(align = "center"),
-              striped = TRUE,
-              showSortable = TRUE,
-              style = list(minWidth = 800),
-              #columns = list(Trial = colDef(html = TRUE)),
-              columns = list(Trial = colDef(html = TRUE),Documentation = colDef(html=TRUE)),
-              details = function(index) {
-
-                # create table for cohort level information
-                
-
-                # create tables to be displayed if nested rows are expanded
-                htmltools::div(
-                  # group 3: summary
-                  # reactable(browse_tbl[index, ] %>%
-                  #             select(Summary)),
-
-                  # group1: general info
-                  reactable(browse_tbl[index, ] %>% select(Sponsor,StudyType, Location, TrialLastUpdate),
-                            defaultColDef = colDef(align = "center"),
-                            columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"))
-                  ),
-
-                  # group 3: summary
-                  reactable(browse_tbl[index, ] %>%
-                              select(Summary)),
-
-                  # group 4: trial conditions
-                  reactable(browse_tbl[index, ] %>%
-                              select(Status, StatusUpdate, LastUpdate, Gender, MinAge),
-                            defaultColDef = colDef(align = "center"),
-                            columns = list(Status = colDef(name = "Clinical.gov Status"),
-                                           MinAge = colDef(name = "Minimum Age"),
-                                           StatusUpdate = colDef(name = "Clinical.gov Verification Date"),
-                                           LastUpdate = colDef(name = "Clinical.gov Last Update"))),
-                  # group2: cohort info
-
-                  # reactable(browse_tbl[index, ]$arms$arm %>%
-                  reactable(browse_tbl[index, ]$arms[[1]] %>%
-                              # reactable(coh %>%
-                              # select(arms),
-                              select(cohortlabel, drug, arm_type,line_of_therapy,arm_hold_status,Selection,summary) %>% distinct(),
-                            columns = list(cohortlabel = colDef(name = "Cohort Label"),
-                                           drug = colDef(name = "Drug(s)"),
-                                           arm_type = colDef(name = "Arm Type"),
-                                           #  biomarker = colDef(name = "Biomarker(s)"),
-                                           line_of_therapy = colDef(name = "Line of Tx"),
-                                           arm_hold_status = colDef(name = "Arm HoldStatus"),
-                                           Selection = colDef(name = "Criteria"),
-                                           summary = colDef(name = "Biomarker")
-                                           #details = function(index){
-                                           #reactable(browse_tbl[index, ]$arms[[1]] %>% select(Gene,Gene2,Type,Variant,Selection,Function))
-                                           # })
-                            )),
-
-                  #  reactable(browse_tbl[index, ]$disp_disease$disp_disease),
-                  reactable(browse_tbl[index, ]$disp_disease[[1]] %>% select(code, selection,stage))
-                 
-                 
-                )
-              })
+  #  if(is.null(input$loc_fil)){
+   
+     # selecTrial$comTb = filtered()
+     selecTrial$comTb = browse_tbl
+      reactable(selecTrial$comTb %>% select( Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation),
+                # rename("Trial" = Link,
+                #        # "TrialName" = paste(Trial,Name,sep=":"),
+                #        #"Title" = Summary,
+                #        "Current Status" = HoldStatus,
+                #        "Conditions/Disease" = Disease,
+                #        "Biomarker" = disp_biomarkers),
+                filterable = TRUE,
+                #searchable = TRUE,
+                resizable = TRUE,
+                fullWidth = TRUE,
+                defaultColDef = colDef(align = "center"),
+                striped = TRUE,
+                showSortable = TRUE,
+                style = list(minWidth = 800),
+                #columns = list(Trial = colDef(html = TRUE)),
+                columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"),Disease = colDef(name = "Conditions/Disease"),
+                               disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
+                details = function(index) {
+                  
+                  # create table for cohort level information
+                  
+                  
+                  # create tables to be displayed if nested rows are expanded
+                  htmltools::div(
+                    # group 3: summary
+                    # reactable(browse_tbl[index, ] %>%
+                    #             select(Summary)),
+                    
+                    # group1: general info
+                    reactable(selecTrial$comTb[index, ] %>% select(Sponsor,StudyType, Location, TrialLastUpdate),
+                              defaultColDef = colDef(align = "center"),
+                              columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"))
+                    ),
+                    
+                    # group 3: summary
+                    reactable(selecTrial$comTb[index, ] %>%
+                                select(Summary)),
+                    
+                    
+                    # group 4: trial Status from .gov
+                    reactable(selecTrial$comTb[index, ] %>%
+                                select(Status, StatusUpdate, LastUpdate, Gender, MinAge),
+                              defaultColDef = colDef(align = "center"),
+                              columns = list(Status = colDef(name = "Clinical.gov Status"),
+                                             MinAge = colDef(name = "Minimum Age"),
+                                             StatusUpdate = colDef(name = "Clinical.gov Verification Date"),
+                                             LastUpdate = colDef(name = "Clinical.gov Last Update"))),
+                    # group2: cohort info
+                    
+                    # reactable(browse_tbl[index, ]$arms$arm %>%
+                    reactable(selecTrial$comTb[index, ]$arms[[1]] %>%
+                                # reactable(coh %>%
+                                # select(arms),
+                                select(cohortlabel, drug, arm_type,line_of_therapy,arm_hold_status,Selection,summary) %>% distinct(),
+                              columns = list(cohortlabel = colDef(name = "Cohort Label"),
+                                             drug = colDef(name = "Drug(s)"),
+                                             arm_type = colDef(name = "Arm Type"),
+                                             #  biomarker = colDef(name = "Biomarker(s)"),
+                                             line_of_therapy = colDef(name = "Line of Tx"),
+                                             arm_hold_status = colDef(name = "Arm HoldStatus"),
+                                             Selection = colDef(name = "Criteria"),
+                                             summary = colDef(name = "Biomarker")
+                                             #details = function(index){
+                                             #reactable(browse_tbl[index, ]$arms[[1]] %>% select(Gene,Gene2,Type,Variant,Selection,Function))
+                                             # })
+                              )),
+                    # group 5: CONDITIONS MENTIONED FROM .GOV
+                    reactable(selecTrial$comTb[index, ] %>%
+                                select(Conditions)),
+                    
+                    # group 3: disease information
+                    
+                    #  reactable(browse_tbl[index, ]$disp_disease$disp_disease),
+                    reactable(selecTrial$comTb[index, ]$disp_disease[[1]] %>% select(code, selection,stage))
+                    
+                    
+                  )
+                })
+  
+ #    }
+ #    else {
+ #      if(!is.null(input$loc_fil)) {
+      
+ #    }
    # display_browse_db # from panel_browse.R
   })
   
