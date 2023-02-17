@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(shinyjs)
 
 
 
@@ -17,6 +18,9 @@ shinyServer(function(input, output,session) {
   
   # first time pass all the trials 
   selecTrial = reactiveValues(comTb=tibble())
+  # output$input_fst <- renderUI({
+  #   input_fst
+  # })
 
  # # selection on stage 
  #  checkStage = eventReactive(input$filter_stage,{
@@ -66,6 +70,9 @@ shinyServer(function(input, output,session) {
   # reactive to get the data if any of the buttons are clicked 
   #filtered <- eventReactive(input$loc_fil,{
   observeEvent(input$loc_fil,{
+    
+    shinyjs::hide(id = "browsetable")
+    shinyjs::show(id = "filterbrowse")
     # To stop errors popping up in app if nothing is chosen by default
     SelStage = as.list.data.frame(input$stageView)
    # print(SelStage)
@@ -80,6 +87,10 @@ shinyServer(function(input, output,session) {
     # if (is.null(checkLoc()) || is.null(checkDrug()) || is.null(checkDise()) || is.null(checkStage()) ) {
     #   return(NULL)
     # }
+    
+    # output$filterhalf <- renderUI({
+    #   filUIhalf
+    # })
    filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct()  # Filter based on the interactive input 
      
     
@@ -170,6 +181,8 @@ shinyServer(function(input, output,session) {
                )
              }) 
      
+    
+     
    })
    
   # return(filTb)
@@ -180,9 +193,15 @@ shinyServer(function(input, output,session) {
   # Reset button
  observeEvent(input$reset_btn_browse, {
   # selecTrial$comTb = browse_tbl
+  #output$input_fst <- renderUI({
+  #  input_fst
+  #})
+   shinyjs::show(id = "browsetable")
+   shinyjs::hide(id = "filterbrowse")
    
-   output$filterbrowse <- renderReactable({
-   })
+   
+   #output$filterbrowse <- renderReactable({
+  # })
   # updateReactable("filterbrowse", data = NULL)
  })
 

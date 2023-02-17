@@ -179,4 +179,4 @@ loadDbData <- function() {
 
 
 source(here("R", "read_data.R"))
-#source(here("R", "panel_browse.R"))
+#source(here("R", "browseUi.R"))

@@ -19,13 +19,16 @@ library(httr)
 library(glue)
 library(tidyverse)
 library(shinyWidgets)
+library(shinyjs)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
+  useShinyjs(),
 
   tagList(
     tags$head(
       tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
+    
     ), 
     
     
@@ -121,16 +124,23 @@ shinyUI(fluidPage(
                )),
                br(),
                br(),
-               fluidPage(
-                 actionButton("reset_btn_browse", "Reset Trials"), 
-                 br(),
-                 br(),
-                 reactableOutput("filterbrowse"),
-                 br(),
-                 actionButton("collapse_btn_browse", "Collapse All"), 
-                 reactableOutput("browsetable"))
+              
+                 fluidRow(
+                   column(6,
+                          actionButton("reset_btn_browse", "Reset Trials")),
+                   column(6, 
+                          actionButton("collapse_btn_browse", "Collapse All") )
+                 ),
+               
+               br(),
+               reactableOutput("filterbrowse"),
+               br(),
+               reactableOutput("browsetable"),
+              
+               
+             #  input_fil,
+             #   input_fst,
                  
-               ),
       
       # MATCH
       # tabPanel("Match",
@@ -140,6 +150,7 @@ shinyUI(fluidPage(
                        bootswatch = "cosmo",
                        primary = "#246725")
       
-    )
-  )
+    ) # tabpanel close
+ ) # navbar close
+ ) # taglist close
 ))
