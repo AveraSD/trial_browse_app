@@ -9,11 +9,11 @@ default:
   trial_data_dir: "data/trials/"
   pt_data_file: "data/pt/ptdata.tsv"
   docker: "no"
-  storage: "json"
+  storage: "db"
 
 
 test: 
   trial_data_dir: "data/trials"
   pt_data_file: "data/pt/ptdata.tsv"
   docker: "no"
-  storage: "json"
+  storage: "db"

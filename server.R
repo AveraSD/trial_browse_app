@@ -86,7 +86,7 @@ shinyServer(function(input, output,session) {
                  # group2: cohort info
                  
                  # reactable(browse_tbl[index, ]$arms$arm %>%
-                 reactable(filTb[index, ]$arms[[1]] %>%
+                 reactable(filTb[index, ]$arms[[1]] %>% unnest(biomarker) %>%
                              # reactable(coh %>%
                              # select(arms),
                              select(cohortlabel, drug, arm_type,line_of_therapy,arm_hold_status,Selection,summary) %>% distinct(),
@@ -173,7 +173,7 @@ shinyServer(function(input, output,session) {
                     # group2: cohort info
                     
                     # reactable(browse_tbl[index, ]$arms$arm %>%
-                    reactable(selecTrial$comTb[index, ]$arms[[1]] %>%
+                    reactable(selecTrial$comTb[index, ]$arms[[1]] %>% unnest(biomarker) %>%
                                 # reactable(coh %>%
                                 # select(arms),
                                 select(cohortlabel, drug, arm_type,line_of_therapy,arm_hold_status,Selection,summary) %>% distinct(),

@@ -160,7 +160,8 @@ loadDbData <- function() {
   #add list here and make it similar to how it looks in panel_browse.R with ndjson files
  #db_tbl$arms <- list(db_tbl$arm[[1]] %>% unnest(biomarker))
   
-#  db_tbl$disp_biomarkers <- db_tbl$arm[[1]]$biomarker %>% bind_rows() %>%
+ db_tbl$disp_biomarkers <- "NA"
+   #db_tbl$arm[[1]]$biomarker %>% bind_rows() %>%
 #    select(summary) %>% distinct() %>%
 #    unlist() %>%
 #    na.omit() %>%
