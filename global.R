@@ -61,7 +61,7 @@ parseTrials <- function(jsonfile) {
     arms = list(arms = trial$query$arm[[1]] %>% unnest(biomarker)),
 
     #query - cohorts only for display table
-    disp_cohorts = list(disp_cohorts = bind_cols(arm_groups %>% select(-biomarker))),
+   # disp_cohorts = list(disp_cohorts = bind_cols(arm_groups %>% select(-biomarker))),
 
     #biomarker = lapply(1:nrow(arm_groups), function(x) processBiomarker(x)) %>%
     #                                              unlist())),
@@ -69,10 +69,7 @@ parseTrials <- function(jsonfile) {
     # query - biomarkers only for display table
     disp_biomarkers = trial$query$arm[[1]]$biomarker %>%
     bind_rows() %>%
-    select(summary) %>% distinct() %>%
-    #do.call(paste, summary) %>%
-    unlist() %>%
-    na.omit() %>%
+    select(summary) %>% distinct() %>% unlist() %>% na.omit() %>%
     paste0(collapse = " | "),
     # unique() %>%
     #  glue_col(sep = " : "),
@@ -87,12 +84,6 @@ parseTrials <- function(jsonfile) {
   return(parsedTrial)
 
  }             
-
-
-
-  
-
-
 
 
 ###############################################
@@ -156,8 +147,9 @@ loadDbData <- function() {
   )
   
   
-  
-  db_tbl$disp_disease = list(disp_disease = db_tbl$details[[1]])
+  db_tbl = db_tbl %>% mutate(disp_disease = db_tbl$details)
+  db_tbl = db_tbl %>% mutate(arms = db_tbl$arm)
+  #db_tbl$disp_disease = list(disp_disease = db_tbl$details[[1]])
   
   # db_tbl$diseasecode <-db_tbl$details[[1]] %>% select(code)
   # db_tbl$diseases<- db_tbl$diseasecode$code
@@ -166,17 +158,16 @@ loadDbData <- function() {
   # db_tbl$stage <-db_tbl$diseasestage$stage
   
   #add list here and make it similar to how it looks in panel_browse.R with ndjson files
- db_tbl$arms <- list(db_tbl$arm[[1]] %>% unnest(biomarker))
+ #db_tbl$arms <- list(db_tbl$arm[[1]] %>% unnest(biomarker))
   
-  db_tbl$disp_biomarkers <- db_tbl$arm[[1]]$biomarker %>% bind_rows() %>%
-    select(summary) %>% distinct() %>%
-    unlist() %>%
-    na.omit() %>%
-    paste0(collapse = "|")
+#  db_tbl$disp_biomarkers <- db_tbl$arm[[1]]$biomarker %>% bind_rows() %>%
+#    select(summary) %>% distinct() %>%
+#    unlist() %>%
+#    na.omit() %>%
+#    paste0(collapse = "|")
   return(db_tbl)
   
 }
-
 
 source(here("R", "read_data.R"))
 #source(here("R", "browseUi.R"))

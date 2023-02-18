@@ -36,9 +36,11 @@ if (storage == "db") {
     db_url <<- "mongodb://127.0.0.1:27017"
   }
   
-  browse_tbl <<- loadDbData()
+  result <<- loadDbData()
+  browse_tbl <<- result
 }
 
+#browse_tbl$disp_biomarkers <- browse_tbl$arm[[1]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
 #source(here("R", "panel_browse.R"))
 drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
 diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()

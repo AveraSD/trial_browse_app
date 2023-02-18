@@ -9,7 +9,8 @@
 
 library(shiny)
 library(shinyjs)
-
+library(dplyr)
+library(tidyverse)
 
 
 
@@ -33,17 +34,17 @@ shinyServer(function(input, output,session) {
     SelDise = as.list.data.frame(input$disFil)
     checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
     SelDrug = as.list.data.frame(input$drugFil)
-    checkDrugSel = browse_tbl %>% select(NCT,disp_cohorts) %>% unnest(disp_cohorts) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
+    checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
     completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT )
-  #  print(completeList)
+    print(completeList)
     # if (is.null(checkLoc()) || is.null(checkDrug()) || is.null(checkDise()) || is.null(checkStage()) ) {
     #   return(NULL)
     # }
    filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct()  # Filter based on the interactive input 
-     
+   #filTb$disp_biomarkers <- filTb$arm[[1]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
       #filter(NCT %in% c(checkLoc(),checkDrug(),checkDise(),checkStage() ))
    output$filterbrowse <- renderReactable({
-   reactable(filTb %>% select( Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation),
+   reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease,disp_biomarkers, Documentation),
              filterable = TRUE,
              #searchable = TRUE,
              resizable = TRUE,
@@ -133,8 +134,8 @@ shinyServer(function(input, output,session) {
   # main display table for BROWSE
   output$browsetable <- renderReactable({
   
-     selecTrial$comTb = browse_tbl
-      reactable(selecTrial$comTb %>% select( Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation),
+     selecTrial$comTb = as_tibble(browse_tbl)
+     reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers,Documentation),
                 filterable = TRUE,
                 #searchable = TRUE,
                 resizable = TRUE,
