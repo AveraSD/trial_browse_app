@@ -132,7 +132,20 @@ shinyUI(fluidPage(
                           
                         )),
                  
-               
+                column(4,
+                       
+                       # style = "display: inline-block;",
+                       #style = "margin-top: 15px;",
+                       radioButtons(
+                         inputId = "filtercond",
+                         label = "And or selection",
+                         choices = c("and", "or"),
+                         # multiple = F,
+                         #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
+                         width = "400px"
+                         
+                       )),
+                
                  column(4 ),
                  column(4,
                         #style = "display: inline-block;",

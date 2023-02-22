@@ -41,15 +41,29 @@ shinyServer(function(input, output,session) {
     checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
     
     
-    completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT,checklineoftxSel$NCT )
-    print(completeList)
+    #completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT,checklineoftxSel$NCT )
+    #print(completeList)
     
     
     # if (is.null(checkLoc()) || is.null(checkDrug()) || is.null(checkDise()) || is.null(checkStage()) ) {
     #   return(NULL)
     # }
-   filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct() 
+   #filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct() 
 
+   
+   if(input$filtercond == "and")
+   {
+     filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) & (NCT %in% checkDiseSel$NCT) & (NCT %in% checklineoftxSel$NCT & (NCT %in% checkDrugSel$NCT))))
+     
+   }
+   else 
+   {
+     filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) | (NCT %in% checkDiseSel$NCT) | (NCT %in% checklineoftxSel$NCT | (NCT %in% checkDrugSel$NCT))))
+   }
+   
+   
+   
+   
    
    # Filter based on the interactive input 
    #filTb$disp_biomarkers <- filTb$arm[[1]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
@@ -140,6 +154,7 @@ shinyServer(function(input, output,session) {
    updateSelectInput(inputId = "disFil",selected = "")
    updateSelectInput(inputId = "drugFil",selected = "")
    updateSelectInput(inputId = "locaFil",selected = "")
+   updateSelectInput(inputId = "lineofTxFil",selected = "")
  })
 
   ##### BROWSE ########b
@@ -229,6 +244,11 @@ shinyServer(function(input, output,session) {
   # collapse button
   observeEvent(input$collapse_btn_browse, {
     updateReactable("browsetable", expanded = FALSE)
+  })
+  
+  
+  observeEvent(input$collapse_btn_browse, {
+    updateReactable("filterbrowse", expanded = FALSE)
   })
   
   ##### MATCH ########
