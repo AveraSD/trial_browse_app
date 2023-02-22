@@ -36,7 +36,10 @@ shinyUI(fluidPage(
      
       tabPanel("Browse",
                wellPanel(fluidRow(
+                 
                  column(4,
+                 
+                 
                  selectInput(
                    inputId = "stageView",
                    label = "Disease Stages",
@@ -61,7 +64,7 @@ shinyUI(fluidPage(
                  # 
                  # ),
                  column(4,
-
+                        
                         # style = "display: inline-block;",
                         #style = "margin-top: 15px;",
                         selectInput(
@@ -80,7 +83,7 @@ shinyUI(fluidPage(
                  # 
                  # ),
                  column(4,
-                        
+                          
                         # style = "display: inline-block;",
                         #style = "margin-top: 15px;",
                         selectInput(
@@ -98,6 +101,23 @@ shinyUI(fluidPage(
                  #        actionButton("drug_fil", " ",icon = shiny::icon("filter"),size = "sm")
                  #        
                  # ),
+                 
+                 
+                #added line of therapy
+                 column(4,
+                        
+                        # style = "display: inline-block;",
+                        #style = "margin-top: 15px;",
+                        selectInput(
+                          inputId = "lineofTxFil",
+                          label = "Line of therapy",
+                          choices = c(lineoftxAv$line_of_therapy),
+                          multiple = T,
+                          #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
+                          width = "400px"
+                          
+                        )),
+                 
                  column(4,
                         
                         # style = "display: inline-block;",
@@ -111,6 +131,8 @@ shinyUI(fluidPage(
                           width = "400px"
                           
                         )),
+                 
+               
                  column(4 ),
                  column(4,
                         #style = "display: inline-block;",

@@ -44,13 +44,18 @@ for (i in 1:nrow(browse_tbl)) {
   n <- browse_tbl$arm[[i]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
   browse_tbl$disp_biomarkers[i] <- n
 }
+
 #browse_tbl$disp_biomarkers <- browse_tbl$arm[[1]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
 #browse_tbl <- browse_tbl %>% select(arm) %>% unnest(biomarker) %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
 #source(here("R", "panel_browse.R"))
+
 drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
 diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
 stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% select(stage) %>% distinct()
 locAv = browse_tbl %>% select(Location) %>% distinct()
+
+#Added line of therapy for filtering
+lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(line_of_therapy) %>% distinct()
 
 #NCTselected=result %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug == "MRTX849 in Combination with Pembrolizumab") %>% select(NCT)
 #browse_tbl = browse_tbl %>% filter(NCT %in% NCTselected$NCT)

@@ -35,14 +35,26 @@ shinyServer(function(input, output,session) {
     checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
     SelDrug = as.list.data.frame(input$drugFil)
     checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
-    completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT )
+   
+    #filter entries for line_of_therapy
+    SelLineofTx = as.list.data.frame(input$lineofTxFil)
+    checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
+    
+    
+    completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT,checklineoftxSel$NCT )
     print(completeList)
+    
+    
     # if (is.null(checkLoc()) || is.null(checkDrug()) || is.null(checkDise()) || is.null(checkStage()) ) {
     #   return(NULL)
     # }
-   filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct()  # Filter based on the interactive input 
+   filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct() 
+
+   
+   # Filter based on the interactive input 
    #filTb$disp_biomarkers <- filTb$arm[[1]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
       #filter(NCT %in% c(checkLoc(),checkDrug(),checkDise(),checkStage() ))
+   
    output$filterbrowse <- renderReactable({
    reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease,disp_biomarkers, Documentation),
              filterable = TRUE,
@@ -56,7 +68,7 @@ shinyServer(function(input, output,session) {
              #columns = list(Trial = colDef(html = TRUE)),
              columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"),Disease = colDef(name = "Conditions/Disease"),
                             disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
-             details = function(index) {
+             details = function(index) { 
                
                # create table for cohort level information
                
@@ -135,7 +147,11 @@ shinyServer(function(input, output,session) {
   output$browsetable <- renderReactable({
   
      selecTrial$comTb = as_tibble(browse_tbl)
-     reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers,Documentation),
+     
+  #selecTrial$comTb %>% select(arm) %>% unnest(arm) %>% select(line_of_therapy)
+     
+     
+     reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation),
                 filterable = TRUE,
                 #searchable = TRUE,
                 resizable = TRUE,
