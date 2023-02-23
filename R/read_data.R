@@ -57,5 +57,7 @@ locAv = browse_tbl %>% select(Location) %>% distinct()
 #Added line of therapy for filtering
 lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(line_of_therapy) %>% distinct()
 
+#lineoftxAv = c("1","2","3","1 2", "1 2 3", "2+")
+
 #NCTselected=result %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug == "MRTX849 in Combination with Pembrolizumab") %>% select(NCT)
 #browse_tbl = browse_tbl %>% filter(NCT %in% NCTselected$NCT)

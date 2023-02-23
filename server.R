@@ -54,13 +54,16 @@ shinyServer(function(input, output,session) {
    if(input$filtercond == "and")
    {
      filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) & (NCT %in% checkDiseSel$NCT) & (NCT %in% checklineoftxSel$NCT & (NCT %in% checkDrugSel$NCT))))
-     
+     print(filTb)
    }
-   else 
+   else if(input$filtercond == "or") 
    {
      filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) | (NCT %in% checkDiseSel$NCT) | (NCT %in% checklineoftxSel$NCT | (NCT %in% checkDrugSel$NCT))))
+     print(filTb)
    }
-   
+   # else {
+   #   print("No matching trials found")
+   # }
    
    
    

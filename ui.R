@@ -112,6 +112,7 @@ shinyUI(fluidPage(
                           inputId = "lineofTxFil",
                           label = "Line of therapy",
                           choices = c(lineoftxAv$line_of_therapy),
+                         #choices = c("1","2","3","1 2", "1 2 3", "2+"),
                           multiple = T,
                           #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
                           width = "400px"
@@ -138,8 +139,8 @@ shinyUI(fluidPage(
                        #style = "margin-top: 15px;",
                        radioButtons(
                          inputId = "filtercond",
-                         label = "And or selection",
-                         choices = c("and", "or"),
+                         label = "Please select condition for criteria (And/Or) ",
+                         choices = c("and", "or"), selected = character(0),
                          # multiple = F,
                          #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
                          width = "400px"
