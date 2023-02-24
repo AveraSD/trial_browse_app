@@ -55,9 +55,13 @@ stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separ
 locAv = browse_tbl %>% select(Location) %>% distinct()
 
 #Added line of therapy for filtering
-lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(line_of_therapy) %>% distinct()
+#lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(line_of_therapy) %>% distinct()
 
-#lineoftxAv = c("1","2","3","1 2", "1 2 3", "2+")
+lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = c(";")) %>% separate_rows(line_of_therapy,sep = c(",")) %>% select(line_of_therapy) %>% distinct() 
+
+#lineoftxAv_sel$line_of_therapy <- gsub('\\s+', '', lineoftxAv$line_of_therapy)
+lineoftxAv_sel<- stringr::str_squish(lineoftxAv$line_of_therapy) %>% as.data.frame() %>% distinct()
+
 
 #NCTselected=result %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug == "MRTX849 in Combination with Pembrolizumab") %>% select(NCT)
 #browse_tbl = browse_tbl %>% filter(NCT %in% NCTselected$NCT)

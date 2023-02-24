@@ -29,17 +29,17 @@ shinyServer(function(input, output,session) {
     # To stop errors popping up in app if nothing is chosen by default
     SelStage = as.list.data.frame(input$stageView)
    # print(SelStage)
-    checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct()
+    checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct()
  #   print(checkStageSel)
     SelDise = as.list.data.frame(input$disFil)
-    checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";")%>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
+    checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
     SelDrug = as.list.data.frame(input$drugFil)
     checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
    
     #filter entries for line_of_therapy
     SelLineofTx = as.list.data.frame(input$lineofTxFil)
-    checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
-    
+    checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = ";") %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
+    print(checklineoftxSel)
     
     #completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT,checklineoftxSel$NCT )
     #print(completeList)
@@ -53,12 +53,13 @@ shinyServer(function(input, output,session) {
    
    if(input$filtercond == "and")
    {
-     filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) & (NCT %in% checkDiseSel$NCT) & (NCT %in% checklineoftxSel$NCT & (NCT %in% checkDrugSel$NCT))))
+     filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) & (NCT %in% checkDiseSel$NCT) & (NCT %in% checklineoftxSel$NCT) & (NCT %in% checkDrugSel$NCT)))
+     
      print(filTb)
    }
    else if(input$filtercond == "or") 
    {
-     filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) | (NCT %in% checkDiseSel$NCT) | (NCT %in% checklineoftxSel$NCT | (NCT %in% checkDrugSel$NCT))))
+     filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) | (NCT %in% checkDiseSel$NCT) | (NCT %in% checklineoftxSel$NCT) | (NCT %in% checkDrugSel$NCT)))
      print(filTb)
    }
    # else {
@@ -158,6 +159,7 @@ shinyServer(function(input, output,session) {
    updateSelectInput(inputId = "drugFil",selected = "")
    updateSelectInput(inputId = "locaFil",selected = "")
    updateSelectInput(inputId = "lineofTxFil",selected = "")
+   updateRadioButtons(inputId = "filtercond", selected = character(0))
  })
 
   ##### BROWSE ########b

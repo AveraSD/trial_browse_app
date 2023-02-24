@@ -111,8 +111,13 @@ shinyUI(fluidPage(
                         selectInput(
                           inputId = "lineofTxFil",
                           label = "Line of therapy",
-                          choices = c(lineoftxAv$line_of_therapy),
+                          #choices = c(lineoftxAv$line_of_therapy),
                          #choices = c("1","2","3","1 2", "1 2 3", "2+"),
+                         
+                         choices = c(lineoftxAv_sel$.),
+                         
+                         
+                         
                           multiple = T,
                           #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
                           width = "400px"
