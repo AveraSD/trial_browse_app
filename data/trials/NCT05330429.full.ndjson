@@ -39,7 +39,7 @@
           "cohortlabel": "Safety Run-in Cohort: Magrolimab + Bevacizumab + FOLFIRI",
           "drug": "Magrolimab | Bevacizumab | Irinotecan | Fluorouracil | Leucovorin",
           "arm_type": "Experimental",
-          "line_of_therapy": "1,2+",
+          "line_of_therapy": "1;2+",
           "arm_hold_status": "on hold",
           "biomarker": [
             {
@@ -79,7 +79,7 @@
           "cohortlabel": "Randomized Cohort: Magrolimab + Bevacizumab + FOLFIRI",
           "drug": "Magrolimab | Bevacizumab | Irinotecan | Fluorouracil | Leucovorin",
           "arm_type": "Experimental",
-          "line_of_therapy": "1,2+",
+          "line_of_therapy": "1;2+",
           "arm_hold_status": "on hold",
           "biomarker": [
             {
@@ -119,7 +119,7 @@
           "cohortlabel": "Randomized Cohort: Bevacizumab + FOLFIRI",
           "drug": "Bevacizumab | Irinotecan | Fluorouracil | Leucovorin | NA",
           "arm_type": "Active Comparator",
-          "line_of_therapy": "1,2+",
+          "line_of_therapy": "1;2+",
           "arm_hold_status": "on hold",
           "biomarker": [
             {

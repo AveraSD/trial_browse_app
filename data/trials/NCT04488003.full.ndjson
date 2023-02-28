@@ -59,7 +59,7 @@
           "cohortlabel": "Part A: Ulixertinib",
           "drug": "Ulixertinib",
           "arm_type": "Experimental",
-          "line_of_therapy": "1,2,3+",
+          "line_of_therapy": "1;2;3+",
           "arm_hold_status": "closed",
           "biomarker": [
             {
@@ -169,7 +169,7 @@
           "cohortlabel": "Part B: Ulixertinib",
           "drug": "Ulixertinib",
           "arm_type": "Experimental",
-          "line_of_therapy": "1,2,3+",
+          "line_of_therapy": "1;2;3+",
           "arm_hold_status": "closed",
           "biomarker": [
             {
@@ -229,7 +229,7 @@
           "cohortlabel": "Part B: Physician's choice of treatment",
           "drug": "Physician's Choice",
           "arm_type": "Experimental",
-          "line_of_therapy": "1,2,3+",
+          "line_of_therapy": "1;2;3+",
           "arm_hold_status": "closed",
           "biomarker": [
             {

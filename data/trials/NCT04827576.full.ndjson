@@ -44,7 +44,7 @@
           "cohortlabel": "Safety Run-in Cohort 1, mNSCLC, mUC, mSCLC (Magrolimab + Docetaxel)",
           "drug": "Magrolimab | Docetaxel",
           "arm_type": "Experimental",
-          "line_of_therapy": "1 ; 2 ; 3",
+          "line_of_therapy": "1;2;3",
           "arm_hold_status": "Not available",
           "biomarker": [
             {
@@ -64,7 +64,7 @@
           "cohortlabel": "Phase 2 Cohort 1a, mNSCLC (Magrolimab + Docetaxel)",
           "drug": "Magrolimab | Docetaxel",
           "arm_type": "Experimental",
-          "line_of_therapy": "1 ; 2",
+          "line_of_therapy": "1;2",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -84,7 +84,7 @@
           "cohortlabel": "Phase 2 Cohort 1b, mUC (Magrolimab + Docetaxel)",
           "drug": "Magrolimab | Docetaxel",
           "arm_type": "Experimental",
-          "line_of_therapy": "2 ; 3",
+          "line_of_therapy": "2;3",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -104,7 +104,7 @@
           "cohortlabel": "Phase 2 Cohort 1c, mSCLC (Magrolimab + Docetaxel)",
           "drug": "Magrolimab | Docetaxel",
           "arm_type": "Experimental",
-          "line_of_therapy": "1 ; 2",
+          "line_of_therapy": "1;2",
           "arm_hold_status": "open",
           "biomarker": [
             {

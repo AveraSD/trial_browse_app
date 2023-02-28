@@ -79,7 +79,7 @@
           "cohortlabel": "Single-Arm",
           "drug": "APL-101 Oral Capsules",
           "arm_type": "Experimental",
-          "line_of_therapy": "1; 2; 3+",
+          "line_of_therapy": "1;2;3+",
           "arm_hold_status": "open",
           "biomarker": [
             {

@@ -36,19 +36,12 @@ shinyServer(function(input, output,session) {
     SelDrug = as.list.data.frame(input$drugFil)
     checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
    
-    #filter entries for line_of_therapy
     SelLineofTx = as.list.data.frame(input$lineofTxFil)
     checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = ";") %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
     print(checklineoftxSel)
     
     #completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT,checklineoftxSel$NCT )
     #print(completeList)
-    
-    
-    # if (is.null(checkLoc()) || is.null(checkDrug()) || is.null(checkDise()) || is.null(checkStage()) ) {
-    #   return(NULL)
-    # }
-   #filTb = browse_tbl  %>% filter(NCT %in% completeList ) %>% distinct() 
 
    
    if(input$filtercond == "and")
