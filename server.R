@@ -90,120 +90,6 @@ shinyServer(function(input, output,session) {
     }
 
 
-  #  matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT) )
-  #  ntb = as.data.frame(table(matchList))
-  #  print(ntb)
-    
-    # ----------------------------------------------------------------------------------------------------------------------- #
-    # part 1 options 
-     # 
-    # if(!is.na(checkStageSel$NCT) || !is.na(checkDiseSel$NCT) || !is.na(checkDrugSel$NCT) || !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT) )
-    #   ntb = table(matchList)
-    #   #completeList = ntb %>% filter(n = 1) %>% .$x
-    #   
-    # }else
-    # if(!is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all four options
-    #  matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT) )
-    #  ntb = table(matchList)
-    # # completeList = ntb %>% filter(n >= 3) %>% .$x
-    #   
-    # }else if(!is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all stage disease drug options
-    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT))
-    #   ntb = table(matchList)
-    #   print("stage disease drug options")
-    #   print(ntb)
-    #   #completeList = ntb %>% filter(n >= 2) %>% .$x
-    #   
-    # }else if(!is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all stage disease line of therapy options
-    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checklineoftxSel$NCT))
-    #   ntb = table(matchList)
-    #  # completeList = ntb %>% filter(n >= 2) %>% .$x
-    #   
-    #   
-    # }else if(is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all disease drug line of therapy options
-    #   matchList = c(unique(checkDiseSel$NCT),  unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT))
-    #   ntb = table(matchList)
-    #  # completeList = ntb %>% filter(n >= 2) %>% .$x
-    #   
-    # }else if(!is.na(checkStageSel$NCT) & is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all stage drug line of therapy options
-    #   matchList = c(unique(checkStageSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT))
-    #   ntb = table(matchList)
-    #   print(" stage drug line of therapy ")
-    #   print(ntb)
-     # completeList = ntb %>% filter(n >= 2) %>% .$x
-      
-      
-    # }else if(!is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all stage disease line of therapy options
-    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checklineoftxSel$NCT))
-    #   ntb = table(matchList)
-    #   completeList = ntb %>% filter(n >= 2) %>% .$x
-    #   
-    #   
-    # }else if(is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all disease drug options
-    #   matchList = c(unique(checkDiseSel$NCT),unique(checkDrugSel$NCT))
-    #   ntb = table(matchList)
-    #   completeList = ntb %>% filter(n = 2) %>% .$x
-    #   
-    #   
-    # }else if(!is.na(checkStageSel$NCT) & is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all stage drug options
-    #   matchList = c(unique(checkStageSel$NCT),unique(checkDrugSel$NCT))
-    #   ntb = table(matchList)
-    #   completeList = ntb %>% filter(n = 2) %>% .$x
-    #   
-    #   
-    # }else if(is.na(checkStageSel$NCT) & is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all drug line of therapy options
-    #   matchList = c(unique(checklineoftxSel$NCT),unique(checkDrugSel$NCT))
-    #   ntb = table(matchList)
-    #   completeList = ntb %>% filter(n = 2) %>% .$x
-    #   
-    #   
-    # }else if(is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all disease line of therapy options
-    #   matchList = c(unique(checklineoftxSel$NCT),unique(checkDiseSel$NCT))
-    #   ntb = table(matchList)
-    #   completeList = ntb %>% filter(n = 2) %>% .$x
-    #   
-    #   
-    # }else if(!is.na(checkStageSel$NCT) & is.na(checkDiseSel$NCT) & is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
-    #   
-    #   # in all stage line of therapy options
-    #   matchList = c(unique(checklineoftxSel$NCT),unique(checkStageSel$NCT) )
-    #   ntb = table(matchList)
-    #   completeList = ntb %>% filter(n = 2) %>% .$x
-    #   
-    # }else{
-    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT) )
-    #      ntb = table(matchList)
-    # }
-    # 
-   
-    #%>% filter(NCT %in% completeList)
-  
-    
-    #completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT,checklineoftxSel$NCT )
-    #print(completeList)
-
     # ----------------------------------------------------------------------------------------------------------------------- #
    filTb = browse_tbl %>% filter(NCT %in% completeList )
    
@@ -371,13 +257,7 @@ shinyServer(function(input, output,session) {
                     
                   )
                 })
-  
- #    }
- #    else {
- #      if(!is.null(input$loc_fil)) {
-      
- #    }
-   # display_browse_db # from panel_browse.R
+
   })
   
   # collapse button

@@ -52,17 +52,7 @@ shinyUI(fluidPage(
                    width = "400px"
                    
                   )),
-                 # column(4,
-                 #        
-                 #        #  style = "display: inline-block;",
-                 #        #style = "margin-top: 10px;",
-                 #        ),
-                 # column(2,
-                 #        #style = "display: inline-block;",
-                 #        # style = "margin-top: 10px;",
-                 #        actionButton("filter_stage", " ",icon = shiny::icon("filter"),size = "sm")
-                 # 
-                 # ),
+                 
                  column(4,
                         
                         # style = "display: inline-block;",
@@ -76,12 +66,7 @@ shinyUI(fluidPage(
                           width = "400px"
 
                         )),
-                 # column(2,
-                 #        #style = "display: inline-block;",
-                 #        # style = "margin-top: 15px;",
-                 #        actionButton("dise_fil", " ",icon = shiny::icon("filter"),size = "sm")
-                 # 
-                 # ),
+                
                  column(4,
                           
                         # style = "display: inline-block;",
@@ -95,13 +80,7 @@ shinyUI(fluidPage(
                           width = "400px"
                           
                         )),
-                 # column(2,
-                 #        #style = "display: inline-block;",
-                 #        # style = "margin-top: 15px;",
-                 #        actionButton("drug_fil", " ",icon = shiny::icon("filter"),size = "sm")
-                 #        
-                 # ),
-                 
+                
                  
                 #added line of therapy
                  column(4,
@@ -137,22 +116,6 @@ shinyUI(fluidPage(
                           width = "400px"
                           
                         )),
-                 
-                # column(4,
-                #        
-                #        # style = "display: inline-block;",
-                #        #style = "margin-top: 15px;",
-                #        radioButtons(
-                #          inputId = "filtercond",
-                #          label = "Please select condition for criteria (And/Or) ",
-                #          choices = c("and", "or"), selected = character(0),
-                #          # multiple = F,
-                #          #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
-                #          width = "400px"
-                #          
-                #        )),
-                
-                # column(4 ),
                  column(4,
                         #style = "display: inline-block;",
                         # style = "margin-top: 15px;",

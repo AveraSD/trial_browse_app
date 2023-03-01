@@ -45,14 +45,10 @@ for (i in 1:nrow(browse_tbl)) {
   browse_tbl$disp_biomarkers[i] <- n
 }
 
-for (i in 1:nrow(browse_tbl)) {
-  n <- browse_tbl$arm[[i]] %>% bind_rows()%>% separate_rows(line_of_therapy,sep =";") %>% select(line_of_therapy) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = " | ")
-  browse_tbl$lnOfTherapy[i] <- n
+for (e in 1:nrow(browse_tbl)) {
+  se <- browse_tbl$arm[[e]] %>% bind_rows()%>% separate_rows(line_of_therapy,sep =";") %>% select(line_of_therapy) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = " | ")
+  browse_tbl$lnOfTherapy[e] <- se
 }
-
-#browse_tbl$disp_biomarkers <- browse_tbl$arm[[1]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
-#browse_tbl <- browse_tbl %>% select(arm) %>% unnest(biomarker) %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
-#source(here("R", "panel_browse.R"))
 
 
 # Make dataframe for each of the filtration criteria - for now - Drug, cancer type, stage, location and line of therapy 
