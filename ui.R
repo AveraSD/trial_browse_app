@@ -114,7 +114,7 @@ shinyUI(fluidPage(
                           #choices = c(lineoftxAv$line_of_therapy),
                          #choices = c("1","2","3","1 2", "1 2 3", "2+"),
                          
-                         choices = c(lineoftxAv_sel$.),
+                         choices = c(lineoftxAv$line_of_therapy),
                          
                          
                          
@@ -138,21 +138,21 @@ shinyUI(fluidPage(
                           
                         )),
                  
-                column(4,
-                       
-                       # style = "display: inline-block;",
-                       #style = "margin-top: 15px;",
-                       radioButtons(
-                         inputId = "filtercond",
-                         label = "Please select condition for criteria (And/Or) ",
-                         choices = c("and", "or"), selected = character(0),
-                         # multiple = F,
-                         #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
-                         width = "400px"
-                         
-                       )),
+                # column(4,
+                #        
+                #        # style = "display: inline-block;",
+                #        #style = "margin-top: 15px;",
+                #        radioButtons(
+                #          inputId = "filtercond",
+                #          label = "Please select condition for criteria (And/Or) ",
+                #          choices = c("and", "or"), selected = character(0),
+                #          # multiple = F,
+                #          #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
+                #          width = "400px"
+                #          
+                #        )),
                 
-                 column(4 ),
+                # column(4 ),
                  column(4,
                         #style = "display: inline-block;",
                         # style = "margin-top: 15px;",

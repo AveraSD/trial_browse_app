@@ -45,23 +45,22 @@ for (i in 1:nrow(browse_tbl)) {
   browse_tbl$disp_biomarkers[i] <- n
 }
 
+for (i in 1:nrow(browse_tbl)) {
+  n <- browse_tbl$arm[[i]] %>% bind_rows()%>% separate_rows(line_of_therapy,sep =";") %>% select(line_of_therapy) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = " | ")
+  browse_tbl$lnOfTherapy[i] <- n
+}
+
 #browse_tbl$disp_biomarkers <- browse_tbl$arm[[1]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
 #browse_tbl <- browse_tbl %>% select(arm) %>% unnest(biomarker) %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
 #source(here("R", "panel_browse.R"))
+
+
+# Make dataframe for each of the filtration criteria - for now - Drug, cancer type, stage, location and line of therapy 
 
 drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
 diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
 stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% select(stage) %>% distinct()
 locAv = browse_tbl %>% select(Location) %>% distinct()
 
-#Added line of therapy for filtering
-#lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(line_of_therapy) %>% distinct()
+lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = c(";")) %>% select(line_of_therapy) %>% distinct() 
 
-lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = c(";")) %>% separate_rows(line_of_therapy,sep = c(",")) %>% select(line_of_therapy) %>% distinct() 
-
-#lineoftxAv_sel$line_of_therapy <- gsub('\\s+', '', lineoftxAv$line_of_therapy)
-lineoftxAv_sel<- stringr::str_squish(lineoftxAv$line_of_therapy) %>% as.data.frame() %>% distinct()
-
-
-#NCTselected=result %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug == "MRTX849 in Combination with Pembrolizumab") %>% select(NCT)
-#browse_tbl = browse_tbl %>% filter(NCT %in% NCTselected$NCT)

@@ -161,6 +161,7 @@ loadDbData <- function() {
  #db_tbl$arms <- list(db_tbl$arm[[1]] %>% unnest(biomarker))
   
  db_tbl$disp_biomarkers <- "NA"
+ db_tbl$lnOfTherapy <- "NA"
    #db_tbl$arm[[1]]$biomarker %>% bind_rows() %>%
 #    select(summary) %>% distinct() %>%
 #    unlist() %>%
@@ -172,4 +173,4 @@ loadDbData <- function() {
 
 
 source(here("R", "read_data.R"))
-#source(here("R", "browseUi.R"))
+

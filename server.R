@@ -24,50 +24,191 @@ shinyServer(function(input, output,session) {
   #filtered <- eventReactive(input$loc_fil,{
   observeEvent(input$loc_fil,{
     
+    # To stop errors popping up in app if nothing is chosen by default
     shinyjs::hide(id = "browsetable")
     shinyjs::show(id = "filterbrowse")
-    # To stop errors popping up in app if nothing is chosen by default
+    
+    # selection 
     SelStage = as.list.data.frame(input$stageView)
-   # print(SelStage)
     checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct()
- #   print(checkStageSel)
+    print(isTRUE(SelStage))
+    print(length(checkStageSel$NCT))
     SelDise = as.list.data.frame(input$disFil)
     checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
-    SelDrug = as.list.data.frame(input$drugFil)
+   
+     SelDrug = as.list.data.frame(input$drugFil)
     checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
    
     SelLineofTx = as.list.data.frame(input$lineofTxFil)
     checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = ";") %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
-    print(checklineoftxSel)
+   
+    SelLocat = as.list.data.frame(input$locaFil)
+    checklocat = browse_tbl %>% select(NCT,Location) %>% filter(Location %in%  SelLocat) %>% select(NCT) %>% distinct()
+    
+    
+    # ----------------------------------------------------------------------------------------------------------------------- #
+    # part 2 options 
+    if(length(checkStageSel$NCT) >= 1  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0){
+
+      # in all four options
+      completeList = c(unique(checkStageSel$NCT))
+      print(completeList)
+
+    }else if(length(checkStageSel$NCT) ==0  && length(checkDiseSel$NCT) >=1 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0){
+
+      # in all disease options
+      completeList = c( unique(checkDiseSel$NCT))
+      print(completeList)
+      
+    }else if(length(checkStageSel$NCT) ==0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) >=1 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0 ){
+
+      # in all Drug options
+      completeList =  c(unique(checkDrugSel$NCT))
+      print(completeList)
+
+
+    }else if(length(checkStageSel$NCT) == 0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) >= 1 && length(checklocat$NCT) == 0 ){
+
+      # in all line of therapy option
+      completeList = c(unique(checklineoftxSel$NCT))
+      print(completeList)
+
+    }else if(length(checkStageSel$NCT) == 0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) >=1  ){
+      
+      # in all Location option
+      completeList = c(unique(checklineoftxSel$NCT))
+      
+    }else{
+      
+      matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT), unique(checklocat$NCT) )
+      ntb = as.data.frame(table(matchList))
+      maxNb = max(ntb$Freq)
+      ntb = ntb %>% filter(Freq >= maxNb )
+      completeList = c(ntb$matchList)
+      print(completeList)
+      
+    }
+
+
+  #  matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT) )
+  #  ntb = as.data.frame(table(matchList))
+  #  print(ntb)
+    
+    # ----------------------------------------------------------------------------------------------------------------------- #
+    # part 1 options 
+     # 
+    # if(!is.na(checkStageSel$NCT) || !is.na(checkDiseSel$NCT) || !is.na(checkDrugSel$NCT) || !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT) )
+    #   ntb = table(matchList)
+    #   #completeList = ntb %>% filter(n = 1) %>% .$x
+    #   
+    # }else
+    # if(!is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all four options
+    #  matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT) )
+    #  ntb = table(matchList)
+    # # completeList = ntb %>% filter(n >= 3) %>% .$x
+    #   
+    # }else if(!is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all stage disease drug options
+    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT))
+    #   ntb = table(matchList)
+    #   print("stage disease drug options")
+    #   print(ntb)
+    #   #completeList = ntb %>% filter(n >= 2) %>% .$x
+    #   
+    # }else if(!is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all stage disease line of therapy options
+    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checklineoftxSel$NCT))
+    #   ntb = table(matchList)
+    #  # completeList = ntb %>% filter(n >= 2) %>% .$x
+    #   
+    #   
+    # }else if(is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all disease drug line of therapy options
+    #   matchList = c(unique(checkDiseSel$NCT),  unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT))
+    #   ntb = table(matchList)
+    #  # completeList = ntb %>% filter(n >= 2) %>% .$x
+    #   
+    # }else if(!is.na(checkStageSel$NCT) & is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all stage drug line of therapy options
+    #   matchList = c(unique(checkStageSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT))
+    #   ntb = table(matchList)
+    #   print(" stage drug line of therapy ")
+    #   print(ntb)
+     # completeList = ntb %>% filter(n >= 2) %>% .$x
+      
+      
+    # }else if(!is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all stage disease line of therapy options
+    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checklineoftxSel$NCT))
+    #   ntb = table(matchList)
+    #   completeList = ntb %>% filter(n >= 2) %>% .$x
+    #   
+    #   
+    # }else if(is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all disease drug options
+    #   matchList = c(unique(checkDiseSel$NCT),unique(checkDrugSel$NCT))
+    #   ntb = table(matchList)
+    #   completeList = ntb %>% filter(n = 2) %>% .$x
+    #   
+    #   
+    # }else if(!is.na(checkStageSel$NCT) & is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all stage drug options
+    #   matchList = c(unique(checkStageSel$NCT),unique(checkDrugSel$NCT))
+    #   ntb = table(matchList)
+    #   completeList = ntb %>% filter(n = 2) %>% .$x
+    #   
+    #   
+    # }else if(is.na(checkStageSel$NCT) & is.na(checkDiseSel$NCT) & !is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all drug line of therapy options
+    #   matchList = c(unique(checklineoftxSel$NCT),unique(checkDrugSel$NCT))
+    #   ntb = table(matchList)
+    #   completeList = ntb %>% filter(n = 2) %>% .$x
+    #   
+    #   
+    # }else if(is.na(checkStageSel$NCT) & !is.na(checkDiseSel$NCT) & is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all disease line of therapy options
+    #   matchList = c(unique(checklineoftxSel$NCT),unique(checkDiseSel$NCT))
+    #   ntb = table(matchList)
+    #   completeList = ntb %>% filter(n = 2) %>% .$x
+    #   
+    #   
+    # }else if(!is.na(checkStageSel$NCT) & is.na(checkDiseSel$NCT) & is.na(checkDrugSel$NCT) & !is.na(checklineoftxSel$NCT) ){
+    #   
+    #   # in all stage line of therapy options
+    #   matchList = c(unique(checklineoftxSel$NCT),unique(checkStageSel$NCT) )
+    #   ntb = table(matchList)
+    #   completeList = ntb %>% filter(n = 2) %>% .$x
+    #   
+    # }else{
+    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT) )
+    #      ntb = table(matchList)
+    # }
+    # 
+   
+    #%>% filter(NCT %in% completeList)
+  
     
     #completeList = c(checkStageSel$NCT, checkDiseSel$NCT,checkDrugSel$NCT,checklineoftxSel$NCT )
     #print(completeList)
 
-   
-   if(input$filtercond == "and")
-   {
-     filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) & (NCT %in% checkDiseSel$NCT) & (NCT %in% checklineoftxSel$NCT) & (NCT %in% checkDrugSel$NCT)))
-     
-     print(filTb)
-   }
-   else if(input$filtercond == "or") 
-   {
-     filTb = subset(browse_tbl, ((NCT %in% checkStageSel$NCT) | (NCT %in% checkDiseSel$NCT) | (NCT %in% checklineoftxSel$NCT) | (NCT %in% checkDrugSel$NCT)))
-     print(filTb)
-   }
-   # else {
-   #   print("No matching trials found")
-   # }
-   
-   
-   
-   
-   # Filter based on the interactive input 
-   #filTb$disp_biomarkers <- filTb$arm[[1]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
-      #filter(NCT %in% c(checkLoc(),checkDrug(),checkDise(),checkStage() ))
+    # ----------------------------------------------------------------------------------------------------------------------- #
+   filTb = browse_tbl %>% filter(NCT %in% completeList )
    
    output$filterbrowse <- renderReactable({
-   reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease,disp_biomarkers, Documentation),
+   reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
              filterable = TRUE,
              #searchable = TRUE,
              resizable = TRUE,
@@ -77,7 +218,7 @@ shinyServer(function(input, output,session) {
              showSortable = TRUE,
              style = list(minWidth = 800),
              #columns = list(Trial = colDef(html = TRUE)),
-             columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"),Disease = colDef(name = "Conditions/Disease"),
+             columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
                             disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
              details = function(index) { 
                
@@ -164,7 +305,7 @@ shinyServer(function(input, output,session) {
   #selecTrial$comTb %>% select(arm) %>% unnest(arm) %>% select(line_of_therapy)
      
      
-     reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, disp_biomarkers, Documentation),
+     reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
                 filterable = TRUE,
                 #searchable = TRUE,
                 resizable = TRUE,
@@ -174,7 +315,7 @@ shinyServer(function(input, output,session) {
                 showSortable = TRUE,
                 style = list(minWidth = 800),
                 #columns = list(Trial = colDef(html = TRUE)),
-                columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"),Disease = colDef(name = "Conditions/Disease"),
+                columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Disease = colDef(name = "Conditions/Disease"),
                                disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
                 details = function(index) {
                   # create tables to be displayed if nested rows are expanded
