@@ -107,7 +107,7 @@ shinyServer(function(input, output,session) {
     
    output$filterbrowse <- renderReactable({
    #reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
-             reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, disp_disease1, Documentation), 
+             reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers,  Documentation), 
                       filterable = TRUE,
              #searchable = TRUE,
              resizable = TRUE,
@@ -121,7 +121,7 @@ shinyServer(function(input, output,session) {
                     #        disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
              
              columns = list( HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
-                            disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE), 
+                            disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
                             Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
                             
                             ),
