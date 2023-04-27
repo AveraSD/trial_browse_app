@@ -121,7 +121,10 @@ shinyServer(function(input, output,session) {
                     #        disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
              
              columns = list( HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
-                            disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
+                            disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE), 
+                            Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
+                            
+                            ),
              details = function(index) { 
                
                # create table for cohort level information
@@ -131,9 +134,9 @@ shinyServer(function(input, output,session) {
                htmltools::div(
                 
                  # group1: general info
-                 reactable(filTb[index, ] %>% select(Name,Sponsor,StudyType, Location, TrialLastUpdate),
+                 reactable(filTb[index, ] %>% select(Link,Name,Sponsor,StudyType, Location, TrialLastUpdate),
                            defaultColDef = colDef(align = "center"),
-                           columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"))
+                           columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"),Link = colDef(html = TRUE,name = "Trial"))
                  ),
                  
                  # group 3: summary
@@ -268,9 +271,9 @@ shinyServer(function(input, output,session) {
                   htmltools::div(
                    
                     # group1: general info
-                    reactable(selecTrial$comTb[index, ] %>% select(Name,Sponsor,StudyType, Location, TrialLastUpdate),
+                    reactable(selecTrial$comTb[index, ] %>% select(Link, Name,Sponsor,StudyType, Location, TrialLastUpdate),
                               defaultColDef = colDef(align = "center"),
-                              columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"))
+                              columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"),Link = colDef(html = TRUE,name = "Trial"))
                     ),
                     
                     # group 3: summary
