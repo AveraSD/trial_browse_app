@@ -7,11 +7,13 @@
 #    http://shiny.rstudio.com/
 #
 
+
+
 library(shiny)
 library(shinyjs)
 library(dplyr)
 library(tidyverse)
-
+library(htmltools)
 
 
 # Define server logic required to draw a histogram
@@ -36,9 +38,9 @@ shinyServer(function(input, output,session) {
     SelDise = as.list.data.frame(input$disFil)
     checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
    
-     SelDrug = as.list.data.frame(input$drugFil)
-    checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
-   
+      SelDrug = as.list.data.frame(input$drugFil)
+     checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
+    # 
     SelLineofTx = as.list.data.frame(input$lineofTxFil)
     checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = ";") %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
    
@@ -91,11 +93,22 @@ shinyServer(function(input, output,session) {
 
 
     # ----------------------------------------------------------------------------------------------------------------------- #
-   filTb = browse_tbl %>% filter(NCT %in% completeList )
    
+    
+    
+    
+    filTb = browse_tbl %>% filter(NCT %in% completeList )
+   
+    ###checking to combine columns april 25
+    #filTb <- filTb %>% mutate(comb_col = html(paste(Documentation, "<br>", Link)))
+    ######## april 25
+    
+    
+    
    output$filterbrowse <- renderReactable({
-   reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
-             filterable = TRUE,
+   #reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
+             reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, disp_disease1, Documentation), 
+                      filterable = TRUE,
              #searchable = TRUE,
              resizable = TRUE,
              fullWidth = TRUE,
@@ -104,7 +117,10 @@ shinyServer(function(input, output,session) {
              showSortable = TRUE,
              style = list(minWidth = 800),
              #columns = list(Trial = colDef(html = TRUE)),
-             columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
+           #  columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
+                    #        disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
+             
+             columns = list( HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
                             disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
              details = function(index) { 
                
@@ -179,30 +195,74 @@ shinyServer(function(input, output,session) {
    updateSelectInput(inputId = "drugFil",selected = "")
    updateSelectInput(inputId = "locaFil",selected = "")
    updateSelectInput(inputId = "lineofTxFil",selected = "")
+   
+   updateSelectInput(inputId = "selcolumns",selected = "")
+   
+   
    updateRadioButtons(inputId = "filtercond", selected = character(0))
  })
 
   ##### BROWSE ########b
   # main display table for BROWSE
+ 
+#browse_tbl <- browse_tbl %>% mutate(comb_col = paste(Documentation,Link, sep="\n"))
+ 
+ 
+ 
   output$browsetable <- renderReactable({
   
      selecTrial$comTb = as_tibble(browse_tbl)
      
   #selecTrial$comTb %>% select(arm) %>% unnest(arm) %>% select(line_of_therapy)
      
+   # selecTrial$comTb <- selecTrial$comTb %>% mutate(comb_col = htmltools::HTML(paste(Documentation,"<br>",Link)))
      
-     reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
-                filterable = TRUE,
-                #searchable = TRUE,
-                resizable = TRUE,
-                fullWidth = TRUE,
-                defaultColDef = colDef(align = "center"),
-                striped = TRUE,
-                showSortable = TRUE,
-                style = list(minWidth = 800),
+     
+   #  selecTrial$comTb <- selecTrial$comTb %>% mutate(comb_col = glue("<a href='{link}'>{Documentation}</a>"))
+     
+   #  reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
+                           reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers, Documentation),    
+                                                 #    reactable::reactable( selecTrial$comTb[, input$selcolumns], 
+                                                 filterable = TRUE,
+                                                 #searchable = TRUE,
+                                                 
+                                                 #       columnDefs = list(list(targets = 4, width = 800)),
+                                                 
+                                                 resizable = TRUE,
+                                                 fullWidth = TRUE,
+                                                 defaultColDef = colDef(align = "center"),
+                                                 striped = TRUE,
+                                                 showSortable = TRUE,
+         
+               # style = list(minWidth = 800), <<< original
+             #  style = list(fontWeight = "bold")  <<< this is for bold all columns working,
+         
                 #columns = list(Trial = colDef(html = TRUE)),
-                columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Disease = colDef(name = "Conditions/Disease"),
-                               disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
+         
+             
+         #old       #columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Disease = colDef(name = "Conditions/Disease"),
+             #oldworking    #              disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
+       
+         
+          # columns = list(colDef("Title", header = "Title", formatter = function(value){HTML(paste0("<b>", value, "</b>"))})),
+       
+         columns = list(HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Disease = colDef(name = "Conditions/Disease"),
+                               disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
+                      Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
+              
+                      #        Title = colDef(name = "Title", minWidth = 300)  
+                   #   Title = colDef(Title = list(fontWeight = "bold"))
+                      
+                      ),
+       #company = colDef(name = "Company", minWidth = 100),
+                 
+        # style = list(".rt-td:nth-child(6)" = list("width" = "1500px"), ".rt-table" = list("width" = "10000px"),
+        #              
+        #              ".rt-th:nth-child(6)" = list("font-weight" = "bold")),
+       
+          
+      # columnProps = list(Title = colDef(style = "font-weight:bold; min-width: 1500px")),
+             
                 details = function(index) {
                   # create tables to be displayed if nested rows are expanded
                   htmltools::div(

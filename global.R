@@ -148,7 +148,13 @@ loadDbData <- function() {
   
   
   db_tbl = db_tbl %>% mutate(disp_disease = db_tbl$details)
+  db_tbl = db_tbl %>% mutate(disp_disease1 = sapply(db_tbl$details, "[[","code"))
+  
+  
   db_tbl = db_tbl %>% mutate(arms = db_tbl$arm)
+  
+ # db_tbl = db_tbl %>% mutate(disp1 = db_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct())
+  
   #db_tbl$disp_disease = list(disp_disease = db_tbl$details[[1]])
   
   # db_tbl$diseasecode <-db_tbl$details[[1]] %>% select(code)
