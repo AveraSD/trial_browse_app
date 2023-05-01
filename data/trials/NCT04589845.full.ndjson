@@ -1,0 +1,336 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04589845",
+      "Protocol_No": "BO41932",
+      "jit": "Optimal",
+      "trial_name": "Roche TAPISTRY"
+    },
+    "disease": {
+      "summary": "locally advanced or metastatic solid tumors determined to harbor specific oncogenic genomic alterations or who are tumor mutational burden (TMB)-high some with excluded NSCLC",
+      "details": [
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "exclude",
+          "stage": "NA"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04589845",
+      "title": "Tumor-Agnostic Precision Immuno-Oncology and Somatic Targeting Rational for You (TAPISTRY) Platform Study",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 30, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Hoffmann-La Roche",
+      "brief_summary": "TAPISTRY is a Phase II, global, multicenter, open-label, multi-cohort study designed to evaluate the safety and efficacy of targeted therapies or immunotherapy as single agents or in rational, specified combinations in participants with unresectable, locally advanced or metastatic solid tumors determined to harbor specific oncogenic genomic alterations or who are tumor mutational burden (TMB)-high as identified by a validated next-generation sequencing (NGS) assay. Participants with solid tumors will be treated with a drug or drug regimen tailored to their NGS assay results at screening. Participants will be assigned to the appropriate cohort based on their genetic alteration(s). Treatment will be assigned on the basis of relevant oncogenotype, will have cohort-specific inclusion/exclusion criteria, and, unless otherwise specified, will continue until disease progression, loss of clinical benefit, unacceptable toxicity, participant or physician decision to discontinue, or death, whichever occurs first.",
+      "conditions": "Solid Tumors",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Cohort A: ROS1 fusion-positive tumors",
+          "drug": "Entrectinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort A: ROS1 fusion-positive tumors",
+              "Gene": "ROS1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "ROS1 Fusion positive  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Cohort B: NTRK1/2/3 fusion-positive tumors",
+          "drug": "Entrectinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort B: NTRK1/2/3 fusion-positive tumors",
+              "Gene": "NTRK1",
+              "Gene2": "NTRK2",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "NTRK1 NTRK2 NTRK3 Fusion positive  "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Cohort C: ALK fusion-positive tumors",
+          "drug": "Alectinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort C: ALK fusion-positive tumors",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "ALK Fusion positive  "
+            },
+            {
+              "cohort": "Cohort C: ALK fusion-positive tumors",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "I1171N",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ALK I1171N Mutation"
+            },
+{
+              "cohort": "Cohort C: ALK fusion-positive tumors",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "I1171S",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ALK I1171S Mutation"
+            },
+            {
+              "cohort": "Cohort C: ALK fusion-positive tumors",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G1202R",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "ALK G1202R Mutation"
+            }
+          ]
+        },
+        {
+          "ArmID": "4",
+          "cohortlabel": "Cohort D: TMB-high tumors",
+          "drug": "Atezolizumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Cohort D: TMB-high tumors",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "TMB",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "high",
+              "summary": "TMB high  "
+            }
+          ]
+        },
+        {
+          "ArmID": "5",
+          "cohortlabel": "Cohort E: AKT1/2/3 mutant-positive tumors",
+          "drug": "Ipatasertib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Cohort E: AKT1/2/3 mutant-positive tumors",
+              "Gene": "AKT1",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "AKT1 Mutation Positive "
+            },
+            {
+              "cohort": "Cohort E: AKT1/2/3 mutant-positive tumors",
+              "Gene": "AKT2",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "AKT2 Mutation Positive "
+            },
+            {
+              "cohort": "Cohort E: AKT1/2/3 mutant-positive tumors",
+              "Gene": "AKT3",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "AKT3 Mutation Positive "
+            }
+          ]
+        },
+        {
+          "ArmID": "6",
+          "cohortlabel": "Cohort F: HER2 mutant-positive tumors",
+          "drug": "Trastuzumab emtansine",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Cohort F: HER2 mutant-positive tumors",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "HER2 Mutation Positive "
+            }
+          ]
+        },
+        {
+          "ArmID": "7",
+          "cohortlabel": "Cohort G: MDM2-amplified, TP53 wild-type tumors",
+          "drug": "Idasanutlin",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Cohort G: MDM2-amplified, TP53 wild-type tumors",
+              "Gene": "MDM2",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MDM2 Amplification "
+            },
+            {
+              "cohort": "Cohort G: MDM2-amplified, TP53 wild-type tumors",
+              "Gene": "TP53",
+              "Gene2": "Not available",
+              "Type": "Wild-Type",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "TP53 Wild-type"
+            }
+          ]
+        },
+        {
+          "ArmID": "8",
+          "cohortlabel": "Cohort H: PIK3CA multiple mutant-positive tumors",
+          "drug": "Inavolisib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort H: PIK3CA multiple mutant-positive tumors",
+              "Gene": "PIK3CA",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "PIK3CA multiple Mutation positive  "
+            }
+          ]
+        },
+        {
+          "ArmID": "9",
+          "cohortlabel": "Cohort I: BRAF class II mutant or fusion-positive tumors",
+          "drug": "Belvarafenib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "on hold",
+          "biomarker": [
+            {
+              "cohort": "Cohort I: BRAF class II mutant or fusion-positive tumors",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class II Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class II Mutation positive  "
+            },
+            {
+              "cohort": "Cohort I: BRAF class II mutant or fusion-positive tumors",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Fusion positive  "
+            }
+          ]
+        },
+        {
+          "ArmID": "10",
+          "cohortlabel": "Cohort J: BRAF class III mutant-positive tumors",
+          "drug": "Belvarafenib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "on hold",
+          "biomarker": [
+            {
+              "cohort": "Cohort J: BRAF class III mutant-positive tumors",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Class III Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "BRAF Class III Mutation positive  "
+            }
+          ]
+        },
+        {
+          "ArmID": "11",
+          "cohortlabel": "Cohort K: RET fusion-positive tumors",
+          "drug": "Pralsetinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort K: RET fusion-positive tumors",
+              "Gene": "RET",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "RET Fusion positive  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "Not Available",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04589845\" target=\"_blank\">NCT04589845<\/a>"
+    }
+  }
+]

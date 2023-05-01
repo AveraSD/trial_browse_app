@@ -1,0 +1,111 @@
+[
+  {
+    "info": {
+      "NCT": "NCT03833154",
+      "Protocol_No": "D9103C00001",
+      "jit": "Tempus",
+      "trial_name": "AstraZeneca PACIFIC-4 "
+    },
+    "disease": {
+      "summary": "Radiation Therapy in Early Stage Unresected Non-small Cell Lung Cancer (NSCLC)  | Unresected NSCLC Harboring an EGFR Mutation  ",
+      "details": [
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include",
+          "stage": "Stage I;Stage II;Un-resectable"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT03833154",
+      "title": "Durvalumab vs Placebo With Stereotactic Body Radiation Therapy in Early Stage Unresected Non-small Cell Lung Cancer (NSCLC) Patients / Osimertinib Following SBRT in Patients With Early Stage Unresected NSCLC Harboring an EGFR Mutation",
+      "current_status": "Recruiting",
+      "status_verif_date": "August 2022",
+      "last_update_date": "August 29, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "AstraZeneca",
+      "brief_summary": "This is a Phase III, randomized, placebo-controlled, double-blind, multi-center study assessing the efficacy and safety of durvalumab with SoC SBRT versus placebo with SoC SBRT in patients with unresected clinical Stage I/II lymph node-negative (T1 to T3N0M0) NSCLC.\n\nAn additional cohort will assess Osimertinib following SBRT in patients with early stage unresected T1 to T3N0M0 NSCLC harbouring an EGFR mutation.",
+      "conditions": "Carcinoma, Non-Small-Cell Lung",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "SoC SBRT + Durvalumab Therapy (Main Cohort)",
+          "drug": "Durvalumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "SoC SBRT + Durvalumab Therapy (Main Cohort)",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "EGFR Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "SoC SBRT + Placebo Therapy (Main Cohort)",
+          "drug": "Other: Placebo",
+          "arm_type": "Placebo Comparator",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "SoC SBRT + Placebo Therapy (Main Cohort)",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "EGFR Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "SoC SBRT + Osimertinib Therapy (Osimertinib cohort, single-arm, separate cohort)",
+          "drug": "Osimertinib (single-arm, open-label)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "SoC SBRT + Osimertinib Therapy (Osimertinib cohort, single-arm, separate cohort)",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "L858R",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "EGFR-TKI sensitivity L858R Mutation  "
+            },
+            {
+              "cohort": "SoC SBRT + Osimertinib Therapy (Osimertinib cohort, single-arm, separate cohort)",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Ex19del",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "EGFR-TKI sensitivity Ex19del Mutation  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://therapies.securetempus.com/\">Tempus<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT03833154\" target=\"_blank\">NCT03833154<\/a>"
+    }
+  }
+]

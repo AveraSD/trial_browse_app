@@ -1,0 +1,126 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04958785",
+      "Protocol_No": "GS-US-586-6144",
+      "jit": "Optimal",
+      "trial_name": "Gilead Sciences GS-US-586-6144"
+    },
+    "disease": {
+      "summary": "Melanoma or Solid Tumors",
+      "details": [
+        {
+          "code": "Melanoma (MEL)",
+          "selection": "include",
+          "stage": "Recurrent"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Recurrent"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04958785",
+      "title": "Study to Evaluate the Safety and Efficacy of Magrolimab Combination Therapy in Adults With Unresectable, Locally Advanced or Metastatic Triple-Negative Breast Cancer",
+      "current_status": "Recruiting",
+      "status_verif_date": "September 2022",
+      "last_update_date": "September 21, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Gilead Sciences",
+      "brief_summary": "The primary objective of this study for the safety run-in cohorts of the study is to evaluate the safety, tolerability, and recommended Phase 2 dose (RP2D) of magrolimab in combination with nab-paclitaxel or paclitaxel (Safety Run-In Cohort 1), and sacituzumab govitecan (Safety Run-In Cohort 2) in metastatic triple-negative breast cancer (mTNBC).\n\nThe primary objective of this study for Phase 2 Cohort 1 is to compare the efficacy of magrolimab in combination with nab-paclitaxel or paclitaxel versus nab-paclitaxel or paclitaxel alone, as determined by progression-free survival (PFS) by investigator assessment.\n\nThe primary objective of this study for Phase 2 Cohort 2 is to evaluate the efficacy of magrolimab in combination with sacituzumab govitecan as determined by confirmed objective response rate (ORR) by investigator assessment.",
+      "conditions": "Triple-Negative Breast Cancer",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Arm #1",
+          "drug": "DAY101 | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm #1",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF Fusion"
+            },
+            {
+              "cohort": "Arm #1",
+              "Gene": "RAF1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RAF1 Fusion"
+            },
+            {
+              "cohort": "Arm #1",
+              "Gene": "RAF1",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RAF1 Amplification  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Arm #2",
+          "drug": "DAY101 | Pimasertib Hydrochloride",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm #2",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF Fusion"
+            },
+            {
+              "cohort": "Arm #2",
+              "Gene": "RAF1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RAF1 Fusion"
+            },
+            {
+              "cohort": "Arm #2",
+              "Gene": "RAF1",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RAF1 Amplification  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-20",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04958785\" target=\"_blank\">NCT04958785<\/a>"
+    }
+  }
+]

@@ -2,51 +2,62 @@
   {
     "info": {
       "NCT": "NCT03175224",
+      "Protocol_No": "APL-101-01",
       "jit": "Caris",
-      "trial_name": "Apollomics APL-101-01 (SPARTA)"
+      "trial_name": "Apollomics SPARTA"
     },
     "disease": {
       "summary": "Solid Tumor | Advanced Cancer | Renal Cancer | Gastric Cancer | Gastroesophageal Junction Adenocarcinoma | NSCLC | Lung Cancer | Brain Tumor | Glioblastoma Multiforme",
       "details": [
         {
-          "code": "CNS/Brain (BRAIN)",
-          "selection": "include"
-        },
-        {
-          "code": "Glioblastoma Multiforme (GBM)",
-          "selection": "include"
-        },
-        {
-          "code": "Solid Tumors",
-          "selection": "include"
-        },
-        {
-          "code": "Lung (LUNG)",
-          "selection": "include"
-        },
-        {
-          "code": "Non-Small Cell Lung Cancer (NSCLC)",
-          "selection": "include"
-        },
-        {
-          "code": "Kidney (KIDNEY)",
-          "selection": "include"
-        },
-        {
-          "code": "Renal Cell Carcinoma (RCC)",
-          "selection": "include"
-        },
-        {
           "code": "Adenocarcinoma of the Gastroesophageal Junction (GEJ)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
+        },
+        {
+          "code": "CNS/Brain (BRAIN)",
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
         },
         {
           "code": "Esophagogastric Adenocarcinoma (EGC)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
         },
         {
           "code": "Esophagus/Stomach (STOMACH)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
+        },
+        {
+          "code": "Glioblastoma Multiforme (GBM)",
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
+        },
+        {
+          "code": "Kidney (KIDNEY)",
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
+        },
+        {
+          "code": "Lung (LUNG)",
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
+        },
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
+        },
+        {
+          "code": "Renal Cell Carcinoma (RCC)",
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Un-resectable;Metastatic"
         }
       ]
     },
@@ -68,7 +79,7 @@
           "cohortlabel": "Single-Arm",
           "drug": "APL-101 Oral Capsules",
           "arm_type": "Experimental",
-          "line_of_therapy": "Not available",
+          "line_of_therapy": "1;2;3+",
           "arm_hold_status": "open",
           "biomarker": [
             {
@@ -89,7 +100,7 @@
               "Variant": "Not available",
               "Selection": "include",
               "Function": "Not available",
-		"summary": "MET gene Fusions "
+              "summary": "MET gene Fusions "
             },
             {
               "cohort": "Single-Arm",
@@ -260,11 +271,23 @@
               "Selection": "exclude",
               "Function": "Not available",
               "summary": "BRAF Rearrangement  "
+            },
+            {
+              "cohort": "Single-Arm",
+              "Gene": "MET",
+              "Gene2": "Not available",
+              "Type": "Alteration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "MET Alteration"
             }
           ]
         }
       ],
-      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
       "min_age": "18 Years",
       "gender": "All",
       "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT03175224\" target=\"_blank\">NCT03175224<\/a>"

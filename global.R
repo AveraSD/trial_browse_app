@@ -5,20 +5,12 @@ library(glue)
 library(dplyr)
 ## parse all trial.full.json and curate relevant info for a basic summary table
 
+## reactive table 
 
 
 parseTrials <- function(jsonfile) {
   #jsonfile <- trialsfiles[1]
   trial <- fromJSON(jsonfile)
-
-  #function to create (1 line of) biomarker per cohort
-  # processBiomarker <- function(x) {
-  #   b <- arm_groups[x,]$biomarker[[1]] %>%
-  #     select(summary) %>%
-  #     unlist() %>%
-  #     glue_collapse(sep = " | ")
-  #   return(b)
-  # }
 
   # pulling out trial arms
   arm_groups = tibble(cohortlabel = trial$query$arm[[1]]$cohortlabel,
@@ -31,7 +23,7 @@ parseTrials <- function(jsonfile) {
          parsedTrial <- tibble(
 
     # info
-    #Protocol = trial$info$protocol_no,
+    Protocol = trial$info$Protocol_No,
     NCT = trial$info$NCT,
     JIT = trial$info$jit,
     #Added Protocol Number
@@ -46,11 +38,12 @@ parseTrials <- function(jsonfile) {
   disp_disease = list(disp_disease = trial$disease$details[[1]]),
   
     # query - general
+  Title = trial$query$title,
     Status = trial$query$current_status,
     StatusUpdate = trial$query$status_verif_date,
     Sponsor = trial$query$sponsor,
     Summary = trial$query$brief_summary,
-    #Conditions = trial$query$conditions,
+    Conditions = trial$query$conditions,
     Phase = trial$query$phase,
     StudyType = trial$query$type,
     MinAge = if(trial$query$min_age %>% is_empty()) {
@@ -68,7 +61,7 @@ parseTrials <- function(jsonfile) {
     arms = list(arms = trial$query$arm[[1]] %>% unnest(biomarker)),
 
     #query - cohorts only for display table
-    disp_cohorts = list(disp_cohorts = bind_cols(arm_groups %>% select(-biomarker))),
+   # disp_cohorts = list(disp_cohorts = bind_cols(arm_groups %>% select(-biomarker))),
 
     #biomarker = lapply(1:nrow(arm_groups), function(x) processBiomarker(x)) %>%
     #                                              unlist())),
@@ -76,28 +69,21 @@ parseTrials <- function(jsonfile) {
     # query - biomarkers only for display table
     disp_biomarkers = trial$query$arm[[1]]$biomarker %>%
     bind_rows() %>%
-    select(summary) %>% distinct() %>%
-    #do.call(paste, summary) %>%
-    unlist() %>%
-    na.omit() %>%
+    select(summary) %>% distinct() %>% unlist() %>% na.omit() %>%
     paste0(collapse = " | "),
     # unique() %>%
     #  glue_col(sep = " : "),
     #do.call(paste(., collapse = " ")),
 
     HoldStatus = trial$query$trial_hold_status,
-    Documentation = trial$query$docs
+    Documentation = trial$query$docs,
+ TrialLastUpdate = trial$query$doclastupdate,
+ Location = trial$query$locations
 
   )
   return(parsedTrial)
 
  }             
-
-
-
-  
-
-
 
 
 ###############################################
@@ -130,7 +116,7 @@ loadDbData <- function() {
                                
                              #   %>% rename( 
     # info
-   "Protocol_No" = Protocol_No,
+   "Protocol" = Protocol_No,
     "JIT" = jit,
     "Name" = trial_name,
     
@@ -138,6 +124,7 @@ loadDbData <- function() {
     "Disease" = summary,
     
     # query - general
+   "Title" = title,
     "Status" = current_status,
     "StatusUpdate" = status_verif_date,
     "Sponsor" = sponsor,
@@ -154,36 +141,15 @@ loadDbData <- function() {
    
     "LastUpdate" = last_update_date,
     "HoldStatus" = trial_hold_status,
-    "Documentation" = docs
+    "Documentation" = docs,
+   "Location" = locations,
+   "TrialLastUpdate" = doclastupdate
   )
   
   
-  # create a 1 line summary for biomarkers for each trial
-  # biom <- function(tb) {
-  #   tb %>% 
-  #     bind_rows() %>%
-  #     select(summary) %>% distinct() %>%
-  #     unlist() %>%
-  #     na.omit() %>%
-  #     paste0(collapse = "|")
-  # }
-      
-      
-      
-      # unnest(biomarker) %>% 
-      # select(summary) 
-      # unlist() %>%
-      # unique() %>% 
-      # glue::glue_collapse(sep = " | ")
-  # }
-  
-  #db_tbl$disp_biomarkers <- db_tbl$arm %>% map(biom)
-  #db_tbl$disp_biomarkers <- db_tbl$arm[[1]]$biomarker %>% map(biom)
-  
-  #db_tbl$disease <-db_tbl$details[[1]] %>% select(code, selection, stage)<<<<< original working only disease name is different
-  #than disp_disease
-  
-  db_tbl$disp_disease = list(disp_disease = db_tbl$details[[1]])
+  db_tbl = db_tbl %>% mutate(disp_disease = db_tbl$details)
+  db_tbl = db_tbl %>% mutate(arms = db_tbl$arm)
+  #db_tbl$disp_disease = list(disp_disease = db_tbl$details[[1]])
   
   # db_tbl$diseasecode <-db_tbl$details[[1]] %>% select(code)
   # db_tbl$diseases<- db_tbl$diseasecode$code
@@ -192,17 +158,19 @@ loadDbData <- function() {
   # db_tbl$stage <-db_tbl$diseasestage$stage
   
   #add list here and make it similar to how it looks in panel_browse.R with ndjson files
- db_tbl$arms <- list(db_tbl$arm[[1]] %>% unnest(biomarker))
+ #db_tbl$arms <- list(db_tbl$arm[[1]] %>% unnest(biomarker))
   
-  db_tbl$disp_biomarkers <- db_tbl$arm[[1]]$biomarker %>% bind_rows() %>%
-    select(summary) %>% distinct() %>%
-    unlist() %>%
-    na.omit() %>%
-    paste0(collapse = "|")
+ db_tbl$disp_biomarkers <- "NA"
+ db_tbl$lnOfTherapy <- "NA"
+   #db_tbl$arm[[1]]$biomarker %>% bind_rows() %>%
+#    select(summary) %>% distinct() %>%
+#    unlist() %>%
+#    na.omit() %>%
+#    paste0(collapse = "|")
   return(db_tbl)
   
 }
 
 
 source(here("R", "read_data.R"))
- source(here("R", "panel_browse.R"))
+

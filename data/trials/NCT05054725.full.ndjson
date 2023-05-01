@@ -1,0 +1,141 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05054725",
+      "Protocol_No": "RMC-4630-03",
+      "jit": "Tempus",
+      "trial_name": "RevMed RMC-4630-03"
+    },
+    "disease": {
+      "summary": "advanced, or metastatic KRASG12C  Non-Small Cell Lung Cancer",
+      "details": [
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05054725",
+      "title": "Combination Study of RMC-4630 and Sotorasib for NSCLC Subjects With KRASG12C Mutation After Failure of Prior Standard Therapies",
+      "current_status": "Recruiting",
+      "status_verif_date": "July 2022",
+      "last_update_date": "August 31, 2022",
+      "trial_hold_status": "closing soon",
+      "sponsor": "Revolution Medicines, Inc.",
+      "brief_summary": "The purpose of this study is to evaluate the antitumor effects of sotorasib and RMC-4630 in subjects with KRASG12C mutant NSCLC",
+      "conditions": "Non-Small Cell Lung Cancer",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "RMC-4630 and sotorasib, Safety Run-in",
+          "drug": "RMC-4630 | Sotorasib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2+",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "RMC-4630 and sotorasib, Safety Run-in",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "",
+              "summary": "KRAS G12C "
+            },
+            {
+              "cohort": "RMC-4630 and sotorasib, Safety Run-in",
+              "Gene": "STK11/LKB1",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "STK11/LKB1 Abberration  "
+            },
+            {
+              "cohort": "RMC-4630 and sotorasib, Safety Run-in",
+              "Gene": "KEAP1",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KEAP1 Abberration  "
+            },
+            {
+              "cohort": "RMC-4630 and sotorasib, Safety Run-in",
+              "Gene": "PIK3CA",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "PIK3CA Abberration  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "RMC-4630 and sotorasib, Expansion",
+          "drug": "RMC-4630 | Sotorasib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2+",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "RMC-4630 and sotorasib, Expansion",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            },
+            {
+              "cohort": "RMC-4630 and sotorasib, Expansion",
+              "Gene": "STK11/LKB1",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "STK11/LKB1 Abberration  "
+            },
+            {
+              "cohort": "RMC-4630 and sotorasib, Expansion",
+              "Gene": "KEAP1",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KEAP1 Abberration  "
+            },
+            {
+              "cohort": "RMC-4630 and sotorasib, Expansion",
+              "Gene": "PIK3CA",
+              "Gene2": "Not available",
+              "Type": "Abberration",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "PIK3CA Abberration  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://therapies.securetempus.com/\">Tempus<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-02-08",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05054725\" target=\"_blank\">NCT05054725<\/a>"
+    }
+  }
+]

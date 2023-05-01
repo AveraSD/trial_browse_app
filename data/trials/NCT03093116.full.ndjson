@@ -1,0 +1,106 @@
+[
+  {
+    "info": {
+      "NCT": "NCT03093116",
+      "Protocol_No": "TPX-0005-01",
+      "jit": "Tempus",
+      "trial_name": "Turning Point Therapeutics TRIDENT-1"
+    },
+    "disease": {
+      "summary": "Locally Advanced or Metastatic Solid Tumors including Non Small Cell Lung Cancer",
+      "details": [
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT03093116",
+      "title": "A Study of Repotrectinib (TPX-0005) in Patients With Advanced Solid Tumors Harboring ALK, ROS1, or NTRK1-3 Rearrangements",
+      "current_status": "Recruiting",
+      "status_verif_date": "September 2022",
+      "last_update_date": "September 13, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Turning Point Therapeutics, Inc.",
+      "brief_summary": "Phase 1 dose escalation will determine the first cycle dose-limiting toxicities (DLTs), the maximum tolerated dose (MTD), the biologically effective dose and recommended Phase 2 dose (RP2D) of repotrectinib given to adult subjects with advanced solid malignancies harboring an ALK, ROS1, NTRK1, NTRK2, or NTRK3 gene rearrangement.\n\nMidazolam DDI substudy will examine effect of of repotrectinib on CYP3A induction.\n\nPhase 2 will determine the confirmed Overall Response Rate (ORR) as assessed by Blinded Independent Central Review (BICR) of repotrectinib in each subject population expansion cohort of advanced solid tumors that harbor a ROS1, NTRK1, NTRK2, or NTRK3 gene rearrangement. The secondary objective will include the duration of response (DOR), time to response (TTR), progression-free survival (PFS), overall survival (OS) and clinical benefit rate (CBR) of repotrectinib in each expansion cohort of advanced solid tumors that harbor a ROS1, NTRK1, NTRK2, or NTRK3 gene rearrangement.",
+      "conditions": "Locally Advanced Solid Tumors | Metastatic Solid Tumors",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Repotrectinib (TPX-0005)",
+          "drug": "Oral repotrectinib (TPX-0005)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1;2;3+",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "ROS1",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "ROS1 Rearrangement  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "NTRK2",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NTRK2 Rearrangement  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "NTRK1",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NTRK1 Rearrangement  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "NTRK3",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NTRK3 Rearrangement  "
+            },
+            {
+              "cohort": "Repotrectinib (TPX-0005)",
+              "Gene": "ALK",
+              "Gene2": "Not available",
+              "Type": "Rearrangement",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "ALK Rearrangement  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://therapies.securetempus.com/\">Tempus<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "12 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT03093116\" target=\"_blank\">NCT03093116<\/a>"
+    }
+  }
+]

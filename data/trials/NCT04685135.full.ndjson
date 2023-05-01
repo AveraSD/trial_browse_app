@@ -1,0 +1,81 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04685135",
+      "Protocol_No": "849-012",
+      "jit": "Optimal",
+      "trial_name": "Mirati Therapeutics KRYSTAL-12"
+    },
+    "disease": {
+      "summary": "Advanced Metastatic Non Small Cell Lung Cancer",
+      "details": [
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04685135",
+      "title": "Phase 3 Study of MRTX849 (Adagrasib) vs Docetaxel in Patients With Advanced Non-Small Cell Lung Cancer With KRAS G12C Mutation",
+      "current_status": "Recruiting",
+      "status_verif_date": "September 2022",
+      "last_update_date": "September 1, 2022",
+      "trial_hold_status": "closed",
+      "sponsor": "Mirati Therapeutics Inc.",
+      "brief_summary": "This Phase 3 study will evaluate the efficacy of the investigational agent MRTX849 (adagrasib) versus docetaxel in patients who have been previously treated for metastatic NSCLC with a KRAS G12C mutation.",
+      "conditions": "Metastatic Non Small Cell Lung Cancer | Advanced Non Small Cell Lung Cancer",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "MRTX849",
+          "drug": "MRTX849",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "MRTX849",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Docetaxel",
+          "drug": "Docetaxel",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "Docetaxel",
+              "Gene": "KRAS",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "G12C",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "KRAS G12C Mutation  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04685135\" target=\"_blank\">NCT04685135<\/a>"
+    }
+  }
+]

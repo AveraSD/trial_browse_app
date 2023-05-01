@@ -19,48 +19,42 @@ library(httr)
 library(glue)
 library(tidyverse)
 library(shinyWidgets)
+library(shinyjs)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
-
   tagList(
     tags$head(
       tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
+    
     ), 
     
-    
+    useShinyjs(),
     navbarPage(
-      title = "TrialMatch", 
+      title = span("TrialMatch",style ="color:black; font-size: 25px" ) ,
       
-      
-      # BROWSE
+     
       tabPanel("Browse",
                wellPanel(fluidRow(
+                 
                  column(4,
+                 
+                 
                  selectInput(
                    inputId = "stageView",
                    label = "Disease Stages",
-                   choices = c("Stage I","Stage II","Stage III","Stage IV","Methylated","Un-resectable","resectable",
-                               "Unmethylated","Advanced Stage","Recurrent","Metastatic","Early stage", "New diagnosis","Relapsed/Refractory","Post Cellular Therapy",
-                               "Smoldering Myeloma"),
+                   choices = c(stageAv$stage),
+                   #choices = c("Stage I","Stage II","Stage III","Stage IV","Methylated","Un-resectable","resectable",
+                   #            "Unmethylated","Advanced Stage","Recurrent","Metastatic","Early stage", "New diagnosis","Relapsed/Refractory","Post Cellular Therapy",
+                    #           "Smoldering Myeloma"),
                    multiple = T,
                    #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
                    width = "400px"
                    
                   )),
-                 # column(4,
-                 #        
-                 #        #  style = "display: inline-block;",
-                 #        #style = "margin-top: 10px;",
-                 #        ),
-                 column(2,
-                        #style = "display: inline-block;",
-                        # style = "margin-top: 10px;",
-                        actionButton("filter_stage", " ",icon = shiny::icon("filter"),size = "sm")
-
-                 ),
+                 
                  column(4,
-
+                        
                         # style = "display: inline-block;",
                         #style = "margin-top: 15px;",
                         selectInput(
@@ -72,14 +66,9 @@ shinyUI(fluidPage(
                           width = "400px"
 
                         )),
-                 column(2,
-                        #style = "display: inline-block;",
-                        # style = "margin-top: 15px;",
-                        actionButton("dise_fil", " ",icon = shiny::icon("filter"),size = "sm")
-
-                 ),
+                
                  column(4,
-                        
+                          
                         # style = "display: inline-block;",
                         #style = "margin-top: 15px;",
                         selectInput(
@@ -91,12 +80,29 @@ shinyUI(fluidPage(
                           width = "400px"
                           
                         )),
-                 column(2,
-                        #style = "display: inline-block;",
-                        # style = "margin-top: 15px;",
-                        actionButton("drug_fil", " ",icon = shiny::icon("filter"),size = "sm")
+                
+                 
+                #added line of therapy
+                 column(4,
                         
-                 ),
+                        # style = "display: inline-block;",
+                        #style = "margin-top: 15px;",
+                        selectInput(
+                          inputId = "lineofTxFil",
+                          label = "Line of therapy",
+                          #choices = c(lineoftxAv$line_of_therapy),
+                         #choices = c("1","2","3","1 2", "1 2 3", "2+"),
+                         
+                         choices = c(lineoftxAv$line_of_therapy),
+                         
+                         
+                         
+                          multiple = T,
+                          #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
+                          width = "400px"
+                          
+                        )),
+                 
                  column(4,
                         
                         # style = "display: inline-block;",
@@ -104,33 +110,50 @@ shinyUI(fluidPage(
                         selectInput(
                           inputId = "locaFil",
                           label = "Locations",
-                          choices = c("Sioux Falls SD"),
+                          choices = c(locAv$Location),
                           multiple = T,
                           #options = pickerOptions(multipleSeparator = ";",actionsBox = TRUE,liveSearch = TRUE),
                           width = "400px"
                           
                         )),
-                 column(2,
+                 column(4,
                         #style = "display: inline-block;",
                         # style = "margin-top: 15px;",
-                        actionButton("loc_fil", " ",icon = shiny::icon("filter"),size = "sm")
+                        actionButton("loc_fil", "Filter",icon = shiny::icon("filter"),size = "lg",class = "btn-warning")
                         
                  )
 
                )),
                br(),
                br(),
-               actionButton("collapse_btn_browse", "Collapse All"), 
-               reactableOutput("browsetable")),
+              
+                 fluidRow(
+                   column(6,
+                          actionButton("reset_btn_browse", "Reset Trials",class = "btn-success")),
+                   column(6, 
+                          actionButton("collapse_btn_browse", "Collapse All",class = "btn-info") )
+                 ),
+               
+               br(),
+               reactableOutput("filterbrowse"),
+               br(),
+               reactableOutput("browsetable"),
+              
+               
+             #  input_fil,
+             #   input_fst,
+                 
       
       # MATCH
       # tabPanel("Match",
       #          reactableOutput("matchtable")),
       
-      theme = bs_theme(version = 5, 
-                       bootswatch = "cosmo",
-                       primary = "#246725")
+     theme = bs_theme(version = 5,
+                      bootswatch = "cosmo",
+                      primary = "#246725")
       
-    )
-  )
-))
+    ) # tabpanel close
+ ) # navbar close
+ ) # taglist close
+)
+)

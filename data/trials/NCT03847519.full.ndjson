@@ -1,0 +1,121 @@
+[
+  {
+    "info": {
+      "NCT": "NCT03847519",
+      "Protocol_No": "ADXS-503-101",
+      "jit": "Tempus",
+      "trial_name": "Advaxis ADXS-503-101"
+    },
+    "disease": {
+      "summary": "Metastatic Squamous or Non-Squamous Non-Small Cell Lung Cancer",
+      "details": [
+        {
+          "code": "Lung Cancer",
+          "selection": "include",
+          "stage": "Metastatic"
+        },
+        {
+          "code": "Lung Squamous Cell Carcinoma (LUSC)",
+          "selection": "include",
+          "stage": "Metastatic"
+        },
+        {
+          "code": "Non-Small Cell Lung Cancer (NSCLC)",
+          "selection": "include",
+          "stage": "Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT03847519",
+      "title": "Study of ADXS-503 With or Without Pembro in Subjects With Metastatic Non-Small Cell Lung Cancer",
+      "current_status": "Recruiting",
+      "status_verif_date": "July 2021",
+      "last_update_date": "January 20, 2022",
+      "trial_hold_status": "closed",
+      "sponsor": "Advaxis, Inc.",
+      "brief_summary": "A Phase 1/2, Open-Label Study of ADXS-503 Alone and in Combination with Pembrolizumab in Subjects with Metastatic Squamous or Non-Squamous Non-Small Cell Lung Cancer",
+      "conditions": "Lung Cancer, Non-Small Cell | Metastatic Squamous Cell Carcinoma | Metastatic Non-Squamous Cell Carcinoma",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "SoC SBRT + Durvalumab Therapy (Main Cohort)",
+          "drug": "Durvalumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "SoC SBRT + Durvalumab Therapy (Main Cohort)",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "EGFR Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "SoC SBRT + Placebo Therapy (Main Cohort)",
+          "drug": "Other: Placebo",
+          "arm_type": "Placebo Comparator",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "SoC SBRT + Placebo Therapy (Main Cohort)",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "EGFR Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "SoC SBRT + Osimertinib Therapy (Osimertinib cohort, single-arm, separate cohort)",
+          "drug": "Osimertinib (single-arm, open-label)",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "closed",
+          "biomarker": [
+            {
+              "cohort": "SoC SBRT + Osimertinib Therapy (Osimertinib cohort, single-arm, separate cohort)",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "L858R",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "EGFR-TKI sensitivity L858R Mutation  "
+            },
+            {
+              "cohort": "SoC SBRT + Osimertinib Therapy (Osimertinib cohort, single-arm, separate cohort)",
+              "Gene": "EGFR",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Ex19del",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "EGFR-TKI sensitivity Ex19del Mutation  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://therapies.securetempus.com/\">Tempus<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT03847519\" target=\"_blank\">NCT03847519<\/a>"
+    }
+  }
+]

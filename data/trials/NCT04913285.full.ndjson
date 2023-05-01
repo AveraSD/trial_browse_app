@@ -2,6 +2,7 @@
   {
     "info": {
       "NCT": "NCT04913285",
+      "Protocol_No": "KN-8701",
       "jit": "Caris",
       "trial_name": "Kinnate Biopharma KN-8701 "
     },
@@ -9,16 +10,19 @@
       "summary": "Solid Tumor, Adult | Non-small Cell Lung Cancer | Melanoma",
       "details": [
         {
-          "code": "Solid Tumors",
-          "selection": "include"
-        },
-        {
           "code": "Melanoma (MEL)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Metastatic;Advanced Stage"
         },
         {
           "code": "Non-Small Cell Lung Cancer (NSCLC)",
-          "selection": "include"
+          "selection": "include",
+          "stage": "Metastatic;Advanced Stage"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Metastatic;Advanced Stage"
         }
       ]
     },
@@ -176,7 +180,9 @@
           ]
         }
       ],
-      "docs": "Q:\\MCK\\MOA\\Precision Oncology\\JIT Trials \\CarisPharmatechStudyList_2022-07-12.pdf",
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-20",
       "min_age": "18 Years",
       "gender": "All",
       "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04913285\" target=\"_blank\">NCT04913285<\/a>"

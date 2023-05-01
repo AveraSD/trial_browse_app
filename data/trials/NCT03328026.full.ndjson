@@ -1,0 +1,186 @@
+[
+  {
+    "info": {
+      "NCT": "NCT03328026",
+      "Protocol_No": "BRI-ROL-001",
+      "jit": "Caris",
+      "trial_name": "BriaCell SV-BR-1-GM regimen"
+    },
+    "disease": {
+      "summary": "Breastcancer, Breast Neoplasm, Metastatic Breast Cancer",
+      "details": [
+        {
+          "code": "Breast Cancer",
+          "selection": "include",
+          "stage": "Recurrent;Metastatic"
+        },
+        {
+          "code": "Breast Neoplasm, NOS (BNNOS)",
+          "selection": "include",
+          "stage": "Recurrent;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT03328026",
+      "title": "Combination Study of SV-BR-1-GM With Retifanlimab",
+      "current_status": "Recruiting",
+      "status_verif_date": "December 2022",
+      "last_update_date": "December 8, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "BriaCell Therapeutics Corporation",
+      "brief_summary": "This is an open-label, phase I/II double arm study of the SV-BR-1-GM regimen in combination with retifanlimab in patients with metastatic or locally recurrent breast cancer who have failed standard therapy.\n\nPatients will receive the SV-BR-1-GM regimen with combination immunotherapy. There will be an initial evaluation of the combination of the SV-BR-1-GM regimen with retifanlimab every 3 weeks. If this is found to be safe and well tolerated in a cohort of at least 12 patients (dose-limiting toxicities (DLTs) in less than 30% of the patients evaluated), then an expansion cohort of up to 24 patients will be treated with that combination. These will be randomized to two regimens differing in the timing of checkpoint inhibitor administration.",
+      "conditions": "Breast Cancer | Breast Neoplasm | Metastatic Breast Cancer | Breast Cancer Metastatic",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "SV-BR-1-GM, retifanlimab combination original sequence",
+          "drug": "SV-BR-1-GM | Low dose cyclophosphamide | Interferon Inoculation | retifanlimab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2+",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination original sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "ER (IHC/FISH) positive  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination original sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PR (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "PR (IHC/FISH) positive  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination original sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "HER2 (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "HER2 (IHC/FISH) positive  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination original sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "HER2 (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "negative",
+              "summary": "HER2 (IHC/FISH) negative  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination original sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "negative",
+              "summary": "ER (IHC/FISH) negative  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination original sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PR (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "negative",
+              "summary": "PR (IHC/FISH) negative  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "SV-BR-1-GM, retifanlimab combination alternative sequence",
+          "drug": "SV-BR-1-GM | Low dose cyclophosphamide | Interferon Inoculation | retifanlimab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2+",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination alternative sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "ER (IHC/FISH) positive  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination alternative sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PR (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "PR (IHC/FISH) positive  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination alternative sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "HER2 (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "HER2 (IHC/FISH) positive  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination alternative sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "HER2 (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "negative",
+              "summary": "HER2 (IHC/FISH) negative  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination alternative sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "negative",
+              "summary": "ER (IHC/FISH) negative  "
+            },
+            {
+              "cohort": "SV-BR-1-GM, retifanlimab combination alternative sequence",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PR (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "negative",
+              "summary": "PR (IHC/FISH) negative  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT03328026\" target=\"_blank\">NCT03328026<\/a>"
+    }
+  }
+]

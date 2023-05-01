@@ -1,0 +1,220 @@
+[
+  {
+    "info": {
+      "NCT": "NCT03947385",
+      "Protocol_No": "IDE196-001",
+      "jit": "Caris",
+      "trial_name": "IDEAYA BioSciences "
+    },
+    "disease": {
+      "summary": "Solid Tumors, Metastatic Uveal Melanoma, Cutaneous Melanoma, Colorectal Cancer",
+      "details": [
+        {
+          "code": "Colorectal Adenocarcinoma (COADREAD)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Cutaneous Melanoma (SKCM)",
+          "selection": "include",
+          "stage": "Advanced Stage"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Uveal Melanoma (UM)",
+          "selection": "include",
+          "stage": "Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT03947385",
+      "title": "Study of IDE196 in Patients With Solid Tumors Harboring GNAQ/11 Mutations or PRKC Fusions",
+      "current_status": "Recruiting",
+      "status_verif_date": "December 2021",
+      "last_update_date": "May 10, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "IDEAYA Biosciences",
+      "brief_summary": "This is a Phase 1/2, multi-center, open-label basket study designed to evaluate the safety and anti-tumor activity of IDE196 in patients with solid tumors harboring GNAQ or GNA11 (GNAQ/11) mutations or PRKC fusions, including metastatic uveal melanoma (MUM), cutaneous melanoma, colorectal cancer, and other solid tumors.\n\nPhase 1 (dose escalation - monotherapy) will assess safety, tolerability and pharmacokinetics of IDE196 via standard dose escalation scheme and determine the recommended Phase 2 dose. Safety and anti-tumor activity will be assessed in the Phase 2 (dose expansion) part of the study.\n\nPhase 1 Tablet and Food Effect Pharmacokinetic (PK) Substudy will assess the PK profile of IDE196 tablet and evaluate the effects of food on the PK profile of IDE196 tablet\n\nPhase 1 (dose escalation - binimetib combination) will assess safety, tolerability and pharmacokinetics of IDE196 and binimetinib via standard dose escalation scheme and determine the recommended Phase 2 dose. Safety and anti-tumor activity will be assessed in the Phase 2 (dose expansion) part of the study.\n\nPhase 1 (dose escalation - crizotinib combination) will assess safety, tolerability and pharmacokinetics of IDE196 and crizotinib via standard dose escalation scheme and determine the recommended Phase 2 dose. Safety and anti-tumor activity will be assessed in the Phase 2 (dose expansion) part of the study.",
+      "conditions": "Metastatic Uveal Melanoma | Cutaneous Melanoma | Colorectal Cancer | Other Solid Tumors",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Dose Escalation Monotherapy",
+          "drug": "IDE196 | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "close",
+          "biomarker": [
+            {}
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Dose Expansion Monotherapy",
+          "drug": "IDE196 | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Dose Expansion Monotherapy",
+              "Gene": "GNAQ",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "GNAQ Mutation  "
+            },
+            {
+              "cohort": "Dose Expansion Monotherapy",
+              "Gene": "GNA11",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "GNA11 Mutation  "
+            },
+            {
+              "cohort": "Dose Expansion Monotherapy",
+              "Gene": "PRKC",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "PRKC Fusion"
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Dose Escalation Binimetinib Combination",
+          "drug": "IDE196 | Binimetinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "close",
+          "biomarker": [
+            {}
+          ]
+        },
+        {
+          "ArmID": "4",
+          "cohortlabel": "Dose Expansion Binimetinib Combination",
+          "drug": "IDE196 | Binimetinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Dose Expansion Binimetinib Combination",
+              "Gene": "GNAQ",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "GNAQ Mutation  "
+            },
+            {
+              "cohort": "Dose Expansion Binimetinib Combination",
+              "Gene": "GNA11",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "GNA11 Mutation  "
+            },
+            {
+              "cohort": "Dose Expansion Binimetinib Combination",
+              "Gene": "PRKC",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "PRKC Fusion"
+            }
+          ]
+        },
+        {
+          "ArmID": "5",
+          "cohortlabel": "Dose Escalation Crizotinib Combination",
+          "drug": "IDE196 | Crizotinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "close",
+          "biomarker": [
+            {}
+          ]
+        },
+        {
+          "ArmID": "6",
+          "cohortlabel": "Dose Expansion Crizotinib Combination",
+          "drug": "IDE196 | Crizotinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Dose Expansion Crizotinib Combination",
+              "Gene": "GNAQ",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "GNAQ Mutation  "
+            },
+            {
+              "cohort": "Dose Expansion Crizotinib Combination",
+              "Gene": "GNA11",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "GNA11 Mutation  "
+            },
+            {
+              "cohort": "Dose Expansion Crizotinib Combination",
+              "Gene": "PRKC",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "PRKC Fusion"
+            }
+          ]
+        },
+        {
+          "ArmID": "7",
+          "cohortlabel": "Tablet PK Substudy",
+          "drug": "IDE196 | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "close",
+          "biomarker": [
+            {}
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT03947385\" target=\"_blank\">NCT03947385<\/a>"
+    }
+  }
+]

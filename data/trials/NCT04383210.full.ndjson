@@ -1,0 +1,176 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04383210",
+      "Protocol_No": "ELVCAP-001-01",
+      "jit": "Caris",
+      "trial_name": "Elevation Oncology"
+    },
+    "disease": {
+      "summary": "Recurrent locally-advanced or metastatic solid tumors",
+      "details": [
+        {
+          "code": "Bladder Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Bowel (BOWEL)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Breast Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Endometrial Carcinoma (UCEC)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Esophagus/Stomach Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Gallbladder Cancer (GBC)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Head and Neck Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Intraductal Papillary Neoplasm of the Bile Duct (IPN)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Kidney Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Liver (LIVER)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Lung Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Ovarian Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Pancreatic Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Prostate Cancer",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Sarcoma, NOS (SARCNOS)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Advanced Stage;Recurrent;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04383210",
+      "title": "Study of Seribantumab in Adult Patients With NRG1 Gene Fusion Positive Advanced Solid Tumors",
+      "current_status": "Recruiting",
+      "status_verif_date": "February 2022",
+      "last_update_date": "September 12, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Elevation Oncology",
+      "brief_summary": "This study is an open-label, international, multi-center, Phase 2 study in adult patients with recurrent, locally-advanced or metastatic solid tumors, which harbor the NRG1 gene fusion.",
+      "conditions": "Locally Advanced Solid Tumor | Metastatic Solid Tumor | Pancreatic Cancer | Lung Cancer | Head and Neck Cancer | Breast Cancer | Kidney Cancer | Colorectal Cancer | Bladder Cancer | Ovarian Cancer | Sarcoma | Gallbladder Cancer | Bile Duct Cancer | Esophageal Cancer | Uterine Cancer | Cholangiocarcinoma | Prostate Cancer",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Cohort 1",
+          "drug": "Seribantumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 1",
+              "Gene": "NRG1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NRG1 Fusion  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Cohort 2",
+          "drug": "Seribantumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 2",
+              "Gene": "NRG1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NRG1 Fusion "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Cohort 3",
+          "drug": "Seribantumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort 3",
+              "Gene": "NRG1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "NRG1 Fusion"
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-30",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04383210\" target=\"_blank\">NCT04383210<\/a>"
+    }
+  }
+]

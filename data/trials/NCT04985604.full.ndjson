@@ -1,0 +1,126 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04985604",
+      "Protocol_No": "DAY 101-102",
+      "jit": "Caris",
+      "trial_name": "Day One Biopharmaceuticals, Inc. DAY 101-102"
+    },
+    "disease": {
+      "summary": "Melanoma or Solid Tumors",
+      "details": [
+        {
+          "code": "Melanoma (MEL)",
+          "selection": "include",
+          "stage": "NA"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Recurrent;Relapsed/Refractory"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04985604",
+      "title": "DAY101 Monotherapy or in Combination With Other Therapies for Patients With Solid Tumors",
+      "current_status": "Recruiting",
+      "status_verif_date": "July 2022",
+      "last_update_date": "July 27, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Day One Biopharmaceuticals, Inc.",
+      "brief_summary": "This is a Phase 1b/2, multi-center, open label umbrella study of patients ≥12 years of age with recurrent or progressive solid tumors with alterations in the key proteins of the RAS/RAF/MEK/ERK pathway, referred to as the MAPK pathway..",
+      "conditions": "Melanoma | Solid Tumor",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Arm #1",
+          "drug": "DAY101 | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm #1",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF Fusion"
+            },
+            {
+              "cohort": "Arm #1",
+              "Gene": "RAF1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RAF1 Fusion"
+            },
+            {
+              "cohort": "Arm #1",
+              "Gene": "RAF1",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RAF1 Amplification  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Arm #2",
+          "drug": "DAY101 | Pimasertib Hydrochloride",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm #2",
+              "Gene": "BRAF",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "BRAF Fusion"
+            },
+            {
+              "cohort": "Arm #2",
+              "Gene": "RAF1",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RAF1 Fusion"
+            },
+            {
+              "cohort": "Arm #2",
+              "Gene": "RAF1",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "RAF1 Amplification  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-02-08",
+      "min_age": "12 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04985604\" target=\"_blank\">NCT04985604<\/a>"
+    }
+  }
+]

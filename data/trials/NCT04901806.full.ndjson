@@ -1,0 +1,102 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04901806",
+      "Protocol_No": "PBI-200-101",
+      "jit": "Caris",
+      "trial_name": "Pyramid Biosciences PBI-200-101"
+    },
+    "disease": {
+      "summary": "Solid Tumor, Adult | Brain Tumor, Primary | Desmoplastic Small Round Cell Tumor",
+      "details": [
+        {
+          "code": "CNS/Brain (BRAIN)",
+          "selection": "include",
+          "stage": "Advanced Stage ;Metastatic"
+        },
+        {
+          "code": "Desmoplastic Small-Round-Cell Tumor (DSRCT)",
+          "selection": "include",
+          "stage": "Advanced Stage ;Metastatic"
+        },
+        {
+          "code": "Solid Tumors",
+          "selection": "include",
+          "stage": "Advanced Stage ;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04901806",
+      "title": "Study of PBI-200 in Subjects With NTRK-Fusion-Positive Solid Tumors",
+      "current_status": "Recruiting",
+      "status_verif_date": "September 2022",
+      "last_update_date": "September 13, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Pyramid Biosciences",
+      "brief_summary": "This is a first-in-human, Phase 1/2 open-label, multicenter, dose-escalation, safety, PK, and biomarker study of PBI-200 in subjects with NTRK-fusion-positive advanced or metastatic solid tumors.",
+      "conditions": "Solid Tumor, Adult | Brain Tumor, Primary | Desmoplastic Small Round Cell Tumor",
+      "type": "Interventional",
+      "phase": "Phase 1 | Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Phase 1 Dose Escalation",
+          "drug": "PBI-200",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Phase 1 Dose Escalation",
+              "Gene": "NTRK",
+              "Gene2": "Not available",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "NTRK Fusion positive  "
+            },
+            {
+              "cohort": "Phase 1 Dose Escalation",
+              "Gene": "NTRK",
+              "Gene2": "Not available",
+              "Type": "Amplification",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "NTRK Amplification positive  "
+            },
+            {
+              "cohort": "Phase 1 Dose Escalation",
+              "Gene": "EWSR1",
+              "Gene2": "WT1",
+              "Type": "Fusion",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+              "summary": "EWSR1-WT1 Fusion positive  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Phase 2 Cohort Expansion",
+          "drug": "PBI-200",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {}
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://trialplus.carisls.com/\">Caris<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-01-20",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04901806\" target=\"_blank\">NCT04901806<\/a>"
+    }
+  }
+]

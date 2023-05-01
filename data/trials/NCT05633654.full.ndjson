@@ -1,0 +1,165 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05633654",
+      "jit": "Optimal",
+      "trial_name": "ASCENT-05"
+    },
+    "disease": {
+      "summary": "Triple Negative Breast Cancer",
+      "details": [
+        {
+          "code": "Breast (BREAST)",
+          "selection": "exclude",
+          "stage": "Metastatic"
+        },
+        {
+          "code": "Breast (BREAST)",
+          "selection": "include",
+          "stage": "NA"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05633654",
+      "title": "Study of Sacituzumab Govitecan-hziy and Pembrolizumab Versus Treatment of Physician's Choice in Patients With Triple Negative Breast Cancer Who Have Residual Invasive Disease After Surgery and Neoadjuvant Therapy",
+      "current_status": "Recruiting",
+      "status_verif_date": "December 2022",
+      "last_update_date": "December 21, 2022",
+      "trial_hold_status": "open",
+      "sponsor": "Gilead Sciences",
+      "brief_summary": "The goal of this study is to find out if the experimental product, sacituzumab govitecan-hziy (SG) in combination with pembrolizumab given after surgery, is effective and safe compared to the treatment of physician's choice (TPC) which includes either pembrolizumab or pembrolizumab plus capecitabine in participants with triple negative breast cancer that still remains after surgery and pre-surgical treatment.",
+      "conditions": "Triple Negative Breast Cancer",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Sacituzumab govitecan-hziy (SG) + Pembrolizumab",
+          "drug": "Sacituzumab govitecan-hziy (SG) | Pembrolizumab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Sacituzumab govitecan-hziy (SG) + Pembrolizumab",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "ER (IHC/FISH) Not available  "
+            },
+            {
+              "cohort": "Sacituzumab govitecan-hziy (SG) + Pembrolizumab",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PR (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "PR (IHC/FISH) Not available  "
+            },
+            {
+              "cohort": "Sacituzumab govitecan-hziy (SG) + Pembrolizumab",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "HER2 (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "negative",
+              "summary": "HER2 (IHC/FISH) negative  "
+            },
+            {
+              "cohort": "Sacituzumab govitecan-hziy (SG) + Pembrolizumab",
+              "Gene": "BRCA1",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRCA1 Mutation  "
+            },
+            {
+              "cohort": "Sacituzumab govitecan-hziy (SG) + Pembrolizumab",
+              "Gene": "BRCA2",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRCA2 Mutation  "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Treatment of Physician's Choice (TPC): Pembrolizumab or Pembrolizumab + Capecitabine",
+          "drug": "Pembrolizumab | Capecitabine",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "Not available",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Treatment of Physician's Choice (TPC): Pembrolizumab or Pembrolizumab + Capecitabine",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "ER (IHC/FISH) Not available  "
+            },
+            {
+              "cohort": "Treatment of Physician's Choice (TPC): Pembrolizumab or Pembrolizumab + Capecitabine",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PR (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "PR (IHC/FISH) Not available  "
+            },
+            {
+              "cohort": "Treatment of Physician's Choice (TPC): Pembrolizumab or Pembrolizumab + Capecitabine",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "HER2 (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "negative",
+              "summary": "HER2 (IHC/FISH) negative  "
+            },
+            {
+              "cohort": "Treatment of Physician's Choice (TPC): Pembrolizumab or Pembrolizumab + Capecitabine",
+              "Gene": "BRCA1",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRCA1 Mutation  "
+            },
+            {
+              "cohort": "Treatment of Physician's Choice (TPC): Pembrolizumab or Pembrolizumab + Capecitabine",
+              "Gene": "BRCA2",
+              "Gene2": "Not available",
+              "Type": "Mutation",
+              "Variant": "Not available",
+              "Selection": "exclude",
+              "Function": "Not available",
+              "summary": "BRCA2 Mutation  "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://www.optimalresearchportal.com/login/\">Optimal<\/a>",
+      "locations": "Sioux Falls SD",
+      "doclastupdate": "2023-02-08",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05633654\" target=\"_blank\">NCT05633654<\/a>"
+    }
+  }
+]
