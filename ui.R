@@ -74,21 +74,23 @@ ui <- dashboardPage(
                                     selectInput(
                                       inputId = "lineofTxFil",
                                       label = "Line of therapy",
-
-
-                                      choices = c(lineoftxAv$line_of_therapy),
-
-
-
+                                      choices = c(lineoftxAv$line_of_therapy), 
                                       multiple = T,
-
                                       width = "100%"
 
-                                    )
+                                    ),
+ 
                                 #    )
-                                    ,
+                                selectInput(
+                                  inputId = "trialTyxFil",
+                                  label = "Trial Type",
+                                  choices = c(trialTyAv$JIT),
+                                  multiple = T, width = "100%"
+                                  ),
+ 
 
                             # column(4,
+ 
 
 
                                     selectInput(
@@ -99,9 +101,9 @@ ui <- dashboardPage(
 
                                       width = "100%"
 
-                                    )
+                                    ),
                                     #)
-                                    ,
+                                    
 #following is for selective display
                          #    column(4,
 

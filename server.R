@@ -48,8 +48,8 @@ shinyServer(function(input, output,session) {
     checklocat = browse_tbl %>% select(NCT,Location) %>% filter(Location %in%  SelLocat) %>% select(NCT) %>% distinct()
     
     # for the trial type 
-    # SelTrialty = as.list.data.frame(input$lxFil) # Ui name
-    #checktrlTy = browse_tbl %>% select(NCT,#column name "jit") %>% filter(#column name "jit" %in%  SelTrialty) %>% select(NCT) %>% distinct()
+     SelTrialty = as.list.data.frame(input$trialTyxFil) # Ui name
+    checktrlTy = browse_tbl %>% select(NCT,JIT) %>% filter(JIT %in%  SelTrialty) %>% select(NCT) %>% distinct()
    
    
    # ----------------------------------------------------------------------------------------------------------------------- #

@@ -1,0 +1,179 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05374512",
+      "Protocol_No": "AstraZeneca_D926PC00001 TROPION_Breast02",
+      "jit": "Avera Trials",
+      "trial_name": "TROPION_Breast02"
+    },
+    "disease": {
+      "summary": "Locally Recurrent Inoperable or Metastatic Triple-negative Breast Cancer",
+      "details": [
+        {
+          "code": "Adenoid Cystic Breast Cancer (ACBC)",
+          "selection": "include",
+          "stage": "Recurrent;Metastatic"
+        },
+        {
+          "code": "Adenomyoepithelioma of the Breast (BRAME)",
+          "selection": "include",
+          "stage": "Recurrent;Metastatic"
+        },
+        {
+          "code": "Breast Lobular Carcinoma In Situ (LCIS)",
+          "selection": "include",
+          "stage": "Recurrent;Metastatic"
+        },
+        {
+          "code": "Breast Neoplasm, NOS (BNNOS)",
+          "selection": "include",
+          "stage": "Recurrent;Metastatic"
+        },
+        {
+          "code": "Metaplastic Breast Cancer (MBC)",
+          "selection": "include",
+          "stage": "Recurrent;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05374512",
+      "title": "A Study of Dato-DXd Versus Investigator's Choice Chemotherapy in Patients With Locally Recurrent Inoperable or Metastatic Triple-negative Breast Cancer, Who Are Not Candidates for PD-1/PD-L1 Inhibitor Therapy (TROPION-Breast02)",
+      "current_status": "Recruiting",
+      "status_verif_date": "April 2023",
+      "last_update_date": "April 24, 2023",
+      "trial_hold_status": "open",
+      "sponsor": "AstraZeneca",
+      "brief_summary": "This is a Phase III, randomised, open-label, 2 arm, multicentre, international study assessing the efficacy and safety of Dato-DXd compared with ICC in participants with locally recurrent inoperable or metastatic TNBC who are not candidates for PD-1/PD-L1 inhibitor therapy.",
+      "conditions": "Breast Cancer",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Dato-DXd",
+          "drug": "Dato-DXd | NA | NA | NA | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "3",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Dato-DXd",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "ER IHC Negative"
+            },
+	    {
+              "cohort": "Dato-DXd",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PR (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "PR IHC Negative"
+            },
+	    {
+              "cohort": "Dato-DXd",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "HER2 (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "HER2 IHC Negative"
+            },
+	    {
+              "cohort": "Dato-DXd",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PD-L1",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "PD-L1 Negative"
+            },
+	    {
+              "cohort": "Dato-DXd",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PD-L1",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Positive",
+              "summary": "PD-L1 Positive"
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Investigator's Choice of Chemotherapy (ICC)",
+          "drug": "Paclitaxel | Nab-paclitaxel | Carboplatin | Capecitabine | Eribulin mesylate",
+          "arm_type": "Active Comparator",
+          "biomarker": [
+            { 
+	      "cohort": "Investigator's Choice of Chemotherapy (ICC)",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PD-L1",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Positive",
+              "summary": "PD-L1 Positive"
+	    },
+            {
+              "cohort": "Investigator's Choice of Chemotherapy (ICC)",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "ER IHC Negative"
+            },
+            {
+              "cohort": "Investigator's Choice of Chemotherapy (ICC)",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PR (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "PR IHC Negative"
+            },
+            {
+              "cohort": "Investigator's Choice of Chemotherapy (ICC)",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "HER2 (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "HER2 IHC Negative"
+            },
+	    {
+              "cohort": "Investigator's Choice of Chemotherapy (ICC)",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "PD-L1",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "PD-L1 Negative"
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://avera-ereg-prod.forteresearchapps.com/ereg-web/protocols/2622/section-6057\">Link<\/a>",
+      "doclastupdate": "2023-05-11",
+      "locations": "Sioux Falls SD",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05374512\" target=\"_blank\">NCT05374512<\/a>"
+    }
+  }
+]

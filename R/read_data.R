@@ -68,7 +68,7 @@ drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% disti
 diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
 stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% select(stage) %>% distinct()
 locAv = browse_tbl %>% select(Location) %>% distinct()
-
+trialTyAv = browse_tbl %>% select(JIT) %>% distinct()
 lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = c(";")) %>% select(line_of_therapy) %>% distinct() 
 #useShinyjs()
 #browse_tbl <- browse_tbl %>% mutate(comb_col = html(paste(Documentation, "<br>", Link)))

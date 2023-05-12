@@ -1,0 +1,181 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05458297",
+      "Protocol_No": "MK 2140-006_B cell",
+      "jit": "Avera Trials",
+      "trial_name": "Merck MK 2140-006_B cell"
+    },
+    "disease": {
+      "summary": "Chronic Lymphocytic Leukemia (CLL), Mantle Cell Lymphoma (MCL), Follicular Lymphoma (FL), Richter Transformation Lymphoma",
+      "details": [
+        {
+          "code": "Chronic Lymphocytic Leukemia/Small Lymphocytic Lymphoma (CLLSLL)",
+          "selection": "include",
+          "stage": "Stage II;Stage II"
+        },
+        {
+          "code": "Duodenal-Type Follicular Lymphoma (DFL)",
+          "selection": "include",
+          "stage": "Stage II"
+        },
+        {
+          "code": "In Situ Mantle Cell Neoplasia (ISMCL)",
+          "selection": "include",
+          "stage": "Stage II"
+        },
+        {
+          "code": "Mast Cell Leukemia (SMMCL)",
+          "selection": "include",
+          "stage": "Stage II"
+        },
+        {
+          "code": "Natural Killer (NK) Cell Lymphoblastic Leukemia/Lymphoma (NKCLL)",
+          "selection": "include",
+          "stage": "Stage II"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05458297",
+      "title": "A Study of Zilovertamab Vedotin (MK-2140) as Monotherapy and in Combination in Participants With Aggressive and Indolent B-cell Malignancies (MK-2140-006)",
+      "current_status": "Recruiting",
+      "status_verif_date": "May 2023",
+      "last_update_date": "May 5, 2023",
+      "trial_hold_status": "open",
+      "sponsor": "Merck Sharp & Dohme LLC",
+      "brief_summary": "The purpose of this study is to assess the safety and tolerability of zilovertamab vedotin as monotherapy and in combination in participants with select B-cell lymphomas including mantle cell lymphoma (MCL), Richter's transformation lymphoma (RTL), follicular lymphoma (FL), and chronic lymphocytic leukemia (CLL). This study will also evaluate zilovertamab vedotin as monotherapy and in combination with respect to objective response rate.\n\nCohort A: Participants with relapsed or refractory MCL relapsed or refractory disease after at least 2 prior systemic therapies including a Bruton's tyrosine kinase inhibition/inhibitor (BTKi), and post therapy chimeric antigen receptor T (CAR-T) cell therapy or ineligible for CAR-T cell therapy\nCohort B: Participants with relapsed or refractory RT disease after at least 1 prior systemic therapy\nCohort C: Participants with relapsed or refractory MCL relapsed or refractory disease after at least 1 prior systemic therapy and no prior exposure to a non-covalent BTKi\nCohort D: Participants with relapsed or refractory FL and CLL relapsed or refractory disease after at least 2 prior systemic therapies and have no other available therapy\nCohort E: Participants with relapsed or refractory FL after at least 2 prior systemic therapies and have no other available therapy\nCohort F: Participants with relapsed or refractory CLL after at least 2 prior systemic therapies and have no other available therapy\n\nThe primary study hypothesis is that zilovertamab vedotin monotherapy has an increased Objective Response Rate (ORR) per Lugano Response Criteria as assessed by blinded independent central review (BICR).",
+      "conditions": "Chronic Lymphocytic Leukemia | Mantle Cell Lymphoma | Follicular Lymphoma | Richter Transformation Lymphoma",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Cohort A",
+          "drug": "Zilovertamab vedotin | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort A",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Cohort B",
+          "drug": "Zilovertamab vedotin | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Recurrent",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort B",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Cohort C",
+          "drug": "Zilovertamab vedotin | Nemtabrutinib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Recurrent",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort C",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        },
+        {
+          "ArmID": "4",
+          "cohortlabel": "Cohort D",
+          "drug": "Zilovertamab vedotin | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort D",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        },
+        {
+          "ArmID": "5",
+          "cohortlabel": "Cohort E",
+          "drug": "Zilovertamab vedotin | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Recurrent",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort E",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        },
+        {
+          "ArmID": "6",
+          "cohortlabel": "Cohort F",
+          "drug": "Zilovertamab vedotin | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "Recurrent",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort F",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://avera-ereg-prod.forteresearchapps.com/ereg-web/protocols/2482/section-5797\">Link<\/a>",
+      "doclastupdate": "2023-05-10",
+      "locations": "Sioux Falls SD",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05458297\" target=\"_blank\">NCT05458297<\/a>"
+    }
+  }
+]
