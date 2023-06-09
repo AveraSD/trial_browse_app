@@ -116,7 +116,8 @@ shinyServer(function(input, output,session) {
     
    output$filterbrowse <- renderReactable({
    #reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
-             reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers,  Documentation), 
+        #     reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers,  Documentation), 
+                       reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy,disp_biomarkers), 
                       filterable = TRUE,
              #searchable = TRUE,
              resizable = TRUE,
@@ -130,7 +131,10 @@ shinyServer(function(input, output,session) {
                     #        disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
              
              columns = list( HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
-                            disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
+                             #change Current Status to Study Status
+                             columns = list( HoldStatus = colDef(name = "Study Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease")),
+                 #           disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
+                            disp_biomarkers = colDef(name = "Biomarker"),
                             Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
                             
                             ),
@@ -143,9 +147,9 @@ shinyServer(function(input, output,session) {
                htmltools::div(
                 
                  # group1: general info
-                 reactable(filTb[index, ] %>% select(Link,Name,Sponsor,StudyType, Location, TrialLastUpdate),
+                 reactable(filTb[index, ] %>% select(Link,Documentation, Name,Sponsor,StudyType, Location, TrialLastUpdate),
                            defaultColDef = colDef(align = "center"),
-                           columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"),Link = colDef(html = TRUE,name = "Trial"))
+                           columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"),Link = colDef(html = TRUE,name = "Trial"),Documentation = colDef(html=TRUE))
                  ),
                  
                  # group 3: summary
@@ -233,7 +237,8 @@ shinyServer(function(input, output,session) {
    #  selecTrial$comTb <- selecTrial$comTb %>% mutate(comb_col = glue("<a href='{link}'>{Documentation}</a>"))
      
    #  reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
-                           reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers, Documentation),    
+                    #       reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers, Documentation),  
+                                                 reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers),
                                                  #    reactable::reactable( selecTrial$comTb[, input$selcolumns], 
                                                  filterable = TRUE,
                                                  #searchable = TRUE,
@@ -259,7 +264,9 @@ shinyServer(function(input, output,session) {
           # columns = list(colDef("Title", header = "Title", formatter = function(value){HTML(paste0("<b>", value, "</b>"))})),
        
          columns = list(HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Disease = colDef(name = "Conditions/Disease"),
-                               disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
+                          #     disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
+                        
+                        disp_biomarkers = colDef(name = "Biomarker"),
                       Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
               
                       #        Title = colDef(name = "Title", minWidth = 300)  
@@ -280,9 +287,9 @@ shinyServer(function(input, output,session) {
                   htmltools::div(
                    
                     # group1: general info
-                    reactable(selecTrial$comTb[index, ] %>% select(Link, Name,Sponsor,StudyType, Location, TrialLastUpdate),
+                    reactable(selecTrial$comTb[index, ] %>% select(Link, Documentation,Name,Sponsor,StudyType, Location, TrialLastUpdate),
                               defaultColDef = colDef(align = "center"),
-                              columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"),Link = colDef(html = TRUE,name = "Trial"))
+                              columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"),Link = colDef(html = TRUE,name = "Trial"), Documentation = colDef(html=TRUE))
                     ),
                     
                     # group 3: summary

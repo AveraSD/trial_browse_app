@@ -30,7 +30,10 @@ parseTrials <- function(jsonfile) {
     #Protocol_No = trial$info$Protocol_No,
     Name = trial$info$trial_name,
 
-
+####
+#filter cohorts which are open
+#filtcohort <- arm_groups %>% select(cohortLabel, arm_hold_status) %>% filter(arm_hold_status == "open"),
+####
     # disease
     Disease = trial$disease$summary,
    # disp_disease =  trial$disease[[1]] %>% unnest(details),
@@ -125,7 +128,8 @@ loadDbData <- function() {
     
     # query - general
    "Title" = title,
-    "Status" = current_status,
+   "Status" = current_status,
+   
     "StatusUpdate" = status_verif_date,
     "Sponsor" = sponsor,
     "Summary" = brief_summary,
@@ -144,6 +148,7 @@ loadDbData <- function() {
     "Documentation" = docs,
    "Location" = locations,
    "TrialLastUpdate" = doclastupdate
+#   "filtcohort" = filtcohort
   )
   
   
@@ -168,6 +173,20 @@ loadDbData <- function() {
   
  db_tbl$disp_biomarkers <- "NA"
  db_tbl$lnOfTherapy <- "NA"
+ 
+ db_tbl$filtopencohort <- "NA"
+#### db_tbl
+ # arm_gr = list(cohortlabel = db_tbl$arm$cohortlabel,
+ #                    
+                  #  arm_hold_status = db_tbl$arm$arm_hold_status)
+ # 
+ # 
+ # db_tbl = db_tbl$arms %>% unnest() %>% select(cohortlabel, arm_hold_status) %>% mutate(filtcohort = filter(arm_hold_status == "open"))
+  
+  
+ ####
+ 
+ 
    #db_tbl$arm[[1]]$biomarker %>% bind_rows() %>%
 #    select(summary) %>% distinct() %>%
 #    unlist() %>%

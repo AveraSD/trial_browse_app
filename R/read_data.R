@@ -61,7 +61,12 @@ for (e in 1:nrow(browse_tbl)) {
   browse_tbl$lnOfTherapy[e] <- se
 }
 
+for (k in 1:nrow(browse_tbl)) {
+  sel <- browse_tbl$arm[[k]]  %>% bind_rows() %>% filter(arm_hold_status == "open") %>% select(cohortlabel, arm_hold_status) %>% distinct() %>% mutate(filtopencohort = paste0(cohortlabel,"-",arm_hold_status)) %>% select(filtopencohort)  %>% unlist() %>% na.omit() %>%  paste0(collapse = " | ")
+ browse_tbl$filtopencohort[k] <- sel
+}
 
+#%>% paste0(cohortlabel,"-",arm_hold_status) %>% unlist() %>% na.omit() %>%  paste0(collapse = " | ")
 # Make dataframe for each of the filtration criteria - for now - Drug, cancer type, stage, location and line of therapy 
 
 drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
