@@ -1,0 +1,161 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05092360",
+      "Protocol_No": "Alkermes_ALKS 4230-007 GOG-3063 ENGOT-ov68 (ARTISTRY-7)",
+      "jit": "Avera Trials",
+      "trial_name": "ARTISTRY-7"
+    },
+    "disease": {
+      "summary": "Epithelial Ovarian Cancer, Platinum-resistant Ovarian Cancer, Fallopian Tube Cancer, Primary Peritoneal Cancer",
+      "details": [
+        {
+          "code": "Cervical Clear Cell Carcinoma (CECC)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        },
+        {
+          "code": "Cervical Endometrioid Carcinoma (CEEN)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        },
+        {
+          "code": "Clear Cell Borderline Ovarian Tumor (CCBOV)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        },
+        {
+          "code": "Endometrioid Ovarian Cancer (EOV)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        },
+        {
+          "code": "High-Grade Serous Fallopian Tube Cancer (HGSFT)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        },
+        {
+          "code": "High-Grade Serous Ovarian Cancer (HGSOC)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        },
+        {
+          "code": "Ovarian Epithelial Tumor (OVT)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        },
+        {
+          "code": "Peritoneal Mesothelioma (PEMESO)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        },
+        {
+          "code": "Peritoneal Serous Carcinoma (PSEC)",
+          "selection": "include",
+          "stage": "Stage III;Recurrent"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05092360",
+      "title": "Phase 3 Study of Nemvaleukin Alfa in Combination With Pembrolizumab in Patients With Platinum-Resistant Epithelial Ovarian Cancer (ARTISTRY-7)",
+      "current_status": "Recruiting",
+      "status_verif_date": "May 2023",
+      "last_update_date": "May 2, 2023",
+      "trial_hold_status": "open",
+      "sponsor": "Alkermes, Inc.",
+      "brief_summary": "This is a Phase 3, multicenter, open-label, randomized study of nemvaleukin in combination with pembrolizumab versus protocol-specific Investigator's choice chemotherapy in patients with platinum-resistant epithelial ovarian, fallopian tube, or primary peritoneal cancer.",
+      "conditions": "Platinum-resistant Ovarian Cancer | Fallopian Tube Cancer | Primary Peritoneal Cancer",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Nemvaleukin and Pembrolizumab Combination",
+          "drug": "Nemvaleukin and Pembrolizumab Combination | NA | NA | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "3",
+          "arm_hold_status": "Not available",
+          "biomarker": [
+            {
+              "cohort": "Nemvaleukin and Pembrolizumab Combination",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Pembrolizumab",
+          "drug": "Pembrolizumab | NA | NA | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "3",
+          "arm_hold_status": "Not available",
+          "biomarker": [
+            {
+              "cohort": "Pembrolizumab",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Nemvaleukin",
+          "drug": "Nemvaleukin | NA | NA | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "3",
+          "arm_hold_status": "Not available",
+          "biomarker": [
+            {
+              "cohort": "Nemvaleukin",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        },
+        {
+          "ArmID": "4",
+          "cohortlabel": "Investigator's Choice",
+          "drug": "Pegylated Liposomal Doxorubicin (PLD) | Paclitaxel | Topotecan | Gemcitabine",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "3",
+          "arm_hold_status": "Not available",
+          "biomarker": [
+            {
+              "cohort": "Investigator's Choice",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://avera-ereg-prod.forteresearchapps.com/ereg-web/protocols/2062/section-4657\">Link<\/a>",
+      "doclastupdate": "2023-05-11",
+      "locations": "Sioux Falls SD",
+      "min_age": "18 Years",
+      "gender": "Female",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05092360\" target=\"_blank\">NCT05092360<\/a>"
+    }
+  }
+]

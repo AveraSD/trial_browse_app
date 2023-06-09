@@ -1,0 +1,131 @@
+[
+  {
+    "info": {
+      "NCT": "NCT04975308",
+      "Protocol_No": "Lilly_J2J-OX-JZLC_EMBER-3",
+      "jit": "Avera Trials",
+      "trial_name": "EMBER 3"
+    },
+    "disease": {
+      "summary": "Breast Neoplasms, Neoplasm Metastasis",
+      "details": [
+        {
+          "code": "Adenoid Cystic Breast Cancer (ACBC)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic;Neoplasms"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT04975308",
+      "title": "A Study of Imlunestrant, Investigator's Choice of Endocrine Therapy, and Imlunestrant Plus Abemaciclib in Participants With ER+, HER2- Advanced Breast Cancer",
+      "current_status": "Recruiting",
+      "status_verif_date": "April 2023",
+      "last_update_date": "April 16, 2023",
+      "trial_hold_status": "open",
+      "sponsor": "Eli Lilly and Company",
+      "brief_summary": "The main purpose of this study is to measure how well imlunestrant works compared to standard hormone therapy, and how well imlunestrant with abemaciclib work compared to imlunestrant in participants with breast cancer that is estrogen receptor positive (ER+) and human epidermal receptor 2 negative (HER2-). Participants must have breast cancer that is advanced or has spread to another part of the body. Study participation could last up to 5 years.",
+      "conditions": "Breast Neoplasms | Neoplasm Metastasis",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Imlunestrant",
+          "drug": "Imlunestrant | NA",
+          "arm_type": "Experimental",
+          "line_of_therapy": "3",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Imlunestrant",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "HER2 Neagtive  "
+            },
+	    {
+              "cohort": "Imlunestrant",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Positive",
+              "summary": "ER Positive "
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Investigator's Choice of Endocrine Therapy",
+          "drug": "Exemestane | Fulvestrant",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "3",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Investigator's Choice of Endocrine Therapy",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "HER2 Negative  "
+            },
+	    {
+              "cohort": "Investigator's Choice of Endocrine Therapy",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Positive",
+              "summary": "ER Positive "
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Imlunestrant plus Abemaciclib",
+          "drug": "Imlunestrant | Abemaciclib",
+          "arm_type": "Experimental",
+          "line_of_therapy": "3",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Imlunestrant plus Abemaciclib",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Negative",
+              "summary": "HER2 Negative "
+            },
+	    {
+              "cohort": "Imlunestrant plus Abemaciclib",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "ER (IHC/FISH)",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Positive",
+              "summary": "ER Positive "
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://avera-ereg-prod.forteresearchapps.com/ereg-web/protocols/1802/section-3957\">Link<\/a>",
+      "doclastupdate": "2023-05-11",
+      "locations": "Sioux Falls SD",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT04975308\" target=\"_blank\">NCT04975308<\/a>"
+    }
+  }
+]

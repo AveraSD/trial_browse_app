@@ -1,0 +1,121 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05256225",
+      "Protocol_No": "NRG-GY026",
+      "jit": "Avera Trials",
+      "trial_name": "NRG-GY026"
+    },
+    "disease": {
+      "summary": "Endometrial Serous Adenocarcinoma, Uterine Corpus Carcinosarcoma",
+      "details": [
+        {
+          "code": "High-Grade Endometrial Stromal Sarcoma (HGESS)",
+          "selection": "include",
+          "stage": "Stage II;Stage III"
+        },
+        {
+          "code": "Low-Grade Endometrial Stromal Sarcoma (LGESS)",
+          "selection": "include",
+          "stage": "Stage II;Stage III"
+        },
+        {
+          "code": "Other Uterine Tumor (OUTT)",
+          "selection": "include",
+          "stage": "Stage II;Stage III"
+        },
+        {
+          "code": "Uterine Carcinosarcoma/Uterine Malignant Mixed Mullerian Tumor (UCS)",
+          "selection": "include",
+          "stage": "Stage II;Stage III"
+        },
+        {
+          "code": "Uterine Mixed Endometrial Carcinoma (UMEC)",
+          "selection": "include",
+          "stage": "Stage II;Stage III"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05256225",
+      "title": "Testing the Addition of Trastuzumab or Trastuzumab/Pertuzumab to the Usual Chemotherapy for HER2 Positive Endometrial Serous Carcinoma or Carcinosarcoma",
+      "current_status": "Recruiting",
+      "status_verif_date": "January 2023",
+      "last_update_date": "May 10, 2023",
+      "trial_hold_status": "open",
+      "sponsor": "National Cancer Institute (NCI)",
+      "brief_summary": "This phase II/III trial tests whether adding trastuzumab and hyaluronidase-oysk (Herceptin HylectaTM) or pertuzumab, trastuzumab and hyaluronidase-zzxf (PhesgoTM) to the usual chemotherapy (paclitaxel and carboplatin) works to shrink tumors in patients with HER2 positive endometrial serous carcinoma or carcinosarcoma. Trastuzumab and pertuzumab are monoclonal antibodies and forms of targeted therapy that attach to specific molecules (receptors) on the surface of tumor cells, known as HER2 receptors. When trastuzumab or pertuzumab attach to HER2 receptors, the signals that tell the cells to grow are blocked and the tumor cell may be marked for destruction by the body's immune system. Hyaluronidase is an endoglycosidase. It helps to keep pertuzumab and trastuzumab in the body longer, so that these medications will have a greater effect. Hyaluronidase also allows trastuzumab and trastuzumab/pertuzumab to be given by injection under the skin and shortens their administration time compared to trastuzumab or pertuzumab alone. Paclitaxel is a taxane and in a class of medications called antimicrotubule agents. It stops cancer cells from growing and dividing and may kill them. Carboplatin is in a class of medications known as platinum-containing compounds. It works in a way similar to the anticancer drug cisplatin, but may be better tolerated than cisplatin. Carboplatin works by killing, stopping or slowing the growth of tumor cells. Giving Herceptin Hylecta or Phesgo in combination with paclitaxel and carboplatin may shrink the tumor and prevent the cancer from coming back in patients with HER2 positive endometrial serous carcinoma or carcinosarcoma.",
+      "conditions": "Endometrial Serous Adenocarcinoma | Uterine Corpus Carcinosarcoma",
+      "type": "Interventional",
+      "phase": "Phase 2 | Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Arm I (paclitaxel, carboplatin)",
+          "drug": "Carboplatin | Procedure: Echocardiography | Procedure: Multigated Acquisition Scan | Paclitaxel | Other: Quality-of-Life Assessment | NA",
+          "arm_type": "Active Comparator",
+          "line_of_therapy": "3;2",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm I (paclitaxel, carboplatin)",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+	      "summary": "HER2 Positive"
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Arm II (paclitaxel, carboplatin, Herceptin Hylecta)",
+          "drug": "Carboplatin | Procedure: Echocardiography | Procedure: Multigated Acquisition Scan | Paclitaxel | Other: Quality-of-Life Assessment | Trastuzumab/Hyaluronidase-oysk",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2;3",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm II (paclitaxel, carboplatin, Herceptin Hylecta)",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+	      "summary": "HER2 Positive"
+            }
+          ]
+        },
+        {
+          "ArmID": "3",
+          "cohortlabel": "Arm III (paclitaxel, carboplatin, Phesgo)",
+          "drug": "Carboplatin | Procedure: Echocardiography | Hyaluronidase-zzxf/Pertuzumab/Trastuzumab | Procedure: Multigated Acquisition Scan | Paclitaxel | Other: Quality-of-Life Assessment",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2;3",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Arm III (paclitaxel, carboplatin, Phesgo)",
+              "Gene": "HER2",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "positive",
+	      "summary": "HER2 Positive"
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://avera-ereg-prod.forteresearchapps.com/ereg-web/protocols/2922/section-6613\">Link<\/a>",
+      "doclastupdate": "2023-05-11",
+      "locations": "Sioux Falls SD",
+      "min_age": "18 Years",
+      "gender": "Female",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05256225\" target=\"_blank\">NCT05256225<\/a>"
+    }
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05144009",
+      "Protocol_No": "ADCT-402-203ADC Therapeutics_ADCT-402-203 (LOTIS-9)",
+      "jit": "Avera Trials",
+      "trial_name": "LOTIS-9"
+    },
+    "disease": {
+      "summary": "Diffuse Large B-cell Lymphoma (DLBCL)",
+      "details": [
+        {
+          "code": "Diffuse Large B-Cell Lymphoma, NOS (DLBCLNOS)",
+          "selection": "include",
+          "stage": "Stage I;Stage II;Stage III;Stage IV"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05144009",
+      "title": "A Study of Loncastuximab Tesirine and Rituximab (Lonca-R) in Previously Untreated Unfit/Frail Participants With Diffuse Large B-cell Lymphoma (DLBCL)",
+      "current_status": "Recruiting",
+      "status_verif_date": "April 2023",
+      "last_update_date": "April 27, 2023",
+      "trial_hold_status": "open",
+      "sponsor": "ADC Therapeutics S.A.",
+      "brief_summary": "The main objective of the trial is to assess the efficacy and tolerability of Lonca-R in unfit and frail participants with previously untreated DLBCL.",
+      "conditions": "Diffuse Large B-cell Lymphoma",
+      "type": "Interventional",
+      "phase": "Phase 2",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Cohort A : Loncastuximab Tesirine + Rituximab (Lonca-R)",
+          "drug": "Loncastuximab Tesirine | Rituximab",
+          "arm_type": "Experimental",
+          "biomarker": [
+            {
+              "cohort": "Cohort A : Loncastuximab Tesirine + Rituximab (Lonca-R)",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+	    }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Cohort B : Loncastuximab Tesirine + Rituximab (Lonca-R)",
+          "drug": "Loncastuximab Tesirine | Rituximab",
+          "arm_type": "Experimental",
+          "line_of_therapy": "2",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Cohort B : Loncastuximab Tesirine + Rituximab (Lonca-R)",
+              "Gene": "Not available",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Not available",
+              "summary": "absent"
+            }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://avera-ereg-prod.forteresearchapps.com/ereg-web/protocols/2142/section-4857\">Link<\/a>",
+      "doclastupdate": "2023-05-11",
+      "locations": "Sioux Falls SD",
+      "min_age": "80 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05144009\" target=\"_blank\">NCT05144009<\/a>"
+    }
+  }
+]

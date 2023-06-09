@@ -1,0 +1,79 @@
+[
+  {
+    "info": {
+      "NCT": "NCT05052801",
+      "Protocol_No": "AMG 552-20210096 (FORTITUDE-101)",
+      "jit": "Avera Trials",
+      "trial_name": "AMG 552 (FORTITUDE-101)"
+    },
+    "disease": {
+      "summary": "Gastric Cancer, Gastroesophageal Junction Adenocarcinoma",
+      "details": [
+        {
+          "code": "Adenocarcinoma of the Gastroesophageal Junction (GEJ)",
+          "selection": "include",
+          "stage": "Advanced Stage;Metastatic"
+        }
+      ]
+    },
+    "query": {
+      "nct": "NCT05052801",
+      "title": "Bemarituzumab or Placebo Plus Chemotherapy in Gastric Cancers With Fibroblast Growth Factor Receptor 2b (FGFR2b) Overexpression",
+      "current_status": "Recruiting",
+      "status_verif_date": "May 2023",
+      "last_update_date": "May 10, 2023",
+      "trial_hold_status": "open",
+      "sponsor": "Amgen",
+      "brief_summary": "The main objective of this study is to compare efficacy of bemarituzumab combined with oxaliplatin, leucovorin, and 5-fluorouracil (5-FU) (mFOLFOX6) to placebo plus mFOLFOX6 as assessed by overall survival (OS) in participants with FGFR2b ≥10% 2+/3+ tumor cell staining (FGFR2b ≥10% 2+/3+TC)",
+      "conditions": "Gastric Cancer | Gastroesophageal Junction Adenocarcinoma",
+      "type": "Interventional",
+      "phase": "Phase 3",
+      "arm": [
+        {
+          "ArmID": "1",
+          "cohortlabel": "Bemarituzumab with mFOLFOX6",
+          "drug": "Bemarituzumab | mFOLFOX6",
+          "arm_type": "Experimental",
+          "line_of_therapy": "1",
+          "arm_hold_status": "open",
+          "biomarker": [
+            {
+              "cohort": "Bemarituzumab with mFOLFOX6",
+              "Gene": "FGFR2",
+              "Gene2": "Not available",
+              "Type": "Not available",
+              "Variant": "Not available",
+              "Selection": "include",
+              "Function": "Overexpression",
+              "summary": "FGFR2 Overexpression"
+            }
+          ]
+        },
+        {
+          "ArmID": "2",
+          "cohortlabel": "Placebo with mFOLFOX6",
+          "drug": "mFOLFOX6 | Placebo",
+          "arm_type": "Active Comparator",
+          "biomarker": [
+            {
+           "cohort": "Placebo with mFOLFOX6",
+               "Gene": "Not available",
+               "Gene2": "Not available",
+               "Type": "Not available",
+               "Variant": "Not available",
+               "Selection": "include",
+               "Function": "Not available",
+               "summary": "absent"
+	     }
+          ]
+        }
+      ],
+      "docs": "<a href=\"https://avera-ereg-prod.forteresearchapps.com/ereg-web/protocols/1783/section-3918\">Link<\/a>",
+      "doclastupdate": "2023-05-11",
+      "locations": "Sioux Falls SD",
+      "min_age": "18 Years",
+      "gender": "All",
+      "link": "<a href=\"https://clinicaltrials.gov/ct2/show/NCT05052801\" target=\"_blank\">NCT05052801<\/a>"
+    }
+  }
+]
