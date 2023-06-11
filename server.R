@@ -117,7 +117,7 @@ shinyServer(function(input, output,session) {
    output$filterbrowse <- renderReactable({
    #reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
         #     reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers,  Documentation), 
-                       reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy,disp_biomarkers), 
+                       reactable(filTb %>% dplyr::select(Protocol, HoldStatus,filtopencohort, Phase, Title, Disease, lnOfTherapy,disp_biomarkers), 
                       filterable = TRUE,
              #searchable = TRUE,
              resizable = TRUE,
@@ -129,10 +129,10 @@ shinyServer(function(input, output,session) {
              #columns = list(Trial = colDef(html = TRUE)),
            #  columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
                     #        disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
-             
-             columns = list( HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
-                             #change Current Status to Study Status
-                             columns = list( HoldStatus = colDef(name = "Study Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease")),
+           #change Current Status to Study Status; Rename filtopencohort to Enrollment Status
+             columns = list( HoldStatus = colDef(name = "Study Status"), filtopencohort = colDef(name = "Enrollment Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
+                             
+                        #     columns = list( HoldStatus = colDef(name = "Study Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease")),
                  #           disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
                             disp_biomarkers = colDef(name = "Biomarker"),
                             Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
@@ -238,7 +238,7 @@ shinyServer(function(input, output,session) {
      
    #  reactable::reactable( selecTrial$comTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
                     #       reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers, Documentation),  
-                                                 reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers),
+                                                 reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Disease, lnOfTherapy, disp_biomarkers),
                                                  #    reactable::reactable( selecTrial$comTb[, input$selcolumns], 
                                                  filterable = TRUE,
                                                  #searchable = TRUE,
@@ -262,8 +262,8 @@ shinyServer(function(input, output,session) {
        
          
           # columns = list(colDef("Title", header = "Title", formatter = function(value){HTML(paste0("<b>", value, "</b>"))})),
-       
-         columns = list(HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Disease = colDef(name = "Conditions/Disease"),
+         #change Current Status to Study Status
+         columns = list(HoldStatus = colDef(name = "Study Status"), filtopencohort = colDef(name = "Enrollment Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Disease = colDef(name = "Conditions/Disease"),
                           #     disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
                         
                         disp_biomarkers = colDef(name = "Biomarker"),
