@@ -133,7 +133,7 @@ loadDbData <- function() {
     "StatusUpdate" = status_verif_date,
     "Sponsor" = sponsor,
     "Summary" = brief_summary,
-   # "Conditions" = conditiions,
+   
     "Conditions" = conditions,
     "Phase" = phase,
     "StudyType" = type,
@@ -154,6 +154,7 @@ loadDbData <- function() {
   
   db_tbl = db_tbl %>% mutate(disp_disease = db_tbl$details)
   db_tbl = db_tbl %>% mutate(disp_disease1 = sapply(db_tbl$details, "[[","code"))
+  
   
   
   db_tbl = db_tbl %>% mutate(arms = db_tbl$arm)
