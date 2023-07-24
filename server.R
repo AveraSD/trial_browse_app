@@ -114,15 +114,89 @@ shinyServer(function(input, output,session) {
     
     
     
+    #adding to have trials open on page loading - july 5th #################### first working
+     #  filt_data_initial_filtered_sel<- reactive({
+     #   if(input$show_closed){
+     #     #filTb[filTb$HoldStatus == "open",input$selcolumns]
+     #     filter(names(filTb) %in% input$selcolumns)
+     #   }
+     #   else{
+     #     filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation) %>% filter(HoldStatus == "open")
+     #   }
+     # })
+    
+    
+    
+    
+
+    ###original working <<<july 5th second working but not completed
+    # filt_data_initial_filtered<- reactive({
+    #   if(input$show_closed){
+    #    filTb[,input$selcolumns]  
+    #     
+    #   }
+    #   else{
+    #    filTb[filTb$HoldStatus == "open",input$selcolumns] 
+    #     
+    #   }
+    # })
+    ##original working <<< july 5
+    
+    
+    
+    
+    
+    
+    ###original working - third working
+    #checks if first closed trials to display or it will be open trials on page loading
+    #next checks if any columns selected otherwise displays a set of eight default columns
+    filt_data_initial_filtered<- reactive({
+      if(input$show_closed){
+        if(length(input$selcolumns > 0)){
+          filTb[filTb$HoldStatus != "open",input$selcolumns]
+        }
+        else{
+          filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
+        }
+          
+        
+      }
+      else{
+        if(length(input$selcolumns > 0)){
+          filTb[filTb$HoldStatus == "open",input$selcolumns]
+        }
+        else{
+          filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
+        } 
+        
+      }
+    })
+    ##original
+    
+    #this is for expandable rows displaying the correct rows for open and close trials
+    expandable_data_filt <- reactive({
+      if (input$show_closed) {
+        filTb[!filTb$HoldStatus %in% "open", ]
+      } else {
+        filTb[filTb$HoldStatus == "open", ]
+      }
+    })
+    
+    
    output$filterbrowse <- renderReactable({
    #reactable(filTb %>% dplyr::select(Link, Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_biomarkers, Documentation),
         #     reactable(filTb %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Disease, lnOfTherapy, disp_disease1, disp_biomarkers,  Documentation), 
                   #     reactable(filTb %>% dplyr::select(Protocol, HoldStatus,filtopencohort, Phase, Title, Disease, lnOfTherapy,disp_biomarkers), 
                                  
-                         #displaying conditions column instead of Disease column
-     reactable(filTb %>% dplyr::select(Protocol, HoldStatus,filtopencohort, Phase, Title, Conditions, lnOfTherapy,disp_biomarkers),
      
+                         #displaying conditions column instead of Disease column  <<< original july 5 following line
+    # reactable(filTb %>% dplyr::select(Protocol, HoldStatus,filtopencohort, Phase, Title, Conditions, lnOfTherapy,disp_biomarkers), <<<< final decided original
+   
+     reactable(filt_data_initial_filtered() ,
      
+     #july 5th commenting - following is orginal
+       #reactable(filTb[, input$selcolumns],   #### this is using selective display columns
+     #july5th commenting
      
                       filterable = TRUE,
              #searchable = TRUE,
@@ -153,18 +227,30 @@ shinyServer(function(input, output,session) {
                htmltools::div(
                 
                  # group1: general info
-                 reactable(filTb[index, ] %>% select(Link,Documentation, Name,Sponsor,StudyType, Location, TrialLastUpdate),
+                # reactable(filTb[index, ] %>% select(Link,Documentation, Name,Sponsor,StudyType, Location, TrialLastUpdate),  <<< original working without select columns and open and closed trials
+                           
+                            #following is for selecting trials open and closed that is similar with the main display columns     
+                           reactable(expandable_data_filt()[index, ] %>% select(Link,Documentation, Name,Sponsor,StudyType, Location, TrialLastUpdate),          
+                           
                            defaultColDef = colDef(align = "center"),
                            columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"),Link = colDef(html = TRUE,name = "Trial"),Documentation = colDef(html=TRUE))
                  ),
                  
                  # group 3: summary
-                 reactable(filTb[index, ] %>%
+                # reactable(filTb[index, ] %>%   <<< original working for without option for selection for open and closed trials
+                
+                
+                #following is for selecting trials open and closed that is similar with the main display columns  
+                             reactable(expandable_data_filt()[index, ] %>%
                              select(Summary)),
                  
                  
                  # group 4: trial Status from .gov
-                 reactable(filTb[index, ] %>%
+                # reactable(filTb[index, ] %>%
+                             
+                             
+                #following is for selecting trials open and closed that is similar with the main display columns
+                             reactable(expandable_data_filt()[index, ] %>%
                              select(Status, StatusUpdate, LastUpdate, Gender, MinAge),
                            defaultColDef = colDef(align = "center"),
                            columns = list(Status = colDef(name = "Clinical.gov Status"),
@@ -174,7 +260,12 @@ shinyServer(function(input, output,session) {
                  # group2: cohort info
                  
                  # reactable(browse_tbl[index, ]$arms$arm %>%
-                 reactable(filTb[index, ]$arms[[1]] %>% unnest(biomarker) %>%
+                
+                
+                # reactable(filTb[index, ]$arms[[1]] %>% unnest(biomarker) %>%  <<< original working without selection for open and closed trials
+                             
+                #following is for selecting trials open and closed that is similar with the main display columns            
+                             reactable(expandable_data_filt()[index, ]$arms[[1]] %>% unnest(biomarker) %>%            
                              # reactable(coh %>%
                              # select(arms),
                              select(cohortlabel, drug, arm_type,line_of_therapy,arm_hold_status,Selection,summary) %>% distinct(),
@@ -191,15 +282,20 @@ shinyServer(function(input, output,session) {
                                           # })
                            )),
                  # group 5: CONDITIONS MENTIONED FROM .GOV
-                 reactable(filTb[index, ] %>%
-                            # select(Conditions)),
+                # reactable(filTb[index, ] %>%  # original working without selection for open and closed trials
+                            # select(Conditions)), <<<< delete this
+                             
+                             
+                             reactable(expandable_data_filt()[index, ] %>%
                              select(Disease)),
                  
                  # group 3: disease information
                  
-                 #  reactable(browse_tbl[index, ]$disp_disease$disp_disease),
-                 reactable(filTb[index, ]$disp_disease[[1]] %>% select(code, selection,stage))
-                  
+                 #  reactable(browse_tbl[index, ]$disp_disease$disp_disease), <<<< delete this
+                
+                
+               #  reactable(filTb[index, ]$disp_disease[[1]] %>% select(code, selection,stage)) # original working without selection for open and closed trials
+                reactable(expandable_data_filt()[index, ]$disp_disease[[1]] %>% select(code, selection,stage)) 
                )
              }) 
    })
@@ -219,10 +315,15 @@ shinyServer(function(input, output,session) {
    updateSelectInput(inputId = "locaFil",selected = "")
    updateSelectInput(inputId = "lineofTxFil",selected = "")
    
+   #reset trial type 
+   updateSelectInput(inputId = "trialTyxFil",selected = "")
    updateSelectInput(inputId = "selcolumns",selected = "")
    
    
    updateRadioButtons(inputId = "filtercond", selected = character(0))
+   
+   #adding update checkbox input when reset for show closed trials
+   updateCheckboxInput(inputId = "show_closed", value = FALSE)
  })
 
   ##### BROWSE ########b
@@ -232,9 +333,113 @@ shinyServer(function(input, output,session) {
  
  
  
+ #####introducing open trials only on page loading for non-filtered browse data
+ 
+ 
+ selecTrial$comTb = as_tibble(browse_tbl)
+ 
+ 
+ 
+ ############################ trials open on page loading
+ 
+ #adding to have trials open on page loading - july 5th #################### original working but with warning error
+ # browse_data_initial_filtered<- reactive({
+ #   if(input$show_closed){
+ #    selecTrial$comTb[,input$selcolumns]  ##original commented on july 12th
+ #   #  selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)
+ #   }
+ #   else{
+ #     
+ #     
+ #     
+ #     selecTrial$comTb[selecTrial$comTb$HoldStatus == "open",input$selcolumns] #commented on july 12th
+ #  #  selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) %>% filter(HoldStatus == "open")
+ #   }
+ # })
+ 
+ 
+ 
+ ############################ trials open on page loading --- original working ends here
+ 
+ 
+ #adding to have trials open on page loading - july 17
+ #checks if first closed trials to display or it will be open trials on page loading
+ #next checks if any columns selected otherwise displays a set of eight default columns
+ 
+ 
+ 
+ browse_data_initial_filtered<- reactive({
+   if(input$show_closed){
+     if(length(input$selcolumns) > 0){
+     selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",input$selcolumns] 
+     }
+     else{
+       selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)
+     }
+   } # if closing for show_closed
+   else
+     { 
+       if(length(input$selcolumns) > 0){
+       selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",input$selcolumns]
+     }
+       else {
+       
+       selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)
+    
+    
+        }
+       
+     
+   }# else - for this - closing 
+   
+ }) #reactive
+ 
+ #this is for expandable rows displaying the correct rows for open and close trials
+ expandable_data <- reactive({
+   if (input$show_closed) {
+     selecTrial$comTb[!selecTrial$comTb$HoldStatus %in% "open", ]
+   } else {
+     selecTrial$comTb[selecTrial$comTb$HoldStatus == "open", ]
+   }
+ })
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ####july 14th
+ # browse_data_initial_filtered<- reactive({
+ #   if(input$show_closed){
+ #     selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) ##original commented on july 12th
+ # 
+ # 
+ #   }
+ #   else{
+ #     selecTrial$comTb[selecTrial$comTb$HoldStatus == "open", ] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)#commented on july 12th
+ # 
+ #   }
+ # })
+ ##july 14th
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   output$browsetable <- renderReactable({
   
-     selecTrial$comTb = as_tibble(browse_tbl)
+   #  selecTrial$comTb = as_tibble(browse_tbl)  <<<< original commented july 6 ==== need this if you don't need checkbox for closed rows
+    
+    
+    
+    
+    
      
   #selecTrial$comTb %>% select(arm) %>% unnest(arm) %>% select(line_of_therapy)
      
@@ -250,11 +455,15 @@ shinyServer(function(input, output,session) {
                                                                  #displaying conditions instead of Disease which is a summary      
                                                                       # reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Disease, lnOfTherapy, disp_biomarkers),
                                                                                              
-                                                                                             reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers),
+                             ##original original                       ## i am using sel columns in next line so commented below                                      
+     # 1 reactable::reactable( selecTrial$comTb %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers), commented - final decided original
                                                                                              
-                                                                                             
-                                                                                             
-                                                 #    reactable::reactable( selecTrial$comTb[, input$selcolumns], 
+                                      
+    #2if you dont need check box then you need line below########################################                                      
+                                                    #reactable::reactable( selecTrial$comTb[, input$selcolumns], #original - this is only to select columns -- working
+                                                ################################################                          
+                                                    reactable::reactable(browse_data_initial_filtered(),
+                                               #      defaultSelected = "Title",                    
                                                  filterable = TRUE,
                                                  #searchable = TRUE,
                                                  
@@ -302,19 +511,28 @@ shinyServer(function(input, output,session) {
                   htmltools::div(
                    
                     # group1: general info
-                    reactable(selecTrial$comTb[index, ] %>% select(Link, Documentation,Name,Sponsor,StudyType, Location, TrialLastUpdate),
+                  #  reactable(selecTrial$comTb[index, ] %>% select(Link, Documentation,Name,Sponsor,StudyType, Location, TrialLastUpdate), #commented original 
+                    
+                    #following is added for expandable rows to reflect the trials that are open and closed correctly - july 20th
+                    reactable(expandable_data()[index, ] %>% select(Link, Documentation,Name,Sponsor,StudyType, Location, TrialLastUpdate),
                               defaultColDef = colDef(align = "center"),
                               columns = list(TrialLastUpdate = colDef(name = "Onsite Last Update"),Link = colDef(html = TRUE,name = "Trial"), Documentation = colDef(html=TRUE))
                     ),
                     
                     # group 3: summary
-                    reactable(selecTrial$comTb[index, ] %>%
+                   # reactable(selecTrial$comTb[index, ] %>%  <<< commented original
+                                
+                                #following for expandable rows to reflect open and closed trials correctly
+                                reactable(expandable_data()[index, ] %>%
                                 select(Summary)),
                     
                     
                     # group 4: trial Status from .gov
-                    reactable(selecTrial$comTb[index, ] %>%
-                                select(Status, StatusUpdate, LastUpdate, Gender, MinAge),
+                   # reactable(selecTrial$comTb[index, ] %>%   <<<< commented original
+                              
+                                
+                                reactable(expandable_data()[index, ] %>%
+                                  select(Status, StatusUpdate, LastUpdate, Gender, MinAge),
                               defaultColDef = colDef(align = "center"),
                               columns = list(Status = colDef(name = "Clinical.gov Status"),
                                              MinAge = colDef(name = "Minimum Age"),
@@ -323,7 +541,9 @@ shinyServer(function(input, output,session) {
                     # group2: cohort info
                     
                     # reactable(browse_tbl[index, ]$arms$arm %>%
-                    reactable(selecTrial$comTb[index, ]$arms[[1]] %>% unnest(biomarker) %>%
+                   # reactable(selecTrial$comTb[index, ]$arms[[1]] %>% unnest(biomarker) %>%     <<<< commented original
+                                
+                                reactable(expandable_data()[index, ]$arms[[1]] %>% unnest(biomarker) %>%
                                 # reactable(coh %>%
                                 # select(arms),
                                 select(cohortlabel, drug, arm_type,line_of_therapy,arm_hold_status,Selection,summary) %>% distinct(),
@@ -340,13 +560,18 @@ shinyServer(function(input, output,session) {
                                              # })
                               )),
                     # group 5: CONDITIONS MENTIONED FROM .GOV
-                    reactable(selecTrial$comTb[index, ] %>%
-                              #  select(Conditions)),
+                  #  reactable(selecTrial$comTb[index, ] %>%
+                              #  select(Conditions)),  <<< changed from Conditions to disease is original is correct 
+                                
+                                
+                                reactable(expandable_data()[index, ] %>%
                                  select(Disease)),
                     # group 3: disease information
                     
                     #  reactable(browse_tbl[index, ]$disp_disease$disp_disease),
-                    reactable(selecTrial$comTb[index, ]$disp_disease[[1]] %>% select(code, selection,stage))
+                   # reactable(selecTrial$comTb[index, ]$disp_disease[[1]] %>% select(code, selection,stage)) <<< original
+                  
+                  reactable(expandable_data()[index, ]$disp_disease[[1]] %>% select(code, selection,stage))
                     
                     
                   )

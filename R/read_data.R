@@ -79,4 +79,6 @@ lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line
 #browse_tbl <- browse_tbl %>% mutate(comb_col = html(paste(Documentation, "<br>", Link)))
 
 #the following is for selective display
-#seldiscolumns<- browse_tbl %>% select(Protocol, HoldStatus, Phase, Title, Disease, disp_disease1, lnOfTherapy, disp_biomarkers, Documentation)
+#seldiscolumns<- browse_tbl %>% select(Protocol, HoldStatus, Phase, Title, Disease, disp_disease1, lnOfTherapy, disp_biomarkers, Documentation) <<< old columns
+
+seldiscolumns<- browse_tbl %>% select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)

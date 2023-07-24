@@ -40,6 +40,9 @@ parseTrials <- function(jsonfile) {
   # disp_disease = trial$disease$details[[1]] %>% select(code, selection),
   disp_disease = list(disp_disease = trial$disease$details[[1]]),
   
+
+
+
     # query - general
   Title = trial$query$title,
     Status = trial$query$current_status,

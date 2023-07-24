@@ -105,34 +105,36 @@ ui <- dashboardPage(
                                     #)
                                     
 #following is for selective display
-                         #    column(4,
+                            # column(4,
 
 
-                                    # selectInput(
-                                    #   inputId = "selcolumns",
-                                    #   label = "Column selection",
-                                    # 
-                                    #   choices = c(colnames(seldiscolumns),
-                                    #               selected = "Title"),
-                                    # 
-                                    # 
-                                    # 
-                                    #   multiple = T,
-                                    # 
-                                    #   width = "100%"
-                                    # 
-                                    # )
-                           #         )
-                                    #,
+                                    selectInput(
+                                      inputId = "selcolumns",
+                                      label = "Column selection",
+
+                                      choices = c(colnames(seldiscolumns)),
+                                      #            choices = c(colnames(browse_tbl),
+                                              # selected = names(browse_tbl)),
 
 
 
+                                      multiple = T,
+
+                                      width = "100%"
+
+                                    )
+                                #    )
+                                    ,
+
+###introducing show only open trials code July 5th##########
+
+checkboxInput("show_closed","show closed trials",value = FALSE),
+
+#checkboxInput("show_selected","show selected"),
 
 
 
-
-
-
+###show open trials only code july 5th
 
                          #    column(4,
 
