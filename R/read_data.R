@@ -52,7 +52,15 @@ if (storage == "db") {
 }
 
 for (i in 1:nrow(browse_tbl)) {
-  n <- browse_tbl$arm[[i]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
+  #n <- browse_tbl$arm[[i]]$biomarker %>% bind_rows() %>% select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")<< commented july 25th original 
+  n <- browse_tbl$arm[[i]]$biomarker %>% bind_rows() %>% 
+    
+    #filtering for biomarkers only that belong to inclusion criteria
+    select(`Selection`,summary) %>% filter(`Selection` == "include") %>% 
+    
+    select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
+  
+  
   browse_tbl$disp_biomarkers[i] <- n
 }
 

@@ -73,9 +73,10 @@ parseTrials <- function(jsonfile) {
     #                                              unlist())),
 
     # query - biomarkers only for display table
-    disp_biomarkers = trial$query$arm[[1]]$biomarker %>%
+    disp_biomarkers = trial$query$arm[[1]]$biomarker %>% 
     bind_rows() %>%
-    select(summary) %>% distinct() %>% unlist() %>% na.omit() %>%
+    select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% 
+  
     paste0(collapse = " | "),
     # unique() %>%
     #  glue_col(sep = " : "),
