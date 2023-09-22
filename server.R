@@ -156,7 +156,8 @@ shinyServer(function(input, output,session) {
           filTb[filTb$HoldStatus != "open",input$selcolumns]
         }
         else{
-          filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
+        #  filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
+          filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
         }
           
         
@@ -166,7 +167,8 @@ shinyServer(function(input, output,session) {
           filTb[filTb$HoldStatus == "open",input$selcolumns]
         }
         else{
-          filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
+       #   filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
+          filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
         } 
         
       }
@@ -192,6 +194,27 @@ shinyServer(function(input, output,session) {
                          #displaying conditions column instead of Disease column  <<< original july 5 following line
     # reactable(filTb %>% dplyr::select(Protocol, HoldStatus,filtopencohort, Phase, Title, Conditions, lnOfTherapy,disp_biomarkers), <<<< final decided original
    
+     dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
+       function(values, name) {
+         dataListId <- sprintf("%s-%s-list", tableId, name)
+         tagList(
+           tags$input(
+             type = "text",
+             list = dataListId,
+             oninput = sprintf("Reactable.setFilter('%s', '%s', event.target.value || undefined)", tableId, name),
+             "aria-label" = sprintf("Filter %s", name),
+             style = style
+           ),
+           tags$datalist(
+             id = dataListId,
+             lapply(unique(values), function(value) tags$option(value = value))
+           )
+         )
+       }
+     }
+     
+     
+     
      reactable(filt_data_initial_filtered() ,
      
      #july 5th commenting - following is orginal
@@ -199,7 +222,7 @@ shinyServer(function(input, output,session) {
      #july5th commenting
      
                       filterable = TRUE,
-             #searchable = TRUE,
+           #  searchable = TRUE,
              resizable = TRUE,
              fullWidth = TRUE,
              defaultColDef = colDef(align = "center"),
@@ -210,13 +233,54 @@ shinyServer(function(input, output,session) {
            #  columns = list(Link = colDef(html = TRUE,name = "Trial"), HoldStatus = colDef(name = "Current Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease"),
                     #        disp_biomarkers = colDef(name = "Biomarker"), Documentation = colDef(html=TRUE)),
            #change Current Status to Study Status; Rename filtopencohort to Enrollment Status
-             columns = list( HoldStatus = colDef(name = "Study Status"), filtopencohort = colDef(name = "Enrollment Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Conditions = colDef(name = "Conditions/Disease"),
-                             
-                        #     columns = list( HoldStatus = colDef(name = "Study Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease")),
+      
+            
+     #columns = list( HoldStatus = colDef(name = "Study Status"), filtopencohort = colDef(name = "Enrollment Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Conditions = colDef(name = "Conditions/Disease"),
+                     columns = list( HoldStatus = colDef(name = "Study Status"), 
+                                 #    Conditions = colDef(name = "Conditions/Disease",filterInput = dataListFilter("conditions-list")),    
+                                
+                                  Diseasecat = colDef(name = "Disease Category"
+                                                     #        filterInput = dataListFilter("disease-list")
+                                 ),
+                                 
+                                 
+                                  Conditions = colDef(
+                                #       filterInput = dataListFilter("conditions-list")), #this kind of id and element-id will not work if you are using renderreactable so use the outputid as below
+                                     
+                                filterInput = dataListFilter("filterbrowse")),
+                                
+                                      #     columns = list( HoldStatus = colDef(name = "Study Status"), lnOfTherapy = colDef(name = "Line of Therapy"), Disease = colDef(name = "Conditions/Disease")),
                  #           disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
-                            disp_biomarkers = colDef(name = "Biomarker"),
-                            Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
                             
+                 stages = colDef(name = "Disease Stage"
+                                 # filterable = TRUE,
+                                 # filterInput = function(values, name) {
+                                 #   tags$select(
+                                 #     # Set to undefined to clear the filter
+                                 #     onchange = sprintf("Reactable.setFilter('stage-select', '%s', event.target.value || undefined)", name),
+                                 #     # "All" has an empty value to clear the filter, and is the default option
+                                 #     tags$option(value = "", "All"),
+                                 #     lapply(unique(values), tags$option),
+                                 #     "aria-label" = sprintf("Filter %s", name),
+                                 #     style = "width: 100%; height: 28px;"
+                                 #   )
+                                 # }
+                 ),
+                 
+                 
+                 
+                 
+                 disp_biomarkers = colDef(name = "Biomarker"),
+                 
+                
+                 
+                 
+                 
+                 
+                 
+                            Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
+         #        , elementId = "conditions-list"      #this is not needed if you are using renderreactable and will be used if you are just using reactable without renderreactable
+             #    elementId = "stage-select"  #this can be used for selectinput for any column; we have tested for stage here
                             ),
              details = function(index) { 
                
@@ -374,8 +438,9 @@ shinyServer(function(input, output,session) {
      selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",input$selcolumns] 
      }
      else{
-       selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)
-     }
+    #   selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Diseasecat, Phase, Title, Conditions, stages, lnOfTherapy, disp_biomarkers)
+       selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
+       }
    } # if closing for show_closed
    else
      { 
@@ -384,8 +449,10 @@ shinyServer(function(input, output,session) {
      }
        else {
        
-       selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)
-    
+   #    selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Diseasecat, Phase, Title, Conditions, stages, lnOfTherapy, disp_biomarkers)
+         selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
+         
+         
     
         }
        
@@ -426,7 +493,31 @@ shinyServer(function(input, output,session) {
  
  
  
- 
+ # #adding autocomplete for Disease category  ----- Sep' 20 2023
+ # dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
+ #   function(values, name) {
+ #     dataListId <- sprintf("%s-%s-list", tableId, name)
+ #     tagList(
+ #       tags$input(
+ #         type = "text",
+ #         list = dataListId,
+ #         oninput = sprintf("Reactable.setFilter('%s', '%s', event.target.value || undefined)", tableId, name),
+ #         "aria-label" = sprintf("Filter %s", name),
+ #         style = style
+ #       ),
+ #       tags$datalist(
+ #         id = dataListId,
+ #         lapply(unique(values), function(value) tags$option(value = value))
+ #       )
+ #     )
+ #   }
+ # }
+ # 
+ # 
+ # 
+ # 
+ # 
+ # # autocomplete ends
  
  
  
@@ -434,6 +525,34 @@ shinyServer(function(input, output,session) {
  
   output$browsetable <- renderReactable({
   
+    #adding autocomplete for Disease category  ----- Sep' 20 2023
+    dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
+      function(values, name) {
+        dataListId <- sprintf("%s-%s-list", tableId, name)
+        tagList(
+          tags$input(
+            type = "text",
+            list = dataListId,
+            oninput = sprintf("Reactable.setFilter('%s', '%s', event.target.value || undefined)", tableId, name),
+            "aria-label" = sprintf("Filter %s", name),
+            style = style
+          ),
+          tags$datalist(
+            id = dataListId,
+            lapply(unique(values), function(value) tags$option(value = value))
+          )
+        )
+      }
+    }
+    
+    
+    
+    
+    
+    # autocomplete ends
+    
+    
+    
    #  selecTrial$comTb = as_tibble(browse_tbl)  <<<< original commented july 6 ==== need this if you don't need checkbox for closed rows
     
     
@@ -464,14 +583,31 @@ shinyServer(function(input, output,session) {
                                                 ################################################                          
                                                     reactable::reactable(browse_data_initial_filtered(),
                                                #      defaultSelected = "Title",                    
+                        #                         searchable = TRUE,
+                                             #    searchable = TRUE,
                                                  filterable = TRUE,
-                                                 #searchable = TRUE,
-                                                 
                                                  #       columnDefs = list(list(targets = 4, width = 800)),
                                                  
                                                  resizable = TRUE,
                                                  fullWidth = TRUE,
-                                                 defaultColDef = colDef(align = "center"),
+                        
+                        
+                                               defaultColDef = colDef(align = "center"),
+                        
+                        # #have autocomplete for all columns instead of one column  - not working
+                        # defaultColDef = colDef(
+                        #   filterInput = function(values, name) {
+                        #     if (is.factor(values)) {
+                        #       dataListFilter("allcol-list")(values, name)
+                        #     }
+                        #   }
+                        # ),
+                        # 
+           #              elementId = "allcol-list",
+           
+           
+           
+           
                                                  striped = TRUE,
                                                  showSortable = TRUE,
          
@@ -487,16 +623,102 @@ shinyServer(function(input, output,session) {
          
           # columns = list(colDef("Title", header = "Title", formatter = function(value){HTML(paste0("<b>", value, "</b>"))})),
          #change Current Status to Study Status
-         columns = list(HoldStatus = colDef(name = "Study Status"), filtopencohort = colDef(name = "Enrollment Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Conditions = colDef(name = "Conditions/Disease"),
+         
+         
+        #Removed filtopencohort which is enrollment status and lnoftherapy from display 
+  #       columns = list(HoldStatus = colDef(name = "Study Status"), filtopencohort = colDef(name = "Enrollment Status"), lnOfTherapy = colDef(name = "Line of Therapy") ,Conditions = colDef(name = "Conditions/Disease"),
+                        
+                    #    columns = list(HoldStatus = colDef(name = "Study Status"), Conditions = colDef(name = "Conditions/Disease"),
+                                       
+                                       columns = list(HoldStatus = colDef(name = "Study Status"), 
+                                                      
+                                                      #Conditions = colDef(name = "Conditions",filterInput = dataListFilter("browsetable")),
+        #########                               
+                        
+        
+        
+        #adding autocomplete for disease category
+        Diseasecat = colDef(name = "Disease Category"
+                            #  filterInput = dataListFilter("diseasecat-list") ---> this does not work because you are using renderreactable so you need to use outputid here which is browsetable
+                            
+                            #    filterInput = dataListFilter("browsetable")  # this is for keeping this column with autocomplete feature - working
+                            
+        ),
+        #     elementId = "cars-list",  #new 
+        #autocomplete ends
+        
+        Conditions = colDef(name = "Conditions",filterInput = dataListFilter("browsetable")),
+        
+        
+        #adding stage with selectinput filter
+        
+        stages = colDef(name = "Disease Stage"
+                        
+                        #following is for using selectinput - for stage-select 
+                        # filterable = TRUE,
+                        # filterInput = function(values, name) {
+                        #   tags$select(
+                        #     # Set to undefined to clear the filter
+                        #     onchange = sprintf("Reactable.setFilter('stage-selection', '%s', event.target.value || undefined)", name),
+                        #     # "All" has an empty value to clear the filter, and is the default option
+                        #     tags$option(value = "", "All"),
+                        #     lapply(unique(values), tags$option),
+                        #     "aria-label" = sprintf("Filter %s", name),
+                        #     style = "width: 100%; height: 28px;"
+                        #   )
+                        # }
+        ),
+        
+        
+        
+        
+                        
                           #     disp_biomarkers = colDef(name = "Biomarker"), disp_disease1 = colDef(name = "Cancer Type"), Documentation = colDef(html=TRUE), 
                         
                         disp_biomarkers = colDef(name = "Biomarker"),
-                      Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
+                        
+                       
+        
+        
+        
+                        
+                       
+                        Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
+        
+        
+        
+        
+        
+        
+                    #   , elementId = "allcol-list"   
+     #   , elementId = "diseasecat-list"
+        
+        
+     #   ,elementId = "stage-selection",
+                        #adding stage with selectinput filter ends
+                        
+                        
+                        
+                        
+           #original before stage added           Title = colDef(name = "Title", minWidth = 300 ,style = list(fontWeight = "bold"))
+                      
+                      
+                      
+                      
+                      
+                      
               
                       #        Title = colDef(name = "Title", minWidth = 300)  
                    #   Title = colDef(Title = list(fontWeight = "bold"))
                       
                       ),
+         
+         
+         #for stage selectinput
+ #         elementId = "stage-select",
+         #for stage selectinput
+         
+         
        #company = colDef(name = "Company", minWidth = 100),
                  
         # style = list(".rt-td:nth-child(6)" = list("width" = "1500px"), ".rt-table" = list("width" = "10000px"),

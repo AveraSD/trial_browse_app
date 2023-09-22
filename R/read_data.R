@@ -74,6 +74,17 @@ for (k in 1:nrow(browse_tbl)) {
  browse_tbl$filtopencohort[k] <- sel
 }
 
+#Adding stage for display column
+
+for (v in 1:nrow(browse_tbl)) {
+  sf <- browse_tbl$details[[v]] %>% bind_rows() %>% select(stage) %>% unnest(stage) %>% distinct() %>% na.omit() %>% paste0(collapse = " | ")
+  browse_tbl$stages[v] <- sf
+}
+
+### stage for display column ends here
+
+
+
 #%>% paste0(cohortlabel,"-",arm_hold_status) %>% unlist() %>% na.omit() %>%  paste0(collapse = " | ")
 # Make dataframe for each of the filtration criteria - for now - Drug, cancer type, stage, location and line of therapy 
 
@@ -89,4 +100,4 @@ lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line
 #the following is for selective display
 #seldiscolumns<- browse_tbl %>% select(Protocol, HoldStatus, Phase, Title, Disease, disp_disease1, lnOfTherapy, disp_biomarkers, Documentation) <<< old columns
 
-seldiscolumns<- browse_tbl %>% select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)
+seldiscolumns<- browse_tbl %>% select(Protocol, Diseasecat, HoldStatus, filtopencohort, stages, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)

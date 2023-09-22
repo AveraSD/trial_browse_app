@@ -127,6 +127,8 @@ loadDbData <- function() {
     "JIT" = jit,
     "Name" = trial_name,
     
+    "Diseasecat" = disease_category,
+   
     # disease
     "Disease" = summary,
     
@@ -180,6 +182,10 @@ loadDbData <- function() {
  db_tbl$lnOfTherapy <- "NA"
  
  db_tbl$filtopencohort <- "NA"
+ 
+ 
+ db_tbl$stages <- "NA"
+ 
 #### db_tbl
  # arm_gr = list(cohortlabel = db_tbl$arm$cohortlabel,
  #                    
