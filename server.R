@@ -153,23 +153,27 @@ shinyServer(function(input, output,session) {
     filt_data_initial_filtered<- reactive({
       if(input$show_closed){
         if(length(input$selcolumns > 0)){
-          filTb[filTb$HoldStatus != "open",input$selcolumns]
+      #    filTb[filTb$HoldStatus != "open",input$selcolumns] commented oct'25th
+          filTb[filTb$HoldStatus == "closed",input$selcolumns]
         }
         else{
         #  filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
-          filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
-        }
+         #commented oct' 25 filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
+          filTb[filTb$HoldStatus == "closed",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
+          }
           
         
       }
       else{
         if(length(input$selcolumns > 0)){
-          filTb[filTb$HoldStatus == "open",input$selcolumns]
+        #  filTb[filTb$HoldStatus == "open",input$selcolumns] commented oct' 25th
+          filTb[filTb$HoldStatus != "closed",input$selcolumns]
         }
         else{
        #   filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
-          filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
-        } 
+      # commented oct 25th..   filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
+          filTb[filTb$HoldStatus != "closed",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
+          } 
         
       }
     })
@@ -178,9 +182,11 @@ shinyServer(function(input, output,session) {
     #this is for expandable rows displaying the correct rows for open and close trials
     expandable_data_filt <- reactive({
       if (input$show_closed) {
-        filTb[!filTb$HoldStatus %in% "open", ]
+        #filTb[!filTb$HoldStatus %in% "open", ] commented oct' 25th
+        filTb[filTb$HoldStatus %in% "closed", ]
       } else {
-        filTb[filTb$HoldStatus == "open", ]
+      #  filTb[filTb$HoldStatus == "open", ] commented oct' 25th
+        filTb[!filTb$HoldStatus == "closed", ]
       }
     })
     
@@ -222,7 +228,7 @@ shinyServer(function(input, output,session) {
      #july5th commenting
      
                       filterable = TRUE,
-           #  searchable = TRUE,
+             searchable = TRUE,
              resizable = TRUE,
              fullWidth = TRUE,
              defaultColDef = colDef(align = "center"),
@@ -435,23 +441,26 @@ shinyServer(function(input, output,session) {
  browse_data_initial_filtered<- reactive({
    if(input$show_closed){
      if(length(input$selcolumns) > 0){
-     selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",input$selcolumns] 
+   #  selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",input$selcolumns] commented oct 25th
+       selecTrial$comTb[selecTrial$comTb$HoldStatus=="closed",input$selcolumns]
      }
      else{
     #   selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Diseasecat, Phase, Title, Conditions, stages, lnOfTherapy, disp_biomarkers)
-       selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
+    # commented oct 25th   selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
+       selecTrial$comTb[selecTrial$comTb$HoldStatus=="closed",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
        }
    } # if closing for show_closed
    else
      { 
        if(length(input$selcolumns) > 0){
-       selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",input$selcolumns]
+    #   selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",input$selcolumns] commented oct25th
+         selecTrial$comTb[selecTrial$comTb$HoldStatus!="closed",input$selcolumns]
      }
        else {
        
    #    selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Diseasecat, Phase, Title, Conditions, stages, lnOfTherapy, disp_biomarkers)
-         selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
-         
+     #    selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
+         selecTrial$comTb[selecTrial$comTb$HoldStatus!="closed",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
          
     
         }
@@ -464,9 +473,11 @@ shinyServer(function(input, output,session) {
  #this is for expandable rows displaying the correct rows for open and close trials
  expandable_data <- reactive({
    if (input$show_closed) {
-     selecTrial$comTb[!selecTrial$comTb$HoldStatus %in% "open", ]
+   #  selecTrial$comTb[!selecTrial$comTb$HoldStatus %in% "open", ] commented oct 25th
+     selecTrial$comTb[selecTrial$comTb$HoldStatus %in% "closed", ]
    } else {
-     selecTrial$comTb[selecTrial$comTb$HoldStatus == "open", ]
+   #  selecTrial$comTb[selecTrial$comTb$HoldStatus == "open", ] commented oct 25th
+     selecTrial$comTb[!selecTrial$comTb$HoldStatus == "closed", ]
    }
  })
  
@@ -584,7 +595,7 @@ shinyServer(function(input, output,session) {
                                                     reactable::reactable(browse_data_initial_filtered(),
                                                #      defaultSelected = "Title",                    
                         #                         searchable = TRUE,
-                                             #    searchable = TRUE,
+                                                 searchable = TRUE,
                                                  filterable = TRUE,
                                                  #       columnDefs = list(list(targets = 4, width = 800)),
                                                  
