@@ -129,6 +129,7 @@ loadDbData <- function() {
     
     "Diseasecat" = disease_category,
    
+    "PrincipalInvestigator" = Principal_Investigator,
     # disease
     "Disease" = summary,
     

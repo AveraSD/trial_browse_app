@@ -159,7 +159,7 @@ shinyServer(function(input, output,session) {
         else{
         #  filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
          #commented oct' 25 filTb[filTb$HoldStatus != "open",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
-          filTb[filTb$HoldStatus == "closed",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
+          filTb[filTb$HoldStatus == "closed",] %>% dplyr::select(Protocol, PrincipalInvestigator, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
           }
           
         
@@ -172,7 +172,7 @@ shinyServer(function(input, output,session) {
         else{
        #   filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers) 
       # commented oct 25th..   filTb[filTb$HoldStatus == "open",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
-          filTb[filTb$HoldStatus != "closed",] %>% dplyr::select(Protocol, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
+          filTb[filTb$HoldStatus != "closed",] %>% dplyr::select(Protocol, PrincipalInvestigator, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers)
           } 
         
       }
@@ -249,6 +249,7 @@ shinyServer(function(input, output,session) {
                                                      #        filterInput = dataListFilter("disease-list")
                                  ),
                                  
+                                 PrincipalInvestigator = colDef(name = "Principal Investigator"),
                                  
                                   Conditions = colDef(
                                 #       filterInput = dataListFilter("conditions-list")), #this kind of id and element-id will not work if you are using renderreactable so use the outputid as below
@@ -447,7 +448,7 @@ shinyServer(function(input, output,session) {
      else{
     #   selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Diseasecat, Phase, Title, Conditions, stages, lnOfTherapy, disp_biomarkers)
     # commented oct 25th   selecTrial$comTb[selecTrial$comTb$HoldStatus!="open",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
-       selecTrial$comTb[selecTrial$comTb$HoldStatus=="closed",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
+       selecTrial$comTb[selecTrial$comTb$HoldStatus=="closed",] %>% dplyr::select(Protocol, PrincipalInvestigator, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
        }
    } # if closing for show_closed
    else
@@ -460,7 +461,7 @@ shinyServer(function(input, output,session) {
        
    #    selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, filtopencohort, Diseasecat, Phase, Title, Conditions, stages, lnOfTherapy, disp_biomarkers)
      #    selecTrial$comTb[selecTrial$comTb$HoldStatus=="open",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
-         selecTrial$comTb[selecTrial$comTb$HoldStatus!="closed",] %>% dplyr::select(Protocol, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
+         selecTrial$comTb[selecTrial$comTb$HoldStatus!="closed",] %>% dplyr::select(Protocol, PrincipalInvestigator, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers)
          
     
         }
@@ -657,6 +658,9 @@ shinyServer(function(input, output,session) {
         ),
         #     elementId = "cars-list",  #new 
         #autocomplete ends
+        
+        PrincipalInvestigator = colDef(name = "Principal Investigator"),
+        
         
         Conditions = colDef(name = "Conditions",filterInput = dataListFilter("browsetable")),
         

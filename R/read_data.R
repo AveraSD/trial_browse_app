@@ -100,4 +100,4 @@ lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line
 #the following is for selective display
 #seldiscolumns<- browse_tbl %>% select(Protocol, HoldStatus, Phase, Title, Disease, disp_disease1, lnOfTherapy, disp_biomarkers, Documentation) <<< old columns
 
-seldiscolumns<- browse_tbl %>% select(Protocol, Diseasecat, HoldStatus, filtopencohort, stages, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers)
+seldiscolumns<- browse_tbl %>% select(Location, PrincipalInvestigator, Protocol, Diseasecat, HoldStatus, filtopencohort, stages, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers, JIT)
