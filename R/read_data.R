@@ -77,8 +77,10 @@ for (k in 1:nrow(browse_tbl)) {
 #Adding stage for display column
 
 for (v in 1:nrow(browse_tbl)) {
-  sf <- browse_tbl$details[[v]] %>% bind_rows() %>% select(stage) %>% unnest(stage) %>% distinct() %>% na.omit() %>% paste0(collapse = " | ")
-  browse_tbl$stages[v] <- sf
+ # sf <- browse_tbl$details[[v]] %>% bind_rows() %>% select(stage) %>% unnest(stage) %>% distinct() %>% na.omit() %>% paste0(collapse = " | ")  commented dec 4 previous working 
+  
+  sf <- browse_tbl$details[[v]] %>% bind_rows() %>% select(stage) %>% unnest(stage) %>% distinct() %>% na.omit() %>% mutate(stages = paste0(stage, collapse = " | ")) %>% select(stages) %>% distinct() %>% na.omit()  # added to avoid c()
+ browse_tbl$stages[v] <- sf
 }
 
 ### stage for display column ends here
