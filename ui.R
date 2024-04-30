@@ -25,7 +25,10 @@ library(shinydashboard)
 
 
 ui <- dashboardPage(
-  dashboardHeader(title = "TrialMatch",titleWidth = 350),
+#  dashboardHeader(title = "TrialMatch",titleWidth = 350), # with blue original 
+  dashboardHeader(title = "TrialMatch", titleWidth = 350,
+                  tags$li(class="dropdown",tags$style(HTML(".skin-blue .main-header .navbar, .skin-blue .main-header .logo {background-color: #007852; }")))),
+  
   dashboardSidebar(collapsed = TRUE,  # sidebar panel does not load when initial loading
     
     tags$style(HTML("
@@ -49,7 +52,7 @@ ui <- dashboardPage(
                              
                              # column(
                              #   4,
-
+ 
                                selectInput(
                                  inputId = "stageView",
                                  label = "Disease Stages",
@@ -128,7 +131,7 @@ ui <- dashboardPage(
 
 ###introducing show only open trials code July 5th##########
 
-checkboxInput("show_closed","show closed trials",value = FALSE),
+#checkboxInput("show_closed","show closed trials",value = FALSE),  ## original placed
 
 #checkboxInput("show_selected","show selected"),
 
@@ -156,8 +159,12 @@ checkboxInput("show_closed","show closed trials",value = FALSE),
 # )
   #                         ),
                            #, #fluidrow
+###introducing show only open trials code July 5th##########
 
+checkboxInput("show_closed","show closed trials",value = FALSE),
 
+#adding action button for toggle search boxes
+#actionButton("toggle_search","Toggle Search Box"),
                            # br(),
                            #        reactableOutput("filterbrowse"),
                            #       br(),

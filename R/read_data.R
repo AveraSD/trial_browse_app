@@ -2,6 +2,7 @@ library(here)
 library(dplyr)
 library(tidyverse)
 library(shinyjs)
+library(tidyr)
 ### read in config parameters
 
 ## trials data location
@@ -92,9 +93,9 @@ for (v in 1:nrow(browse_tbl)) {
 
 drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
 diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
-stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% select(stage) %>% distinct()
-locAv = browse_tbl %>% select(Location) %>% distinct()
-trialTyAv = browse_tbl %>% select(JIT) %>% distinct()
+stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% select(stage) %>% distinct() 
+locAv = browse_tbl %>% select(Location) %>% separate_rows(Location,sep=",") %>% mutate(Location=trimws(Location)) %>% distinct()
+trialTyAv = browse_tbl %>% select(JIT) %>%  mutate(JIT =trimws(JIT)) %>% distinct()
 lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = c(";")) %>% select(line_of_therapy) %>% distinct() 
 #useShinyjs()
 #browse_tbl <- browse_tbl %>% mutate(comb_col = html(paste(Documentation, "<br>", Link)))

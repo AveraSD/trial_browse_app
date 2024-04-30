@@ -32,75 +32,141 @@ shinyServer(function(input, output,session) {
     
     # selection 
     SelStage = as.list.data.frame(input$stageView)
-    checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct()
+  #  checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct() #old working
+    checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(str_detect(stage, paste(SelStage,collapse = "|"))) %>% select(NCT) %>% distinct()
+    
     print(isTRUE(SelStage))
     print(length(checkStageSel$NCT))
+    
     SelDise = as.list.data.frame(input$disFil)
-    checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(code %in% SelDise) %>% select(NCT) %>% distinct()
+    checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(code %in% SelDise) %>% select(NCT) %>% distinct() #old working
+   # checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(str_detect(code, paste(SelDise,collapse = "|"))) %>% select(NCT) %>% distinct()
    
-      SelDrug = as.list.data.frame(input$drugFil)
+       SelDrug = as.list.data.frame(input$drugFil)
      checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
     # 
     SelLineofTx = as.list.data.frame(input$lineofTxFil)
     checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = ";") %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
    
     SelLocat = as.list.data.frame(input$locaFil)
-    checklocat = browse_tbl %>% select(NCT,Location) %>% filter(Location %in%  SelLocat) %>% select(NCT) %>% distinct()
-    
+  #  checklocat = browse_tbl %>% select(NCT,Location) %>% filter(Location %in%  SelLocat) %>% select(NCT) %>% distinct() old working
+    checklocat = browse_tbl %>% select(NCT,Location) %>% filter(str_detect(Location, paste(SelLocat, collapse = "|"))) %>% select(NCT) %>% distinct()
     # for the trial type 
      SelTrialty = as.list.data.frame(input$trialTyxFil) # Ui name
-    checktrlTy = browse_tbl %>% select(NCT,JIT) %>% filter(JIT %in%  SelTrialty) %>% select(NCT) %>% distinct()
-   
+ #   checktrlTy = browse_tbl %>% select(NCT,JIT) %>% filter(JIT %in%  SelTrialty) %>% select(NCT) %>% distinct() old working
+    checktrlTy = browse_tbl %>% select(NCT,JIT) %>% filter(str_detect(JIT, paste(SelTrialty,collapse = "|"))) %>% select(NCT) %>% distinct()
    
    # ----------------------------------------------------------------------------------------------------------------------- #
     # part 2 options 
-    if(length(checkStageSel$NCT) >= 1  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0){
+    # if(length(checkStageSel$NCT) >= 1  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0){
+    # 
+    #   # in all four options
+    #   completeList = c(unique(checkStageSel$NCT))
+    #   print(completeList)
+    # 
+    # }else if(length(checkStageSel$NCT) ==0  && length(checkDiseSel$NCT) >=1 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0 ){
+    # 
+    #   # in all disease options
+    #   completeList = c( unique(checkDiseSel$NCT))
+    #   print(completeList)
+    #   
+    # }else if(length(checkStageSel$NCT) ==0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) >=1 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0 ){
+    # 
+    #   # in all Drug options
+    #   completeList =  c(unique(checkDrugSel$NCT))
+    #   print(completeList)
+    # 
+    # 
+    # }else if(length(checkStageSel$NCT) == 0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) >= 1 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0 ){
+    # 
+    #   # in all line of therapy option
+    #   completeList = c(unique(checklineoftxSel$NCT))
+    #   print(completeList)
+    # 
+    # }else if(length(checkStageSel$NCT) == 0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) >=1 && length(checktrlTy$NCT) == 0  ){
+    #   
+    #   # in all Location option
+    #   completeList = c(unique(checklocat$NCT))
+    #   
+    # }else if(length(checkStageSel$NCT) == 0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0  && length(checktrlTy$NCT) >=1  ){
+    #   
+    #   # in all Trial type option
+    #   completeList = c(unique(checktrlTy$NCT))
+    #   
+    # }else{
+    #   
+    #   matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT), unique(checklocat$NCT), unique(checktrlTy$NCT) )
+    #   ntb = as.data.frame(table(matchList))
+    #   maxNb = max(ntb$Freq)
+    #   ntb = ntb %>% filter(Freq >= maxNb )
+    #   completeList = c(ntb$matchList)
+    #   print(completeList)
+    #   }
 
-      # in all four options
-      completeList = c(unique(checkStageSel$NCT))
-      print(completeList)
 
-    }else if(length(checkStageSel$NCT) ==0  && length(checkDiseSel$NCT) >=1 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0 ){
-
-      # in all disease options
-      completeList = c( unique(checkDiseSel$NCT))
-      print(completeList)
+    #new code on apr 26  1st try for intersection
+    
+    # check_conditions <- function(dataframes_list) {
+    #   completelist <- NULL
+    #   for (i in 2:length(dataframes_list)) {
+    #     combinations <- combn(dataframes_list, i, simplify = FALSE)
+    #     for (j in 1:ncol(combinations)) {
+    #       dfs <- combinations[[j]]
+    #       if(!any(sapply(dfs,function(df)nrow(df)== 0)) &&
+    #       (is.null(completelist) || length(completelist) == 0 ||
+    #       (all(lengths(lapply(dfs, function(df) nrow(filter(df, NCT %in% completelist)))) >= 1) &&
+    #           all(lengths(lapply(dfs, function(df) nrow(filter(df, NCT %in% completelist)))) == 0)))) {
+    #         completelist <- unique(dfs[[1]]$NCT)
+    #         break
+    #       }
+    #     }
+    #     if (!is.null(completelist) && length(completelist) > 0 ) break
+    #   }
+    #   completelist
+    # }
+    # 
+    # # Define your dataframes list
+    # dataframes_list <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrlTy)
+    # 
+    # # Get the common NCT values based on different combinations
+    # completelist <- check_conditions(dataframes_list)
+    
+    # Get the intersection of NCT values from the result objects - 2nd try
+    get_intersection <- function(result_objects) {
+      # Extract NCT values from result objects
       
-    }else if(length(checkStageSel$NCT) ==0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) >=1 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0 ){
-
-      # in all Drug options
-      completeList =  c(unique(checkDrugSel$NCT))
-      print(completeList)
-
-
-    }else if(length(checkStageSel$NCT) == 0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) >= 1 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0 ){
-
-      # in all line of therapy option
-      completeList = c(unique(checklineoftxSel$NCT))
-      print(completeList)
-
-    }else if(length(checkStageSel$NCT) == 0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) >=1 && length(checktrlTy$NCT) == 0  ){
+      non_null_results<- lapply(result_objects, function(result)
+      {
+        if(nrow(result) > 0) result$NCT else NULL
+      }
+        )
       
-      # in all Location option
-      completeList = c(unique(checklocat$NCT))
+      non_null_results <- Filter(Negate(is.null),non_null_results)
       
-    }else if(length(checkStageSel$NCT) == 0  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0  && length(checktrlTy$NCT) >=1  ){
+      if(length(non_null_results) == 0){
+        return(character(0))
+      }
       
-      # in all Trial type option
-      completeList = c(unique(checktrlTy$NCT))
-      
-    }else{
-      
-      matchList = c(unique(checkStageSel$NCT), unique(checkDiseSel$NCT), unique(checkDrugSel$NCT), unique(checklineoftxSel$NCT), unique(checklocat$NCT), unique(checktrlTy$NCT) )
-      ntb = as.data.frame(table(matchList))
-      maxNb = max(ntb$Freq)
-      ntb = ntb %>% filter(Freq >= maxNb )
-      completeList = c(ntb$matchList)
-      print(completeList)
-      
+     # nct_lists <- lapply(nonzeroresults, function(result) result$NCT)
+      #print(nct_lists)
+      # Get the intersection of NCT values
+    #  intersection_nct <- Reduce(intersect, nct_lists)
+      intersection_nct <- Reduce(intersect, non_null_results)
+      return(intersection_nct)
     }
-
-
+    
+    # Example usage:
+    # Assuming result_objects contain the result objects checkDis, checkSt, checkTrl, checkloc, checklot
+    result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrlTy)
+    
+    # Get the intersection of NCT values
+    intersection_nct <- get_intersection(result_objects)
+    
+    # Print the intersection NCT values
+    print(intersection_nct)
+    
+    completeList = intersection_nct
+    
     # ----------------------------------------------------------------------------------------------------------------------- #
    
     
@@ -162,7 +228,9 @@ shinyServer(function(input, output,session) {
          # filTb[filTb$HoldStatus == "closed",] %>% dplyr::select(Protocol, PrincipalInvestigator, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers) #previous display order
           
           #changing display order
-          filTb[filTb$HoldStatus == "closed",] %>% dplyr::select(Protocol, Title, Phase, stages, Conditions,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
+       #   filTb[filTb$HoldStatus == "closed",] %>% dplyr::select(Protocol, Title, Phase, stages, Conditions,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
+          #changing display columns
+          filTb[filTb$HoldStatus == "closed",] %>% dplyr::select(Protocol, Title, Phase, stages, lnOfTherapy , disp_disease1, HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
           }
           
         
@@ -178,7 +246,9 @@ shinyServer(function(input, output,session) {
        #   filTb[filTb$HoldStatus != "closed",] %>% dplyr::select(Protocol, PrincipalInvestigator, HoldStatus, Phase, Title, Diseasecat, Conditions, stages, disp_biomarkers) #previous display order
           
           #changing display order
-          filTb[filTb$HoldStatus != "closed",] %>% dplyr::select(Protocol, Title, Phase, stages, Conditions,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
+         # filTb[filTb$HoldStatus != "closed",] %>% dplyr::select(Protocol, Title, Phase, stages, Conditions,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
+          #changing display columns
+          filTb[filTb$HoldStatus != "closed",] %>% dplyr::select(Protocol, Title, Phase, stages, lnOfTherapy , disp_disease1, HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
           } 
         
       }
@@ -233,7 +303,7 @@ shinyServer(function(input, output,session) {
        #reactable(filTb[, input$selcolumns],   #### this is using selective display columns
      #july5th commenting
      
-                      filterable = TRUE,
+     #                 filterable = TRUE,
              searchable = TRUE,
              resizable = TRUE,
              fullWidth = TRUE,
@@ -254,7 +324,8 @@ shinyServer(function(input, output,session) {
                                   Diseasecat = colDef(name = "Disease Category"
                                                      #        filterInput = dataListFilter("disease-list")
                                  ),
-                                 
+                                 lnOfTherapy = colDef(name = "Line of Therapy"),
+                                 disp_disease1 = colDef(name = "Cancer Type"),
                                  PrincipalInvestigator = colDef(name = "Principal Investigator"),
                                  
                                   Conditions = colDef(
@@ -457,7 +528,9 @@ shinyServer(function(input, output,session) {
     #   selecTrial$comTb[selecTrial$comTb$HoldStatus=="closed",] %>% dplyr::select(Protocol, PrincipalInvestigator, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers) #previous display order
        
        #changing display order
-       selecTrial$comTb[selecTrial$comTb$HoldStatus=="closed",] %>% dplyr::select(Protocol, Title, Phase, stages, Conditions,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
+     #  selecTrial$comTb[selecTrial$comTb$HoldStatus=="closed",] %>% dplyr::select(Protocol, Title, Phase, stages, Conditions,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
+       #changing display columns
+       selecTrial$comTb[selecTrial$comTb$HoldStatus=="closed",] %>% dplyr::select(Protocol, Title, Phase, stages, lnOfTherapy, disp_disease1,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
        
        }
    } # if closing for show_closed
@@ -474,9 +547,11 @@ shinyServer(function(input, output,session) {
        #  selecTrial$comTb[selecTrial$comTb$HoldStatus!="closed",] %>% dplyr::select(Protocol, PrincipalInvestigator, HoldStatus, Diseasecat, Phase, Title, Conditions, stages, disp_biomarkers) #previous display order
          
     # changing display order
-         selecTrial$comTb[selecTrial$comTb$HoldStatus!="closed",] %>% dplyr::select(Protocol, Title, Phase, stages, Conditions,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
-        }
-       
+        # selecTrial$comTb[selecTrial$comTb$HoldStatus!="closed",] %>% dplyr::select(Protocol, Title, Phase, stages, Conditions,  HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
+        #changing display columns
+         selecTrial$comTb[selecTrial$comTb$HoldStatus!="closed",] %>% dplyr::select(Protocol, Title, Phase, stages,  lnOfTherapy, disp_disease1, HoldStatus, Diseasecat, PrincipalInvestigator,  disp_biomarkers)
+         }
+      
      
    }# else - for this - closing 
    
@@ -608,7 +683,9 @@ shinyServer(function(input, output,session) {
                                                #      defaultSelected = "Title",                    
                         #                         searchable = TRUE,
                                                  searchable = TRUE,
-                                                 filterable = TRUE,
+                        
+                        #no filter for each column
+                                         #        filterable = TRUE,
                                                  #       columnDefs = list(list(targets = 4, width = 800)),
                                                  
                                                  resizable = TRUE,
@@ -669,7 +746,8 @@ shinyServer(function(input, output,session) {
         ),
         #     elementId = "cars-list",  #new 
         #autocomplete ends
-        
+        lnOfTherapy = colDef(name = "Line of Therapy"),
+        disp_disease1 = colDef(name = "Cancer Type"),
         PrincipalInvestigator = colDef(name = "Principal Investigator"),
         
         
