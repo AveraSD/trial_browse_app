@@ -44,7 +44,7 @@ ui <- dashboardPage(
    
        #with gray background and green and tan and purple buttons  
    #changed width 370px to 350px
-   tags$style(HTML('.skin-blue .sidebar { background-color: #D1D3D3  ; width:350px; height: 180vh;}',          
+   tags$style(HTML('.skin-blue .sidebar { background-color: #D1D3D3  ; width:350px; height: 200vh;}',          
                     #    '.left-side, .main-sidebar {padding-top: 20px}',
                     #     '.skin-blue .sidebar .selectize-control { background-color: #D1D3D3 }',
                     #    '.skin-blue .sidebar .selectize-input { background-color: #D1D3D3 }',
