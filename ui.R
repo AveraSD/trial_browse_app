@@ -39,15 +39,16 @@ ui <- dashboardPage(
     # ")),
     
     #new block
-    width = 370,
+    width = 350, #original was 370
    # tags$style(HTML('.skin-blue .sidebar { background-color: #E6E4D0  ; width:370px; height: 598vh;}', #this is light tan with green buttons
    
-       #with gray background and green and tan and purple buttons            
-   tags$style(HTML('.skin-blue .sidebar { background-color: #D1D3D3  ; width:370px; height: 598vh;}',          
+       #with gray background and green and tan and purple buttons  
+   #changed width 370px to 350px
+   tags$style(HTML('.skin-blue .sidebar { background-color: #D1D3D3  ; width:350px; height: 180vh;}',          
                     #    '.left-side, .main-sidebar {padding-top: 20px}',
                     #     '.skin-blue .sidebar .selectize-control { background-color: #D1D3D3 }',
                     #    '.skin-blue .sidebar .selectize-input { background-color: #D1D3D3 }',
-                    '.skin-blue .sidebar .selectize-dropdown { background-color: #D6EADD  }',
+                    '.skin-blue .sidebar .selectize-dropdown { background-color: #D1D3D3  }',
                     #  '.skin-blue .sidebar .sidebar-menu .treeview-menu > li >a {color: black;}',
                     #  '.skin-blue .sidebar h5 {color:black; }',
                     '.skin-blue .control-label { color: black; }',
@@ -255,7 +256,8 @@ checkboxInput("show_closed","show closed trials",value = FALSE),
               theme = bs_theme(version = 5,
                               bootswatch = "cosmo",
                               # primary = "#246725")
-      primary = "#D6EADD")
+     # primary = "#D6EADD")
+      primary = "#D1D3D3")
   )
   
    
