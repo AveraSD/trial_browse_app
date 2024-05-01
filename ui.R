@@ -31,20 +31,57 @@ ui <- dashboardPage(
   
   dashboardSidebar(collapsed = TRUE,  # sidebar panel does not load when initial loading
     
-    tags$style(HTML("
-      .main-sidebarmenu{
-        width: 350px;
-      }
-    ")),
+                   #commented block working from before
+    # tags$style(HTML("
+    #   .main-sidebarmenu{
+    #     width: 350px;
+    #   }
+    # ")),
+    
+    #new block
+    width = 370,
+   # tags$style(HTML('.skin-blue .sidebar { background-color: #E6E4D0  ; width:370px; height: 598vh;}', #this is light tan with green buttons
+   
+       #with gray background and green and tan and purple buttons            
+   tags$style(HTML('.skin-blue .sidebar { background-color: #D1D3D3  ; width:370px; height: 598vh;}',          
+                    #    '.left-side, .main-sidebar {padding-top: 20px}',
+                    #     '.skin-blue .sidebar .selectize-control { background-color: #D1D3D3 }',
+                    #    '.skin-blue .sidebar .selectize-input { background-color: #D1D3D3 }',
+                    '.skin-blue .sidebar .selectize-dropdown { background-color: #D6EADD  }',
+                    #  '.skin-blue .sidebar .sidebar-menu .treeview-menu > li >a {color: black;}',
+                    #  '.skin-blue .sidebar h5 {color:black; }',
+                    '.skin-blue .control-label { color: black; }',
+                    '.skin-blue .sidebar .form-group .control-label {color: black; }',
+                    #  '.well {color: white;}',
+                    '.well .control-label { color: black;}',
+                    '.sidebar .checkbox label {color: black;}',
+                    #  '.btn-yellow {background-color: #F8EB60; color: #F8EB60 ;}',
+                    #  '.btn-yellow {background-color: #F8EB60;color: black ;}', good yellow put back
+                    '.btn-green {background-color: #C4E86B;color: black ;}',
+                    '.btn-orange {background-color: #FF7F2F; color: black ;}',
+                    '.btn-purple {background-color: #644B78; color: white ;}',
+                    '.btn-resetorange {background-color: #FF7F2F; color: black ;}',
+                    
+                    '.btn-ltgreen {background-color: #72AA85; color: white ;}',
+                    '.btn-tan {background-color: #9D9666; color: white ;}',
+                    
+                    #   '.skin-blue .sidebar .checkbox .control-label { color: black;}' 
+    )),
+    
+    
+    
+    
     
     
     sidebarMenu(
       menuItem("Browse", tabName = "browse", icon = icon("search")),
 
+   #  menuItem("Browse", tabName = "browse", style = "background-color: #E6E4D0;"),      
+      
       ####
       useShinyjs(),
-      tabItems(
-        tabItem(tabName = "browse",
+       tabItems(
+         tabItem(tabName = "browse",
  #               fluidRow(
   #                column(12,
    #                      wellPanel(
@@ -53,6 +90,8 @@ ui <- dashboardPage(
                              # column(
                              #   4,
  
+# style = "background-color: #E6E4D0;",
+ style = "background-color: #D1D3D3;",
                                selectInput(
                                  inputId = "stageView",
                                  label = "Disease Stages",
@@ -141,8 +180,9 @@ ui <- dashboardPage(
 
                          #    column(4,
 
-                                    actionButton("loc_fil", "Filter",icon = shiny::icon("filter"),size = "sm",class = "btn-warning",width="50%"),
-
+                                 #   actionButton("loc_fil", "Filter",icon = shiny::icon("filter"),size = "sm",class = "btn-warning",width="50%"),
+#new
+actionButton("loc_fil", "Filter",icon = shiny::icon("filter"),size = "sm",class = "btn-ltgreen",width="50%"),
                            #  ) #column
 
                              # )
@@ -152,10 +192,15 @@ ui <- dashboardPage(
 
                           # fluidRow(
                            #  column(4,
-                                    actionButton("reset_btn_browse", "Reset Trials",class = "btn-success", width = "50%"),
+              #                      actionButton("reset_btn_browse", "Reset Trials",class = "btn-success", width = "50%"),
 # ),
+#new
+actionButton("reset_btn_browse", "Reset Trials",class = "btn-tan", width = "50%"),
                             # column(4,
-                                    actionButton("collapse_btn_browse", "Collapse All",class = "btn-info", width = "50%") ,
+                            #        actionButton("collapse_btn_browse", "Collapse All",class = "btn-info", width = "50%") ,
+#new
+actionButton("collapse_btn_browse", "Collapse All",class = "btn-purple", width = "50%") ,
+
 # )
   #                         ),
                            #, #fluidrow
@@ -209,8 +254,8 @@ checkboxInput("show_closed","show closed trials",value = FALSE),
       # #       
               theme = bs_theme(version = 5,
                               bootswatch = "cosmo",
-                               primary = "#246725")
-
+                              # primary = "#246725")
+      primary = "#D6EADD")
   )
   
    
