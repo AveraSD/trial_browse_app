@@ -39,11 +39,22 @@ shinyServer(function(input, output,session) {
     print(length(checkStageSel$NCT))
     
     SelDise = as.list.data.frame(input$disFil)
-    checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(code %in% SelDise) %>% select(NCT) %>% distinct() #old working
+   # checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(code %in% SelDise) %>% select(NCT) %>% distinct() #old working
    # checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(str_detect(code, paste(SelDise,collapse = "|"))) %>% select(NCT) %>% distinct()
+    
+    SelDise1<- as.list.data.frame(gsub("\\([^()]*\\)","",SelDise))
    
-       SelDrug = as.list.data.frame(input$drugFil)
-     checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
+    SelDise1<- trimws(SelDise1)
+    print(SelDise1)
+   # checkDiseSel = browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(disp_disease1,SelDise1)) %>% select(NCT) %>% distinct()  # working str_detect
+  #  checkDiseSel = browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect((trimws(disp_disease1)),paste(SelDise1,collapse = "|"))) %>% select(NCT) %>% distinct() # working good with trimws
+    
+    checkDiseSel = browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",SelDise1,"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()   #works final with b
+    
+ 
+    #drug not in the filter menu
+   #  SelDrug = as.list.data.frame(input$drugFil)
+  #   checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
     # 
     SelLineofTx = as.list.data.frame(input$lineofTxFil)
     checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = ";") %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
@@ -157,6 +168,8 @@ shinyServer(function(input, output,session) {
     
     # Example usage:
     # Assuming result_objects contain the result objects checkDis, checkSt, checkTrl, checkloc, checklot
+  #  result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrlTy)   >>>>>>> old correct
+    
     result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrlTy)
     
     # Get the intersection of NCT values
@@ -685,7 +698,7 @@ shinyServer(function(input, output,session) {
                                                  searchable = TRUE,
                         
                         #no filter for each column
-                                         #        filterable = TRUE,
+                                                 filterable = TRUE,
                                                  #       columnDefs = list(list(targets = 4, width = 800)),
                                                  
                                                  resizable = TRUE,
