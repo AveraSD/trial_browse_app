@@ -698,7 +698,7 @@ shinyServer(function(input, output,session) {
                                                  searchable = TRUE,
                         
                         #no filter for each column
-                                                 filterable = TRUE,
+                                              #   filterable = TRUE,
                                                  #       columnDefs = list(list(targets = 4, width = 800)),
                                                  
                                                  resizable = TRUE,
