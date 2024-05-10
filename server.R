@@ -33,10 +33,19 @@ shinyServer(function(input, output,session) {
     # selection 
     SelStage = as.list.data.frame(input$stageView)
   #  checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct() #old working
-    checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(str_detect(stage, paste(SelStage,collapse = "|"))) %>% select(NCT) %>% distinct()
     
+    checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(str_detect(stage, paste(SelStage,collapse = "|"))) %>% select(NCT) %>% distinct() #old working final
     print(isTRUE(SelStage))
     print(length(checkStageSel$NCT))
+    
+    # reactive_data1<- reactive({
+    #   data <- browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(str_detect(stage, paste(SelStage,collapse = "|"))) %>% select(NCT) %>% distinct()
+    #   return(data)
+    # })
+    #   checkStageSel = reactive_data1
+    
+          
+    
     
     SelDise = as.list.data.frame(input$disFil)
    # checkDiseSel = browse_tbl %>% select(NCT,disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(code %in% SelDise) %>% select(NCT) %>% distinct() #old working
@@ -48,10 +57,80 @@ shinyServer(function(input, output,session) {
     print(SelDise1)
    # checkDiseSel = browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(disp_disease1,SelDise1)) %>% select(NCT) %>% distinct()  # working str_detect
   #  checkDiseSel = browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect((trimws(disp_disease1)),paste(SelDise1,collapse = "|"))) %>% select(NCT) %>% distinct() # working good with trimws
+
     
-    checkDiseSel = browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",SelDise1,"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()   #works final with b
+    #    the following line is for using without reactive
+ #   checkDiseSel = browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",SelDise1,"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()   #works final with b without reactive
     
- 
+    
+ ####new block for addressing broad and specific cancer type search
+    reactive_data <- reactive({
+      
+      if(SelDise1 == "Lung Cancer" | SelDise1 == "Lung") {
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Lung","Lung Cancer"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }else if(SelDise1 == "Breast Cancer" | SelDise1 == "Breast"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Breast","Breast Cancer"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      } else if(SelDise1 == "Small Cell Lung Cancer"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("^",c("Small Cell Lung Cancer"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      } else if(SelDise1 == "Skin" | SelDise1 == "Melanoma"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Skin","Melanoma"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }else if(SelDise1 == "Ovary/Fallopian Tube" | SelDise1 == "Ovarian Cancer"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Ovary","Ovarian Cancer"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Lymphoid Neoplasm"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Lymphoid","Lymphoma", "Myeloma", "Lymphoid Leukemia"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Cervix"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Cervix","Cervical"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Peritoneum"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Peritoneum","Peritoneal"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Pancreas"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Pancreas","Pancreatic"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Bladder/Urinary Tract" | SelDise1 == "Bladder Cancer"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Bladder","Bladder Cancer"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Soft Tissue" | SelDise1 == "Sarcoma"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Soft Tissue","Sarcoma"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Liver"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Liver","Hepatocellular carcinoma"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Head and Neck"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Head and Neck","Hypopharynx", "Larynx", "Oral"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Uterus"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Uterus","Uterine", "Mullerian"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "CNS/Brain" | SelDise1 == "Glioma"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("CNS/Brain","Glioma"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+      else if(SelDise1 == "Esophagus/Stomach" ){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Esophagus","Stomach", "Esophageal", "Esophagogastric"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+       }
+      else if(SelDise1 == "Solid Tumors"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Uterus","Cervix", "Vulva", "Vagina","Brain", "Bowel","Lung","Breast","Bone", "Skin",
+                                                                                                                     "Ovary","Fallopian Tube","Esophagus", "Stomach","Pancreas","Kidney","Head and Neck","Soft Tissue",
+                                                                                                                     "Lymphoid", "Myeloid","Colorectal","Glioblastoma","Melanoma","Colorectal","Pancreatic","Gall bladder","Non-Small Cell Lung",
+                                                                                                                     "Hepatocellular Carcinoma","Glioma","Ovarian","Gliosarcoma","Gastroesophageal","Small Cell Lung","Renal",
+                                                                                                                     "Sarcoma", "Lymphoma","Endometrial","Mullerian","Uterine","Bile","Primary",
+                                                                                                                     "Prostate","Bladder","Cervical","Liver","Peritoneum", "Colon", "Thyroid","Solid Tumors"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      }
+       else if(SelDise1 == "Colorectal Cancer" | SelDise1 == "Bowel"){
+         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Colon","Colorectal Cancer", "Colorectal", "Bowel"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()                                                                                                               
+      }
+      else {
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",SelDise1,"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()   #works final with b
+      }
+      
+      return(data)
+    })
+        checkDiseSel = reactive_data()
+        
+  #### new block ends  
+        
     #drug not in the filter menu
    #  SelDrug = as.list.data.frame(input$drugFil)
   #   checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
@@ -154,9 +233,21 @@ shinyServer(function(input, output,session) {
       
       non_null_results <- Filter(Negate(is.null),non_null_results)
       
+      #original block
       if(length(non_null_results) == 0){
         return(character(0))
+      
       }
+     #original block
+      
+      #additional block tested ok with disease combinations
+      # if(length(non_null_results) == 1){
+      # 
+      #      return(NULL) 
+      # }
+      #additional block tested ends
+      
+      
       
      # nct_lists <- lapply(nonzeroresults, function(result) result$NCT)
       #print(nct_lists)
@@ -698,7 +789,7 @@ shinyServer(function(input, output,session) {
                                                  searchable = TRUE,
                         
                         #no filter for each column
-                                              #   filterable = TRUE,
+                                            #     filterable = TRUE,
                                                  #       columnDefs = list(list(targets = 4, width = 800)),
                                                  
                                                  resizable = TRUE,
