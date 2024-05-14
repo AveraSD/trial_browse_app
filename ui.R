@@ -106,8 +106,11 @@ ui <- dashboardPage(
                                     selectInput(
                                       inputId = "disFil",
                                       label = "Cancer Type",
-                                      choices = c(diseasAv$code),
-                                      multiple = TRUE,
+                                    #  choices = c(diseasAv$code), original without "" as a choice
+                                      choices = c(diseasAv$code,""),
+                                 #     multiple = TRUE, original kept as multiple
+                                      multiple = FALSE,
+                                      selected = "",
                                       width = "100%"
                                     ), #selectinput
                          #    ), #column
