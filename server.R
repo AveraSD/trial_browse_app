@@ -86,7 +86,7 @@ shinyServer(function(input, output,session) {
       else if(SelDise1 == "Peritoneum"){
         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Peritoneum","Peritoneal"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
       }
-      else if(SelDise1 == "Pancreas"){
+      else if(SelDise1 == "Pancreas" | SelDise1 == "Pancreatic Cancer" ){
         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Pancreas","Pancreatic"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
       }
       else if(SelDise1 == "Bladder/Urinary Tract" | SelDise1 == "Bladder Cancer"){
@@ -95,17 +95,17 @@ shinyServer(function(input, output,session) {
       else if(SelDise1 == "Soft Tissue" | SelDise1 == "Sarcoma" | SelDise1 == "DSRCT"){
         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Soft Tissue","Sarcoma"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
       }
-      else if(SelDise1 == "Liver"){
+      else if(SelDise1 == "Liver" | SelDise1 == "Liver Cancer"){
         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Liver","Hepatocellular carcinoma"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
       }
       else if(SelDise1 == "Head and Neck" | SelDise1 == "Head and Neck Cancer"){
         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Head and Neck","Hypopharynx", "Larynx", "Oral", "Head and Neck Squamous"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
       }
       else if(SelDise1 == "Uterus"){
-        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Uterus","Uterine", "Mullerian"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Uterus","Uterine", "Mullerian", "Endometrial"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
       }
-      else if(SelDise1 == "CNS/Brain" | SelDise1 == "Glioma"){
-        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("CNS/Brain","Glioma"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
+      else if(SelDise1 == "CNS/Brain" | SelDise1 == "Brain Cancer"){
+        data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("CNS/Brain","Glioma","Glioblastoma","Glioblastoma Multiforme"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
       }
       else if(SelDise1 == "Esophagus/Stomach" | SelDise1 == "Esophagus/Stomach Cancer" ){
         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Esophagus","Stomach", "Esophageal", "Esophagogastric", "Gastroesophageal"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
@@ -121,7 +121,7 @@ shinyServer(function(input, output,session) {
      else if(SelDise1 == "Prostate" | SelDise1 == "Prostate Cancer"){
       data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Prostate","Prostate Cancer"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
      }  else if(SelDise1 == "Colorectal Cancer" | SelDise1 == "Bowel"){
-         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Colon","Colorectal Cancer", "Colorectal", "Bowel"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()                                                                                                               
+         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Colon","Colorectal Cancer", "Colorectal", "Bowel","Rectal"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()                                                                                                               
       }
       else {
         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",SelDise1,"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()   #works final with b
@@ -409,7 +409,7 @@ shinyServer(function(input, output,session) {
        #reactable(filTb[, input$selcolumns],   #### this is using selective display columns
      #july5th commenting
      
-     #                 filterable = TRUE,
+            #          filterable = TRUE,
              searchable = TRUE,
              resizable = TRUE,
              fullWidth = TRUE,
@@ -791,7 +791,7 @@ shinyServer(function(input, output,session) {
                                                  searchable = TRUE,
                         
                         #no filter for each column
-                                                 filterable = TRUE,
+                                         #        filterable = TRUE,
                                                  #       columnDefs = list(list(targets = 4, width = 800)),
                                                  
                                                  resizable = TRUE,
