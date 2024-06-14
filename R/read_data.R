@@ -57,7 +57,10 @@ for (i in 1:nrow(browse_tbl)) {
   n <- browse_tbl$arm[[i]]$biomarker %>% bind_rows() %>% 
     
     #filtering for biomarkers only that belong to inclusion criteria
-    select(`Selection`,summary) %>% filter(`Selection` == "include") %>% 
+   # select(`Selection`,summary) %>% filter(`Selection` == "include") %>%  ## previous working
+    
+    #filtering for biomarkers only that belong to inclusion and exclusion criteria
+    select(`Selection`,summary) %>% filter(`Selection` == "include" | `Selection` == "exclude") %>%
     
     select(summary) %>% distinct() %>% unlist() %>% na.omit() %>% paste0(collapse = "|")
   
