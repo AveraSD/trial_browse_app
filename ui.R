@@ -41,10 +41,10 @@ ui <- dashboardPage(
     #new block
     width = 350, #original was 370
    # tags$style(HTML('.skin-blue .sidebar { background-color: #E6E4D0  ; width:370px; height: 598vh;}', #this is light tan with green buttons
-   
+ #  div(style="overflow-y: scroll"),
        #with gray background and green and tan and purple buttons  
    #changed width 370px to 350px
-   tags$style(HTML('.skin-blue .sidebar { background-color: #D1D3D3  ; width:350px; height: 200vh;}',          
+   tags$style(HTML('.skin-blue .sidebar { background-color: #D1D3D3  ; width:350px; height: 98vh;}',   #height set earlier to 200vh,105 introduced another scroll bar; so adjusted       
                     #    '.left-side, .main-sidebar {padding-top: 20px}',
                     #     '.skin-blue .sidebar .selectize-control { background-color: #D1D3D3 }',
                     #    '.skin-blue .sidebar .selectize-input { background-color: #D1D3D3 }',
@@ -66,6 +66,17 @@ ui <- dashboardPage(
                     '.btn-ltgreen {background-color: #72AA85; color: white ;}',
                     '.btn-tan {background-color: #9D9666; color: white ;}',
                     
+                   #adding freeze header for reactable 
+  #                  '
+  #   .reactable .rt-thead {
+  #     position: sticky;
+  #     top: 0;
+  #     z-index: 1;
+  #     background-color: white;  /* Optional: Keeps header background solid */
+  #   }
+  # ',
+  #                  
+                   
                     #   '.skin-blue .sidebar .checkbox .control-label { color: black;}' 
     )),
     
@@ -126,6 +137,19 @@ ui <- dashboardPage(
 
                                     ),
  
+                          #add phase
+                                    selectInput(
+                                    inputId = "PhaseFil",
+                                    label = "Phase",
+                                    choices = c(PhaseAv$Phase), 
+                                    multiple = T,
+                                    width = "100%"
+  
+                                    ),
+
+
+                          #add phase ends
+
                                 #    )
                                 selectInput(
                                   inputId = "trialTyxFil",
@@ -134,7 +158,17 @@ ui <- dashboardPage(
                                   multiple = T, width = "100%"
                                   ),
  
+                              # add trial status
+                                selectInput(
+                                inputId = "trstatFil",
+                                label = "Trial Status",
+                                choices = c(trstatAv$HoldStatus),
+                                multiple = T, width = "100%"
+                                ),
 
+
+
+                              #add trial status ends
                             # column(4,
  
 
@@ -244,6 +278,32 @@ checkboxInput("show_closed","show closed trials",value = FALSE),
     )#sidebar menu
   ),#sidebar
     dashboardBody(
+      
+      #add reactable sticky header
+      tags$head(
+        tags$style(HTML("
+        /* Reactable sticky header */
+       ' .reactable .rt-thead {
+          position: sticky !important;
+          top: 0 !important;
+          z-index: 1 !important;
+          background-color: white !important;
+        }'
+        # /* Sidebar scrollbar on the left */
+        # .main-sidebar {
+        #   overflow-y: auto;
+        #   direction: rtl;
+        # }
+        # .main-sidebar .sidebar-menu {
+        #   direction: ltr;
+        # }
+      "))
+      ),
+      
+      
+      
+      # end
+      
       useShinyjs(),
       tabItems(
       tabItem(tabName = "dashboard",

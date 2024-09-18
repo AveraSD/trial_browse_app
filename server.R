@@ -148,6 +148,33 @@ shinyServer(function(input, output,session) {
  #   checktrlTy = browse_tbl %>% select(NCT,JIT) %>% filter(JIT %in%  SelTrialty) %>% select(NCT) %>% distinct() old working
     checktrlTy = browse_tbl %>% select(NCT,JIT) %>% filter(str_detect(JIT, paste(SelTrialty,collapse = "|"))) %>% select(NCT) %>% distinct()
    
+    #add phase
+    SelPhase = as.list.data.frame(input$PhaseFil)
+#    checkPhase = browse_tbl %>% select(NCT,Phase) %>% filter(str_detect(Phase, paste(SelPhase, collapse = "|"))) %>% select(NCT) %>% distinct()
+    
+    reactivephase <- reactive({
+   phasecheck <-browse_tbl %>% select(NCT,Phase) %>% separate_rows(Phase, sep = "\\s*\\|\\s*") %>%
+      # Trim spaces and standardize format
+      mutate(Phase = trimws(Phase),
+             Phase = tolower(Phase)) %>%
+      # Apply the same standardization used for selectInput choices
+      mutate(Phasenew = gsub("phase(\\d+)", "phase \\1", Phase)) %>%
+      # Filter rows where the standardized phase matches the user selection
+      
+      group_by(NCT) %>%
+      summarise(Phasenew = paste(Phasenew, collapse = " | "))  
+   print(phasecheck$Phasenew)
+   print(phasecheck$NCT)
+   phasecheck %>% filter(grepl(SelPhase, Phasenew)) 
+    })
+    checkPhase = reactivephase()
+    
+    #  print(Phase)
+  #    print(SelPhase)
+    
+    
+    #add phase ends
+    
    # ----------------------------------------------------------------------------------------------------------------------- #
     # part 2 options 
     # if(length(checkStageSel$NCT) >= 1  && length(checkDiseSel$NCT) == 0 && length(checkDrugSel$NCT) == 0 && length(checklineoftxSel$NCT) == 0 && length(checklocat$NCT) == 0 && length(checktrlTy$NCT) == 0){
@@ -263,7 +290,11 @@ shinyServer(function(input, output,session) {
     # Assuming result_objects contain the result objects checkDis, checkSt, checkTrl, checkloc, checklot
   #  result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrlTy)   >>>>>>> old correct
     
-    result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrlTy)
+  #  result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrlTy)   ####original working last 
+    
+    #add phase
+    result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checkPhase, checktrlTy)
+    #add phase ends
     
     # Get the intersection of NCT values
     intersection_nct <- get_intersection(result_objects)
@@ -571,6 +602,11 @@ shinyServer(function(input, output,session) {
    
    #reset trial type 
    updateSelectInput(inputId = "trialTyxFil",selected = "")
+   
+   #add phase
+   updateSelectInput(inputId = "PhaseFil",selected = "")
+   #add phase ends
+   
    updateSelectInput(inputId = "selcolumns",selected = "")
    
    
@@ -789,15 +825,15 @@ shinyServer(function(input, output,session) {
                                                #      defaultSelected = "Title",                    
                         #                         searchable = TRUE,
                                                  searchable = TRUE,
-                        
+                                                 pagination = FALSE, highlight = TRUE, height = 1228,  #height 928 previous
                         #no filter for each column
                                          #        filterable = TRUE,
                                                  #       columnDefs = list(list(targets = 4, width = 800)),
                                                  
                                                  resizable = TRUE,
                                                  fullWidth = TRUE,
-                        
-                        
+                                          #       defaultPageSize = 30,
+                                          #       bordered = TRUE,
                                                defaultColDef = colDef(align = "center"),
                         
                         # #have autocomplete for all columns instead of one column  - not working

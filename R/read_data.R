@@ -100,6 +100,15 @@ stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separ
 locAv = browse_tbl %>% select(Location) %>% separate_rows(Location,sep=",") %>% mutate(Location=trimws(Location)) %>% distinct()
 trialTyAv = browse_tbl %>% select(JIT) %>%  mutate(JIT =trimws(JIT)) %>% distinct()
 lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = c(";")) %>% select(line_of_therapy) %>% distinct() 
+
+#add phase for menu
+PhaseAv = browse_tbl %>% select(Phase) %>% separate_rows(Phase, sep="\\s*\\|\\s*") %>% mutate(Phase = trimws(Phase), Phase = tolower(Phase)) %>% mutate(Phase = gsub("phase(\\d+)", "phase \\1", Phase)) %>% distinct(Phase)
+
+
+#add phase ends
+#add trial status
+trstatAv = browse_tbl %>% select(HoldStatus) %>%  mutate(HoldStatus =trimws(tolower(HoldStatus))) %>% distinct()
+#add trial status ends
 #useShinyjs()
 #browse_tbl <- browse_tbl %>% mutate(comb_col = html(paste(Documentation, "<br>", Link)))
 
