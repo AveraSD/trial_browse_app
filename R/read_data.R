@@ -115,4 +115,4 @@ trstatAv = browse_tbl %>% select(HoldStatus) %>%  mutate(HoldStatus =trimws(tolo
 #the following is for selective display
 #seldiscolumns<- browse_tbl %>% select(Protocol, HoldStatus, Phase, Title, Disease, disp_disease1, lnOfTherapy, disp_biomarkers, Documentation) <<< old columns
 
-seldiscolumns<- browse_tbl %>% select(Location, PrincipalInvestigator, Protocol, Diseasecat, HoldStatus, filtopencohort, stages, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers, JIT)
+seldiscolumns<- browse_tbl %>% select(Location, PrincipalInvestigator, Protocol, Diseasecat, HoldStatus, filtopencohort, stages, Phase, Title, Conditions, lnOfTherapy, disp_biomarkers, JIT, Link)
