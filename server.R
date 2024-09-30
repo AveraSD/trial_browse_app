@@ -33,11 +33,11 @@ shinyServer(function(input, output,session) {
     # selection 
     SelStage = as.list.data.frame(input$stageView)
   #  checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(stage %in% SelStage) %>% select(NCT) %>% distinct() #old working
-    
+  #  if (SelStage != "") {
     checkStageSel = browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(str_detect(stage, paste(SelStage,collapse = "|"))) %>% select(NCT) %>% distinct() #old working final
     print(isTRUE(SelStage))
     print(length(checkStageSel$NCT))
-    
+  #  }
     # reactive_data1<- reactive({
     #   data <- browse_tbl %>% select(NCT, disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% filter(str_detect(stage, paste(SelStage,collapse = "|"))) %>% select(NCT) %>% distinct()
     #   return(data)
@@ -65,7 +65,7 @@ shinyServer(function(input, output,session) {
     
  ####new block for addressing broad and specific cancer type search
     reactive_data <- reactive({
-      
+ #     if (SelDise1 != "") {
       if(SelDise1 == "Lung Cancer" | SelDise1 == "Lung") {
         data <- browse_tbl %>% select(NCT,disp_disease1) %>%  filter(str_detect(trimws(disp_disease1),paste0("\\b",c("Lung","Lung Cancer"),"\\b",collapse = "|"))) %>% select(NCT) %>% distinct()
       }else if(SelDise1 == "Breast Cancer" | SelDise1 == "Breast"){
@@ -128,6 +128,7 @@ shinyServer(function(input, output,session) {
       }
       
       return(data)
+  #    } #new if ends
     })
         checkDiseSel = reactive_data()
         
@@ -138,36 +139,47 @@ shinyServer(function(input, output,session) {
   #   checkDrugSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% filter(drug %in% SelDrug) %>% select(NCT) %>% distinct()
     # 
     SelLineofTx = as.list.data.frame(input$lineofTxFil)
+  #  if (SelLineofTx != "") {
     checklineoftxSel = browse_tbl %>% select(NCT,arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = ";") %>% filter(line_of_therapy %in% SelLineofTx) %>% select(NCT) %>% distinct()
-   
+   # }
     SelLocat = as.list.data.frame(input$locaFil)
   #  checklocat = browse_tbl %>% select(NCT,Location) %>% filter(Location %in%  SelLocat) %>% select(NCT) %>% distinct() old working
-    checklocat = browse_tbl %>% select(NCT,Location) %>% filter(str_detect(Location, paste(SelLocat, collapse = "|"))) %>% select(NCT) %>% distinct()
+  #  if (SelLocat != "") {
+    checklocat = browse_tbl %>% select(NCT,Location) %>% separate_rows(Location,sep = "\\s*;s*") %>% filter(str_detect(Location, paste(SelLocat, collapse = "|"))) %>% select(NCT) %>% distinct()
+  #  }
     # for the trial type 
      SelTrialty = as.list.data.frame(input$trialTyxFil) # Ui name
  #   checktrlTy = browse_tbl %>% select(NCT,JIT) %>% filter(JIT %in%  SelTrialty) %>% select(NCT) %>% distinct() old working
+  #   if (SelTrialty != "") {
     checktrlTy = browse_tbl %>% select(NCT,JIT) %>% filter(str_detect(JIT, paste(SelTrialty,collapse = "|"))) %>% select(NCT) %>% distinct()
-   
+ #    }
     #add phase
-    SelPhase = as.list.data.frame(input$PhaseFil)
+ #   SelPhase = as.list.data.frame(input$PhaseFil)
 #    checkPhase = browse_tbl %>% select(NCT,Phase) %>% filter(str_detect(Phase, paste(SelPhase, collapse = "|"))) %>% select(NCT) %>% distinct()
     
-    reactivephase <- reactive({
-   phasecheck <-browse_tbl %>% select(NCT,Phase) %>% separate_rows(Phase, sep = "\\s*\\|\\s*") %>%
+    
+   #  reactivephase <- reactive({
+   #    if (!is.null(SelPhase) | SelPhase != "" ) {
+   # phasecheck <-browse_tbl %>% select(NCT,Phase) %>% separate_rows(Phase, sep = "\\s*\\|\\s*") %>%
       # Trim spaces and standardize format
-      mutate(Phase = trimws(Phase),
-             Phase = tolower(Phase)) %>%
+      # mutate(Phase = trimws(Phase),
+      #        Phase = tolower(Phase)) %>%
       # Apply the same standardization used for selectInput choices
-      mutate(Phasenew = gsub("phase(\\d+)", "phase \\1", Phase)) %>%
+    #  mutate(Phasenew = gsub("phase(\\d+)", "phase \\1", Phase)) %>%
       # Filter rows where the standardized phase matches the user selection
       
-      group_by(NCT) %>%
-      summarise(Phasenew = paste(Phasenew, collapse = " | "))  
-   print(phasecheck$Phasenew)
-   print(phasecheck$NCT)
-   phasecheck %>% filter(grepl(SelPhase, Phasenew)) 
-    })
-    checkPhase = reactivephase()
+   #    group_by(NCT) %>%
+   #    summarise(Phasenew = paste(Phasenew, collapse = " | "))  
+   # print(phasecheck$Phasenew)
+   # print(phasecheck$NCT)
+   # phasecheck<- phasecheck %>% filter(grepl(SelPhase, Phasenew))
+ #  phasecheck
+      
+    #   return(phasecheck)
+    #   } #new if ends
+    # })
+    
+ #   checkPhase = reactivephase()
     
     #  print(Phase)
   #    print(SelPhase)
@@ -177,9 +189,10 @@ shinyServer(function(input, output,session) {
     
     
     #add trial status
+   # if (SelTrialstat != "") {
     SelTrialstat = as.list.data.frame(input$trstatFil)
-    checktrialstat = browse_tbl %>% select(NCT,HoldStatus) %>% filter(str_detect(HoldStatus, paste(SelTrialstat,collapse = "|"))) %>% select(NCT) %>% distinct()
-    
+    checktrialstat = browse_tbl %>% select(NCT,HoldStatus) %>% mutate(HoldStatus = tolower(HoldStatus)) %>% mutate(HoldStatus = trimws(HoldStatus)) %>% filter(str_detect(HoldStatus, paste(SelTrialstat,collapse = "|"))) %>% select(NCT) %>% distinct()
+    #}
     #add trial status ends
     
    # ----------------------------------------------------------------------------------------------------------------------- #
@@ -300,8 +313,11 @@ shinyServer(function(input, output,session) {
   #  result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrlTy)   ####original working last 
     
     #add phase
-    result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checkPhase, checktrialstat, checktrlTy)
+  #  result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checkPhase, checktrialstat, checktrlTy)
     #add phase ends
+   
+    #no phase 
+    result_objects <- list(checkStageSel, checkDiseSel, checklineoftxSel, checklocat, checktrialstat, checktrlTy)
     
     # Get the intersection of NCT values
     intersection_nct <- get_intersection(result_objects)

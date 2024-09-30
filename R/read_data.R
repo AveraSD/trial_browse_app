@@ -97,12 +97,12 @@ for (v in 1:nrow(browse_tbl)) {
 drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
 diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
 stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% select(stage) %>% distinct() 
-locAv = browse_tbl %>% select(Location) %>% separate_rows(Location,sep=",") %>% mutate(Location=trimws(Location)) %>% distinct()
+locAv = browse_tbl %>% select(Location) %>% separate_rows(Location,sep="[,;]") %>% mutate(Location=trimws(Location)) %>% distinct()
 trialTyAv = browse_tbl %>% select(JIT) %>%  mutate(JIT =trimws(JIT)) %>% distinct()
 lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = c(";")) %>% select(line_of_therapy) %>% distinct() 
 
 #add phase for menu
-PhaseAv = browse_tbl %>% select(Phase) %>% separate_rows(Phase, sep="\\s*\\|\\s*") %>% mutate(Phase = trimws(Phase), Phase = tolower(Phase)) %>% mutate(Phase = gsub("phase(\\d+)", "phase \\1", Phase)) %>% distinct(Phase)
+#PhaseAv = browse_tbl %>% select(Phase) %>% separate_rows(Phase, sep="\\s*\\|\\s*") %>% mutate(Phase = trimws(Phase), Phase = tolower(Phase)) %>% mutate(Phase = gsub("phase(\\d+)", "phase \\1", Phase)) %>% distinct(Phase)
 
 
 #add phase ends
