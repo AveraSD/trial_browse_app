@@ -138,15 +138,15 @@ ui <- dashboardPage(
                                     ),
  
                           #add phase
-                                    # selectInput(
-                                    # inputId = "PhaseFil",
-                                    # label = "Phase",
-                               #     choices = c(PhaseAv$Phase), 
-                                    # choices = c(PhaseAv$Phase),
-                                    # multiple = T,
-                                    # width = "100%"
-                                    # 
-                                    # ),
+                               selectInput(
+                               inputId = "PhaseFil",
+                               label = "Phase",
+                             #      choices = c(PhaseAv$Phase),
+                               choices = c(PhaseAv$Phase),
+                               multiple = T,
+                               width = "100%"
+
+                               ),
 
 
                           #add phase ends

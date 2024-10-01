@@ -94,20 +94,21 @@ for (v in 1:nrow(browse_tbl)) {
 #%>% paste0(cohortlabel,"-",arm_hold_status) %>% unlist() %>% na.omit() %>%  paste0(collapse = " | ")
 # Make dataframe for each of the filtration criteria - for now - Drug, cancer type, stage, location and line of therapy 
 
-drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
+#drugAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% select(drug) %>% distinct()
 diseasAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% select(code) %>% distinct()
-stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% select(stage) %>% distinct() 
-locAv = browse_tbl %>% select(Location) %>% separate_rows(Location,sep="[,;]") %>% mutate(Location=trimws(Location)) %>% distinct()
-trialTyAv = browse_tbl %>% select(JIT) %>%  mutate(JIT =trimws(JIT)) %>% distinct()
+#for unique values of stage
+stageAv = browse_tbl %>% select(disp_disease) %>% unnest(disp_disease) %>% separate_rows(stage,sep = ";") %>% mutate(stage = trimws(stage), stage = tolower(stage), stage = sort(stage)) %>% select(stage) %>% distinct() 
+locAv = browse_tbl %>% select(Location) %>% separate_rows(Location,sep="[,;]") %>% mutate(Location=trimws(Location), Location = sort(Location)) %>% distinct()
+trialTyAv = browse_tbl %>% select(JIT) %>%  mutate(JIT =trimws(JIT), JIT = sort(JIT)) %>% distinct()
 lineoftxAv = browse_tbl %>% select(arms) %>% unnest(arms) %>% separate_rows(line_of_therapy,sep = c(";")) %>% select(line_of_therapy) %>% distinct() 
 
 #add phase for menu
-#PhaseAv = browse_tbl %>% select(Phase) %>% separate_rows(Phase, sep="\\s*\\|\\s*") %>% mutate(Phase = trimws(Phase), Phase = tolower(Phase)) %>% mutate(Phase = gsub("phase(\\d+)", "phase \\1", Phase)) %>% distinct(Phase)
+PhaseAv = browse_tbl %>% select(Phase) %>% separate_rows(Phase, sep="\\s*\\|\\s*") %>% mutate(Phase = trimws(Phase), Phase = tolower(Phase)) %>% mutate(Phase = gsub("phase(\\d+)", "phase \\1", Phase), Phase = sort(Phase)) %>% distinct(Phase)
 
 
 #add phase ends
 #add trial status
-trstatAv = browse_tbl %>% select(HoldStatus) %>%  mutate(HoldStatus =trimws(tolower(HoldStatus))) %>% distinct()
+trstatAv = browse_tbl %>% select(HoldStatus) %>%  mutate(HoldStatus =trimws(tolower(HoldStatus)), HoldStatus = sort(HoldStatus)) %>% distinct()
 #add trial status ends
 #useShinyjs()
 #browse_tbl <- browse_tbl %>% mutate(comb_col = html(paste(Documentation, "<br>", Link)))
